@@ -21,7 +21,7 @@ function Services() {
     },
     {
       icon: <Briefcase size={48} />,
-      title: "Corporate Investigation",
+      title: "Corporate Investigation ",
       description: "Protect your business with thorough corporate investigative services",
       features: [
         "Employee misconduct investigations",
