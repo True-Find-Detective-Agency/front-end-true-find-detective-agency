@@ -1,47 +1,29 @@
+// DetectiveAgency.jsx
+import React from 'react';
+import {
+  Search, Shield, Eye, Phone, Mail, MapPin, Award, Clock, Users, Target, CheckCircle, ArrowRight, Star
+} from 'lucide-react';
+import "../css/home.css";
+import AboutStats from '../utils/AnimatedStat';
+import { services, features, testimonials, process, aboutFeatures } from '../data/data';
 
-import { Search, Shield, Eye, Phone, Mail, MapPin, Menu, X } from 'lucide-react';
-import "../css/home.css"
-import bg from "../assets/home banner.mp4"
+// Map icon names to components
+const iconMap = { Search, Shield, Eye, Users, Target, Phone, Clock, Award, CheckCircle };
 
-export default function DetectiveAgency() {
-
-
-  const services = [
-    {
-      icon: <Search size={40} />,
-      title: "Background Checks",
-      description: "Comprehensive background investigations for personal and corporate needs"
-    },
-    {
-      icon: <Shield size={40} />,
-      title: "Corporate Investigation",
-      description: "Fraud detection, employee screening, and business intelligence"
-    },
-    {
-      icon: <Eye size={40} />,
-      title: "Surveillance",
-      description: "Professional surveillance services with detailed reporting"
-    }
-  ];
-
+export default function Home() {
   return (
     <div className="app">
-
       {/* Hero Section */}
       <section className="hero" id="home">
         <video autoPlay muted loop playsInline className="hero-video">
-          <source src={bg} type="video/mp4" />
+          <source src='https://res.cloudinary.com/dmqa8d6yq/video/upload/v1762684383/home_banner_bg.mp4' type="video/mp4" />
         </video>
-
         <div className="hero-overlay"></div>
-
         <div className="container">
           <div className="hero-content">
             <h1 className="hero-title">Uncovering Truth in the Shadows</h1>
-            <p className="hero-subtitle">
-              Professional investigative services with over 20 years of experience.
-              Discretion guaranteed, results delivered.
-            </p>
+            <h1 className="hero-title">Welcome to True Find Detective Agency</h1>
+            <p className="hero-subtitle"> Professional investigat ive services with over 20 years of experience. Discretion guaranteed, results delivered.</p>
             <div className="hero-buttons">
               <button className="btn btn-primary">Get Started</button>
               <button className="btn btn-secondary">Learn More</button>
@@ -50,6 +32,23 @@ export default function DetectiveAgency() {
         </div>
       </section>
 
+      {/* Features Overview */}
+      <section className="features-overview">
+        <div className="container">
+          <div className="features-grid">
+            {features.map((feature, index) => {
+              const IconComponent = iconMap[feature.icon];
+              return (
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">{IconComponent && <IconComponent size={32} />}</div>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* Services Section */}
       <section className="services" id="services">
@@ -58,16 +57,21 @@ export default function DetectiveAgency() {
           <p className="section-subtitle">
             Comprehensive investigative solutions tailored to your needs
           </p>
-
           <div className="services-grid">
-            {services.map((service, index) => (
-              <div key={index} className="service-card">
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <button className="service-btn">Learn More →</button>
-              </div>
-            ))}
+            {services.map((service, index) => {
+              const IconComponent = iconMap[service.icon];
+              return (
+                <div key={index} className="service-card">
+                  <div className="service-icon">{IconComponent && <IconComponent size={40} />}</div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                  <p className="service-details">{service.details}</p>
+                  <button className="service-btn">
+                    Learn More <ArrowRight size={16} />
+                  </button>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -77,34 +81,66 @@ export default function DetectiveAgency() {
         <div className="container">
           <div className="about-content">
             <div className="about-text">
-              <h2>Why Choose Us?</h2>
+              <h2>Why Choose True Find?</h2>
               <p>
                 With over two decades of experience in private investigation,
-                our team of licensed professionals brings unmatched expertise
-                to every case. We utilize cutting-edge technology combined with
-                traditional investigative techniques to deliver results.
+                our team of professional investigators brings unmatched expertise
+                to every case. We utilize modern investigative techniques combined with
+                traditional methods to deliver results you can trust.
+              </p>
+              <p className="about-highlight">
+                Our commitment to excellence and client satisfaction has made us
+                a trusted name in the investigation industry. We handle each case
+                with the utmost care, professionalism, and dedication.
               </p>
               <ul className="about-features">
-                <li>✓ Licensed & Insured Investigators</li>
-                <li>✓ 24/7 Availability</li>
-                <li>✓ Complete Confidentiality</li>
-                <li>✓ Court-Admissible Evidence</li>
+                {aboutFeatures.map((item, idx) => (
+                  <li key={idx}>✓ {item}</li>
+                ))}
               </ul>
             </div>
-            <div className="about-stats">
-              <div className="stat">
-                <div className="stat-number">2000+</div>
-                <div className="stat-label">Cases Solved</div>
+            <AboutStats />
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="process-section">
+        <div className="container">
+          <h2 className="section-title">How We Work</h2>
+          <p className="section-subtitle">Our systematic approach to delivering reliable results</p>
+          <div className="process-timeline">
+            {process.map((item, index) => (
+              <div key={index} className="process-item">
+                <div className="process-step">{item.step}</div>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
               </div>
-              <div className="stat">
-                <div className="stat-number">98%</div>
-                <div className="stat-label">Success Rate</div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="testimonials-section">
+        <div className="container">
+          <h2 className="section-title">What Our Clients Say</h2>
+          <p className="section-subtitle">Real experiences from satisfied clients</p>
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="testimonial-card">
+                <div className="testimonial-rating">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} size={18} fill="#DAA520" color="#DAA520" />
+                  ))}
+                </div>
+                <p className="testimonial-text">"{testimonial.text}"</p>
+                <div className="testimonial-author">
+                  <strong>{testimonial.name}</strong>
+                  <span>{testimonial.role}</span>
+                </div>
               </div>
-              <div className="stat">
-                <div className="stat-number">20+</div>
-                <div className="stat-label">Years Experience</div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -113,24 +149,23 @@ export default function DetectiveAgency() {
       <section className="contact" id="contact">
         <div className="container">
           <h2 className="section-title">Get In Touch</h2>
-          <p className="section-subtitle">
-            Confidential consultation available 24/7
-          </p>
-
+          <p className="section-subtitle">Confidential consultation available 24/7</p>
           <div className="contact-content">
             <div className="contact-info">
               <div className="contact-item">
                 <Phone size={24} />
                 <div>
                   <h4>Phone</h4>
-                  <p>+1 (555) 123-4567</p>
+                  <p>+91 898 7883 739</p>
+                  <span className="contact-note">Available 24/7</span>
                 </div>
               </div>
               <div className="contact-item">
                 <Mail size={24} />
                 <div>
                   <h4>Email</h4>
-                  <p>info@shadowseek.com</p>
+                  <p>info@truefind.com</p>
+                  <span className="contact-note">Response within 24 hours</span>
                 </div>
               </div>
               <div className="contact-item">
@@ -138,17 +173,41 @@ export default function DetectiveAgency() {
                 <div>
                   <h4>Location</h4>
                   <p>123 Mystery Lane, Suite 400<br />New York, NY 10001</p>
+                  <span className="contact-note">By appointment only</span>
                 </div>
               </div>
             </div>
-
             <div className="contact-form">
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-              <input type="tel" placeholder="Phone Number" />
-              <textarea placeholder="Tell us about your case..." rows="5"></textarea>
-              <button className="btn btn-primary" onClick={() => alert('Message sent! We will contact you soon.')}>Send Message</button>
+              <h3 className="form-title">Send Us a Message</h3>
+              <input type="text" placeholder="Your Name *" required />
+              <input type="email" placeholder="Your Email *" required />
+              <input type="tel" placeholder="Phone Number *" required />
+              <select className="form-select">
+                <option value="">Select Service Type</option>
+                <option value="background">Background Check</option>
+                <option value="corporate">Corporate Investigation</option>
+                <option value="surveillance">Surveillance</option>
+                <option value="missing">Missing Person</option>
+                <option value="fraud">Fraud Investigation</option>
+                <option value="other">Other</option>
+              </select>
+              <textarea placeholder="Tell us about your case... *" rows="5" required></textarea>
+              <p className="privacy-note">🔒 All information is kept strictly confidential</p>
+              <button className="btn btn-primary" onClick={() => alert('Thank you for contacting True Find Detective Agency. We will review your case and get back to you within 24 hours.')}>
+                Send Message
+              </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="cta-banner">
+        <div className="container">
+          <div className="cta-content">
+            <h2>Need Immediate Assistance?</h2>
+            <p>Our team is available 24/7 for urgent cases and emergency situations</p>
+            <button className="btn btn-primary-large">Call Now: (555) 123-4567</button>
           </div>
         </div>
       </section>

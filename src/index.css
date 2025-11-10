@@ -1,0 +1,9 @@
+/* ================== Hide caret globally ================= */
+/* Remove outline on click */
+
+
+html, body, *, *::before, *::after {
+  caret-color: transparent !important;
+  user-select: none; /* prevents text selection */
+}
+/* ========================================================== */
