@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock, Navigation, Search, Building } from 'lucide
 import "../css/branches.css";
 
 import { branches, regions } from '../data/data';
+import LocationButton from '../components/LocationButton';
 function Branches() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('all');
@@ -128,10 +129,8 @@ function Branches() {
                       </div>
                     </div>
 
-                    <button className="branch-button">
-                      <Navigation size={16} />
-                      Get Directions
-                    </button>
+                    <LocationButton lat="23.2056" lng="77.0937" />
+
                   </div>
                 ))}
               </div>
