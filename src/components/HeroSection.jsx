@@ -20,7 +20,7 @@ function HeroSection() {
           <h1 className="hero-title">Revealing the Truth, One Case at a Time</h1>
           <h2 className="hero-subtitle">Trusted. Discreet. Professional.</h2>
           <p className="hero-description">
-            For over 20 years, True Find Detective Agency has delivered confidential investigations
+           True Find Detective Agency has delivered confidential investigations
             with proven results. Your truth matters — we’ll help you uncover it.
           </p>
           <div className="hero-buttons">

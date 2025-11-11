@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .branches-page {
     background: #0a0a0a;
@@ -10,11 +6,6 @@
     min-height: 100vh;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
 
 /* Hero Section */
 .branches-hero {
@@ -116,7 +107,7 @@
 
 .branches-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
     gap: 2rem;
 }
 
@@ -253,29 +244,9 @@
     border: 1px solid #2a2a2a;
 }
 
-.branch-button {
-    width: 100%;
-    background: #DAA520;
-    color: #0a0a0a;
-    border: none;
-    padding: 1rem;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
 
-.branch-button:hover {
-    background: #FFD700;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.4);
-}
+
+
 
 /* No Results */
 .no-results {
