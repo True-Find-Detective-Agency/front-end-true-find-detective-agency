@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation, Outlet } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/logo.png";
 import "../css/pageTransition.css";
 
 function PageTransition() {
@@ -30,18 +30,18 @@ function PageTransition() {
           src={logo}
           alt="Logo"
           style={{
-            width: "120px",
-            height: "120px",
+            width: "520px",
+            height: "520px",
             borderRadius: "50%",
             objectFit: "cover",
-            boxShadow: "0 0 20px rgba(0,0,0,0.3)",
-            border: "3px solid white",
           }}
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         />
+        <div class="loader"></div>
         </motion.div>
+        
       )}
 
       {showPage && (

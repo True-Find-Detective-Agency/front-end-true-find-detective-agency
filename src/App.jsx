@@ -10,6 +10,7 @@ import WhyUs from "./pages/WhyUs";
 
 import ScrollToTop from "./utils/ScrollToTop";
 import PageTransition from "./utils/PageTransition"; // 👈 add this
+import Branches from "./pages/Branches";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="services" element={<Services />} />
             <Route path="contact" element={<Contact />} />
             <Route path="why-us" element={<WhyUs />} />
+            <Route path="branches" element={<Branches />} />
           </Route>
         </Route>
       </Routes>

@@ -6,50 +6,20 @@ import {
 import "../css/home.css";
 import AboutStats from '../utils/AnimatedStat';
 import { services, features, testimonials, process, aboutFeatures } from '../data/data';
+import { useNavigate } from 'react-router-dom';
+import HeroSection from '../components/HeroSection';
 
 // Map icon names to components
 const iconMap = { Search, Shield, Eye, Users, Target, Phone, Clock, Award, CheckCircle };
 
 export default function Home() {
+
+  const navTo = useNavigate();
   return (
     <div className="app">
       {/* Hero Section */}
-      <section className="hero" id="home">
-        <video autoPlay muted loop playsInline className="hero-video">
-          <source src='https://res.cloudinary.com/dmqa8d6yq/video/upload/v1762684383/home_banner_bg.mp4' type="video/mp4" />
-        </video>
-        <div className="hero-overlay"></div>
-        <div className="container">
-          <div className="hero-content">
-            <h1 className="hero-title">Uncovering Truth in the Shadows</h1>
-            <h1 className="hero-title">Welcome to True Find Detective Agency</h1>
-            <p className="hero-subtitle"> Professional investigat ive services with over 20 years of experience. Discretion guaranteed, results delivered.</p>
-            <div className="hero-buttons">
-              <button className="btn btn-primary">Get Started</button>
-              <button className="btn btn-secondary">Learn More</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Features Overview */}
-      <section className="features-overview">
-        <div className="container">
-          <div className="features-grid">
-            {features.map((feature, index) => {
-              const IconComponent = iconMap[feature.icon];
-              return (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">{IconComponent && <IconComponent size={32} />}</div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
+      
+      <HeroSection />
       {/* Services Section */}
       <section className="services" id="services">
         <div className="container">
@@ -66,13 +36,14 @@ export default function Home() {
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
                   <p className="service-details">{service.details}</p>
-                  <button className="service-btn">
-                    Learn More <ArrowRight size={16} />
-                  </button>
+
                 </div>
               );
             })}
           </div>
+          <button className="service-btn " onClick={() => navTo("/services")}>
+            All Services <ArrowRight size={16} />
+          </button>
         </div>
       </section>
 
@@ -80,34 +51,53 @@ export default function Home() {
       <section className="about" id="about">
         <div className="container">
           <div className="about-content">
-            <div className="about-text">
-              <h2>Why Choose True Find?</h2>
-              <p>
-                With over two decades of experience in private investigation,
-                our team of professional investigators brings unmatched expertise
-                to every case. We utilize modern investigative techniques combined with
-                traditional methods to deliver results you can trust.
-              </p>
-              <p className="about-highlight">
-                Our commitment to excellence and client satisfaction has made us
-                a trusted name in the investigation industry. We handle each case
-                with the utmost care, professionalism, and dedication.
-              </p>
-              <ul className="about-features">
-                {aboutFeatures.map((item, idx) => (
-                  <li key={idx}>✓ {item}</li>
-                ))}
-              </ul>
+            <div className="about-text-wrapper">
+              <div className="about-text">
+                <h2>Why Choose True Find?</h2>
+                <p>
+                  With over two decades of experience in private investigation,
+                  our team of professional investigators brings unmatched expertise
+                  to every case. We utilize modern investigative techniques combined with
+                  traditional methods to deliver results you can trust.
+                </p>
+                <p className="about-highlight">
+                  Our commitment to excellence and client satisfaction has made us
+                  a trusted name in the investigation industry. We handle each case
+                  with the utmost care, professionalism, and dedication.
+                </p>
+                <ul className="about-features">
+                  {aboutFeatures.map((item, idx) => (
+                    <li key={idx}>✓ {item}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
+
             <AboutStats />
           </div>
+          <div className="features-grid">
+            {features.map((feature, index) => {
+              const IconComponent = iconMap[feature.icon];
+              return (
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">{IconComponent && <IconComponent size={32} />}</div>
+                  <h3>{feature.title}</h3>
+                  <p>{feature.description}</p>
+                </div>
+              );
+            })}
+          </div>
+          <button className="service-btn" onClick={() => navTo("/why-us")}>
+            View in Detailed <ArrowRight size={16} />
+          </button>
         </div>
       </section>
 
       {/* Process Section */}
       <section className="process-section">
         <div className="container">
-          <h2 className="section-title">How We Work</h2>
+          <h2 className="section-title">Our Investigation Process
+          </h2>
           <p className="section-subtitle">Our systematic approach to delivering reliable results</p>
           <div className="process-timeline">
             {process.map((item, index) => (
@@ -142,6 +132,9 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <button className="service-btn ">
+            All reviews <ArrowRight size={16} />
+          </button>
         </div>
       </section>
 

@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
 }
 
-.features-overview::before {
+section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -462,7 +462,17 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
+  
 }
+
+section .service-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto 0;
+}
+
+
 
 .service-btn:hover {
   background: var(--primary-gold);
@@ -470,6 +480,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(5px);
   box-shadow: var(--shadow-gold);
 }
+
 
 /* ========================================
    ABOUT SECTION
@@ -494,11 +505,28 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .about-content {
+  margin-bottom: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
+
+/* 🕵️ About Section Background */
+.about-text-wrapper {
+  background-image: url("../assets//craig-whitehead-lbekri_riMg-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 40px;
+  border-radius: 16px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+
+
 
 .about-text h2 {
   font-size: 2.8rem;

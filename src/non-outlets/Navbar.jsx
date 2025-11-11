@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Shield, Menu, X } from "lucide-react";
 
+import "../css/navbar.css"
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -27,165 +28,13 @@ function Navbar() {
             <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
             <li><Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
             <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+            <li><Link to="/branches" onClick={() => setMenuOpen(false)}>Branches</Link></li>
             <li><Link to="/why-us" onClick={() => setMenuOpen(false)}>Why Us</Link></li>
           </ul>
         </div>
       </nav>
 
-      <style jsx>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
 
-        .navbar {
-          background: rgba(10, 10, 10, 0.95);
-          backdrop-filter: blur(10px);
-          padding: 1rem 0;
-          position: fixed;
-          width: 100%;
-          top: 0;
-          z-index: 1000;
-          border-bottom: 1px solid rgba(218, 165, 32, 0.2);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .nav-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .logo {
-          display: flex;
-          align-items: center;
-          gap: 0.75rem;
-          font-size: 1.25rem;
-          font-weight: bold;
-          color: #DAA520;
-          letter-spacing: 1px;
-          cursor: pointer;
-        }
-
-        .logo svg {
-          color: #DAA520;
-        }
-
-        .menu-toggle {
-          display: none;
-          background: none;
-          border: none;
-          color: #DAA520;
-          cursor: pointer;
-          padding: 0.5rem;
-          transition: transform 0.3s ease;
-        }
-
-        .menu-toggle:hover {
-          transform: scale(1.1);
-        }
-
-        .nav-links {
-          display: flex;
-          list-style: none;
-          gap: 2.5rem;
-          align-items: center;
-        }
-
-        .nav-links li {
-          position: relative;
-        }
-
-        .nav-links a {
-          color: #e0e0e0;
-          text-decoration: none;
-          transition: color 0.3s ease;
-          font-weight: 500;
-          font-size: 1rem;
-          padding: 0.5rem 0;
-          display: block;
-          position: relative;
-        }
-
-        .nav-links a::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: #DAA520;
-          transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-          color: #DAA520;
-        }
-
-        .nav-links a:hover::after {
-          width: 100%;
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-          .menu-toggle {
-            display: block;
-          }
-
-          .nav-links {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.98);
-            flex-direction: column;
-            padding: 2rem;
-            gap: 1.5rem;
-            display: none;
-            border-top: 1px solid rgba(218, 165, 32, 0.2);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-          }
-
-          .nav-links.active {
-            display: flex;
-          }
-
-          .nav-links a {
-            width: 100%;
-            text-align: center;
-            padding: 0.75rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-          }
-
-          .nav-links a:hover {
-            background: rgba(218, 165, 32, 0.1);
-          }
-
-          .nav-links a::after {
-            display: none;
-          }
-
-          .logo span {
-            font-size: 1rem;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .logo span {
-            font-size: 0.85rem;
-          }
-
-          .logo svg {
-            width: 24px;
-            height: 24px;
-          }
-        }
-      `}</style>
     </>
   );
 }
