@@ -9,42 +9,36 @@
   z-index: 9999;
 }
 
+
+
 /* ================ */
 /* HTML: <div class="loader"></div> */
-.loader {
-  width: 50px;
+/* HTML: <div class="loader"></div> */
+
+.full-body {
+  height: 100vh;
+  width: 100vw;
+}
+
+.full-body .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  margin: auto;
+  width: 70px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 8px solid transparent;
-  border-right-color: #e0e0e0; /* orange neon */
-  position: relative;
-  top: -22%;
-  left: 3%;
-  animation: l24 1s infinite linear, neonPulse 1.5s ease-in-out infinite;
-  box-shadow: 0 0 5px #ffa500, 0 0 10px #ff7300, 0 0 15px #ff4500;
+  background:
+    radial-gradient(farthest-side, #ffa516 94%, #0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%, #ffa516);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 8px), #000 0);
+  animation: l13 0.5s infinite linear;
+  /* faster rotation */
 }
 
-.loader::before,
-.loader::after {
-  content: "";
-  position: absolute;
-  inset: -8px;
-  border-radius: 50%;
-  border: inherit;
-  animation: l24 2s infinite linear, neonPulse 1.5s ease-in-out infinite;
-  box-shadow: 0 0 7px #ffa500, 0 0 15px #ff7300, 0 0 22px #ff4500;
-}
-
-.loader::after {
-  animation-duration: 4s, 1.5s;
-}
-
-/* Rotation */
-@keyframes l24 {
+@keyframes l13 {
   100% {
     transform: rotate(1turn);
   }
 }
-
-/* Neon glow pulse */
-

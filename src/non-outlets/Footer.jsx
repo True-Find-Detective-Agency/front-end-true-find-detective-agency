@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Shield, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
-import GetInTouch from "../utils/GetInTouch";
+import GetInTouch from "../components/GetInTouch";
 
 function Footer() {
   return (

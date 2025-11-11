@@ -1,7 +1,7 @@
 import React from 'react';
 import { Shield, Award, Users, Eye, Target, CheckCircle } from 'lucide-react';
 import "../css/about.css"
-import AboutStats from '../utils/AnimatedStat';
+import AboutStats from '../components/AnimatedStat';
 
 function About() {
   const values = [
@@ -108,8 +108,8 @@ function About() {
             </p>
             <div className="values-grid">
               {values.map((value, index) => (
-                <div key={index} className="value-card">
-                  <div className="value-icon">{value.icon}</div>
+                <div key={index} className="feature-card">
+                  <div className="feature-icon">{value.icon}</div>
                   <h3>{value.title}</h3>
                   <p>{value.description}</p>
                 </div>

@@ -11,24 +11,29 @@ import WhyUs from "./pages/WhyUs";
 import ScrollToTop from "./utils/ScrollToTop";
 import PageTransition from "./utils/PageTransition"; // 👈 add this
 import Branches from "./pages/Branches";
+import CustomCursor from "./utils/CustomCursor";
+import SmoothScroll from "./utils/SmoothScroll";
 
 function App() {
   return (
     <BrowserRouter>
+      <CustomCursor />
       <ScrollToTop />
-      <Routes>
-        <Route element={<PageTransition />}> {/* 👈 Wrap all pages here */}
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="home" element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="why-us" element={<WhyUs />} />
-            <Route path="branches" element={<Branches />} />
+      {/* <SmoothScroll > */}
+        <Routes>
+          <Route element={<PageTransition />}> {/* 👈 Wrap all pages here */}
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="home" element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="services" element={<Services />} />
+              <Route path="contact" element={<Contact />} />
+              <Route path="why-us" element={<WhyUs />} />
+              <Route path="branches" element={<Branches />} />
+            </Route>
           </Route>
-        </Route>
-      </Routes>
+        </Routes>
+      {/* </SmoothScroll> */}
     </BrowserRouter>
   );
 }

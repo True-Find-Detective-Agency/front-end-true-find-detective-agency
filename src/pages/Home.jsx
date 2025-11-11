@@ -1,17 +1,19 @@
 // DetectiveAgency.jsx
 import React from 'react';
 import {
-  Search, Shield, Eye, Phone, Mail, MapPin, Award, Clock, Users, Target, CheckCircle, ArrowRight, Star
+  Search, Shield, Eye, Phone, Mail, MapPin, Award, Clock, Users, Target, CheckCircle, ArrowRight, Star, UserRoundX
 } from 'lucide-react';
 import "../css/home.css";
-import AboutStats from '../utils/AnimatedStat';
+import { GiWrappedHeart } from "react-icons/gi";
+
+import AboutStats from '../components/AnimatedStat';
 import { services, features, testimonials, process, aboutFeatures } from '../data/data';
 import { useNavigate } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import ContactForm from '../components/ContactForm';
 
 // Map icon names to components
-const iconMap = { Search, Shield, Eye, Users, Target, Phone, Clock, Award, CheckCircle };
+const iconMap = { GiWrappedHeart, Search, Shield, Eye, Users, Target, Phone, Clock, Award, CheckCircle, UserRoundX };
 
 export default function Home() {
 
@@ -32,7 +34,15 @@ export default function Home() {
             {services.map((service, index) => {
               const IconComponent = iconMap[service.icon];
               return (
-                <div key={index} className="service-card">
+                <div key={index} className="service-card"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0, 0, 0, 0.48)), url(${service.bg})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+
+                >
                   <div className="service-icon">{IconComponent && <IconComponent size={40} />}</div>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
@@ -137,9 +147,13 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <button className="service-btn ">
+          <button
+            className="service-btn"
+            onClick={() => window.open("https://g.page/r/CToGJ1ZyK_KkEAI/review", "_blank")}
+          >
             All reviews <ArrowRight size={16} />
           </button>
+
         </div>
       </section>
 

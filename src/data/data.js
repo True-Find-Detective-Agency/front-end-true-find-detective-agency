@@ -1,11 +1,19 @@
 // data.js
 export const services = [
-  { icon: "Search", title: "Background Checks", description: "Comprehensive background investigations for personal and corporate needs", details: "Employment verification, personal history, and detailed screening services" },
-  { icon: "Shield", title: "Corporate Investigation", description: "Fraud detection, employee screening, and business intelligence", details: "Protect your business interests with thorough corporate investigations" },
-  { icon: "Eye", title: "Surveillance", description: "Professional surveillance services with detailed reporting", details: "Discreet monitoring with comprehensive documentation and evidence" },
-  { icon: "Users", title: "Missing Persons", description: "Locate missing individuals with compassionate investigation", details: "Skip tracing, database searches, and thorough location services" },
-  { icon: "Target", title: "Fraud Investigation", description: "Uncover fraud and financial irregularities", details: "Insurance fraud, identity theft, and asset verification services" },
-  { icon: "Phone", title: "Digital Forensics", description: "Advanced digital investigation and cyber analysis", details: "Computer forensics, mobile analysis, and social media investigation" }
+  { icon: "Search", title: "Background Checks", description: "Comprehensive background investigations for personal and corporate needs", details: "Employment verification, personal history, and detailed screening services", bg:"https://media.istockphoto.com/id/1341253865/photo/businessman-using-smartphone-to-input-passcode-or-password-for-access-to-mobile-phone.jpg?s=612x612&w=0&k=20&c=KUuQpYu4LA0sMpL277GlbAdVvl1TSTXkK45iY71XLw8="},
+  { icon: "Shield", title: "Corporate Investigation", description: "Fraud detection, employee screening, and business intelligence", details: "Protect your business interests with thorough corporate investigations", bg:"https://img.freepik.com/free-photo/african-american-officers-examining-criminal-records-incident-room-planning-private-investigation-police-archive-man-woman-investors-analyzing-case-files-reading-statements_482257-61734.jpg?semt=ais_hybrid&w=740&q=80"},
+  { icon: "Eye", title: "Surveillance", description: "Professional surveillance services with detailed reporting", details: "Discreet monitoring with comprehensive documentation and evidence", bg:"https://media.gettyimages.com/id/1171004715/photo/hacker-using-laptops-and-stealing-credit-card-information.jpg?s=612x612&w=0&k=20&c=G3q-6JBeONHYjhNrTd_q_GtkX-e_z_c8MW2fL3dj3OY=" },
+  { icon: "UserRoundX", title: "Missing Persons", description: "Locate missing individuals with compassionate investigation", details: "Skip tracing, database searches, and thorough location services",  bg:"https://www.shutterstock.com/shutterstock/photos/752963539/display_1500/stock-vector-silhouette-missing-person-with-stamp-752963539.jpg" },
+  { icon: "Target", title: "Fraud Investigation", description: "Uncover fraud and financial irregularities", details: "Insurance fraud, identity theft, and asset verification services", bg:"https://img.freepik.com/free-photo/side-view-male-hacker-with-gloves-laptop_23-2148578161.jpg?semt=ais_hybrid&w=740&q=80" },
+  {
+  icon: "GiWrappedHeart",
+  title: "Extra-Marital Affair Investigation",
+  description: "Find the truth about your partner’s loyalty with complete confidentiality.",
+  details: "Our team gathers solid proof through surveillance, background checks, and discreet investigation to confirm or clear doubts.",
+  bg: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201404/extra_storysize_650_042414121530.jpg"
+}
+
+
 ];
 
 
@@ -202,41 +210,41 @@ export const aboutFeatures = [
 export const process = [
   {
     step: "01",
-    title: "Initial Consultation",
-    description: "Contact us for a free, confidential consultation about your case",
+    title: "Consultation",
+    description: "We listen carefully to your concerns and goals",
   },
   {
     step: "02",
-    title: "Case Evaluation",
-    description: "We assess your needs and develop a customized investigation plan",
+    title: "Case Review",
+    description: "Our experts analyze your case to find the best approach",
   },
   {
     step: "03",
-    title: "Agreement & Planning",
-    description: "Once you approve, we set clear objectives, timelines, and investigation methods",
+    title: "Planning & Approval",
+    description: "We prepare a clear investigation plan and get your go-ahead",
   },
   {
     step: "04",
-    title: "Investigation",
-    description: "Our skilled investigators conduct thorough research and field operations",
+    title: "Field Investigation",
+    description: "Our team collects accurate data and on-ground intelligence",
   },
   {
     step: "05",
-    title: "Evidence Collection",
-    description: "We collect verifiable data, photos, and reports to support your case",
+    title: "Evidence Verification",
+    description: "We check and confirm the authenticity of every detail",
   },
   {
     step: "06",
-    title: "Detailed Reporting",
-    description: "Receive a complete, professional report with verified findings and next steps",
+    title: "Final Report",
+    description: "You receive a complete report with verified results and advice",
   },
 ];
 
 
 export const testimonials = [
-  { name: "Sarah M.", role: "Business Owner", text: "True Find helped uncover internal issues in my company. Their professionalism and discretion were outstanding.", rating: 5 },
-  { name: "Michael R.", role: "Individual Client", text: "After months of searching, True Find located my missing relative in just two weeks. Forever grateful for their dedication.", rating: 5 },
-  { name: "Jennifer L.", role: "Corporate Client", text: "Excellent service for background checks. Thorough, fast, and reliable. Highly recommend for business needs.", rating: 5 }
+  { name: "Yogesh Ahirwar", role: "Business Owner", text: "Sir, you did a great job in resolving all my inquiries. Thank you.", rating: 5 },
+  { name: "Himanshu Lavsavre", role: "Individual Client", text: "Service is mind-blowing sir.. you help me alot sir and done my work smoothly and confidential.", rating: 5 },
+  { name: "Rahul Choudhary", role: "Corporate Client", text: "Very honest and smart investigators - Detective Agency handled my case perfectly and kept everything confidential.", rating: 5 }
 ];
 
 
@@ -272,3 +280,155 @@ export const detailedWhyChoose = [
     photo: "trackrecord.jpg"
   }
 ];
+
+
+export const branches = [
+    {
+      id: 1,
+      city: "New York",
+      region: "northeast",
+      address: "123 Mystery Lane, Suite 400",
+      state: "NY",
+      zip: "10001",
+      phone: "+1 (555) 123-4567",
+      email: "newyork@truefind.com",
+      hours: "24/7 Available",
+      services: ["Corporate Investigation", "Background Checks", "Surveillance", "Digital Forensics"],
+      manager: "Robert Harrison",
+      established: "2005"
+    },
+    {
+      id: 2,
+      city: "Los Angeles",
+      region: "west",
+      address: "456 Investigation Ave, Floor 12",
+      state: "CA",
+      zip: "90001",
+      phone: "+1 (555) 234-5678",
+      email: "losangeles@truefind.com",
+      hours: "24/7 Available",
+      services: ["Entertainment Industry Cases", "Background Checks", "Surveillance", "Missing Persons"],
+      manager: "Sarah Mitchell",
+      established: "2008"
+    },
+    {
+      id: 3,
+      city: "Chicago",
+      region: "midwest",
+      address: "789 Detective Street, Suite 200",
+      state: "IL",
+      zip: "60601",
+      phone: "+1 (555) 345-6789",
+      email: "chicago@truefind.com",
+      hours: "24/7 Available",
+      services: ["Corporate Investigation", "Fraud Investigation", "Background Checks", "Legal Support"],
+      manager: "Michael Chen",
+      established: "2010"
+    },
+    {
+      id: 4,
+      city: "Houston",
+      region: "south",
+      address: "321 Evidence Blvd, Building A",
+      state: "TX",
+      zip: "77001",
+      phone: "+1 (555) 456-7890",
+      email: "houston@truefind.com",
+      hours: "24/7 Available",
+      services: ["Oil & Gas Industry", "Corporate Investigation", "Background Checks", "Surveillance"],
+      manager: "Jennifer Lopez",
+      established: "2012"
+    },
+    {
+      id: 5,
+      city: "Miami",
+      region: "south",
+      address: "654 Clue Avenue, Suite 150",
+      state: "FL",
+      zip: "33101",
+      phone: "+1 (555) 567-8901",
+      email: "miami@truefind.com",
+      hours: "24/7 Available",
+      services: ["Maritime Investigation", "Background Checks", "Surveillance", "Fraud Investigation"],
+      manager: "Carlos Rodriguez",
+      established: "2013"
+    },
+    {
+      id: 6,
+      city: "Boston",
+      region: "northeast",
+      address: "987 Sherlock Road, Floor 5",
+      state: "MA",
+      zip: "02101",
+      phone: "+1 (555) 678-9012",
+      email: "boston@truefind.com",
+      hours: "24/7 Available",
+      services: ["Academic Investigation", "Background Checks", "Corporate Investigation", "Digital Forensics"],
+      manager: "Emily Watson",
+      established: "2014"
+    },
+    {
+      id: 7,
+      city: "Seattle",
+      region: "west",
+      address: "147 Tech Park Lane, Suite 300",
+      state: "WA",
+      zip: "98101",
+      phone: "+1 (555) 789-0123",
+      email: "seattle@truefind.com",
+      hours: "24/7 Available",
+      services: ["Tech Industry Cases", "Digital Forensics", "Background Checks", "Corporate Investigation"],
+      manager: "David Kim",
+      established: "2015"
+    },
+    {
+      id: 8,
+      city: "Atlanta",
+      region: "south",
+      address: "258 Investigation Plaza, Building C",
+      state: "GA",
+      zip: "30301",
+      phone: "+1 (555) 890-1234",
+      email: "atlanta@truefind.com",
+      hours: "24/7 Available",
+      services: ["Background Checks", "Surveillance", "Corporate Investigation", "Missing Persons"],
+      manager: "Patricia Johnson",
+      established: "2016"
+    },
+    {
+      id: 9,
+      city: "Denver",
+      region: "midwest",
+      address: "369 Detective Drive, Suite 100",
+      state: "CO",
+      zip: "80201",
+      phone: "+1 (555) 901-2345",
+      email: "denver@truefind.com",
+      hours: "24/7 Available",
+      services: ["Background Checks", "Surveillance", "Fraud Investigation", "Asset Verification"],
+      manager: "James Anderson",
+      established: "2017"
+    },
+    {
+      id: 10,
+      city: "Phoenix",
+      region: "west",
+      address: "741 Truth Street, Floor 8",
+      state: "AZ",
+      zip: "85001",
+      phone: "+1 (555) 012-3456",
+      email: "phoenix@truefind.com",
+      hours: "24/7 Available",
+      services: ["Background Checks", "Surveillance", "Missing Persons", "Corporate Investigation"],
+      manager: "Lisa Martinez",
+      established: "2018"
+    }
+  ];
+
+export  const regions = [
+    { value: 'all', label: 'All Regions' },
+    { value: 'northeast', label: 'Northeast' },
+    { value: 'south', label: 'South' },
+    { value: 'midwest', label: 'Midwest' },
+    { value: 'west', label: 'West' }
+  ];

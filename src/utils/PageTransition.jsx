@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLocation, Outlet } from "react-router-dom";
-import logo from "../assets/logo.png";
 import "../css/pageTransition.css";
 
 function PageTransition() {
@@ -10,38 +9,17 @@ function PageTransition() {
   const location = useLocation();
 
   useEffect(() => {
-    setShowPage(false); // hide page first
-    const timer = setTimeout(() => setShowPage(true), 500); // wait until animation ends
+    setShowPage(false);
+    const timer = setTimeout(() => setShowPage(true), 300); // shorter delay for faster loader
     return () => clearTimeout(timer);
   }, [location]);
 
   return (
     <>
       {!showPage && (
-        <motion.div
-          key="loader"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="transition-screen"
-        >
-          <motion.img
-          src={logo}
-          alt="Logo"
-          style={{
-            width: "520px",
-            height: "520px",
-            borderRadius: "50%",
-            objectFit: "cover",
-          }}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-        <div class="loader"></div>
-        </motion.div>
-        
+        <div className="full-body">
+          <div className="loader"></div>
+        </div>
       )}
 
       {showPage && (
@@ -50,7 +28,7 @@ function PageTransition() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <Outlet />
         </motion.div>

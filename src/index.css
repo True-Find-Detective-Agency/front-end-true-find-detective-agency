@@ -2,8 +2,11 @@
 /* Remove outline on click */
 
 
+/* prevents text selection */
 html, body, *, *::before, *::after {
   caret-color: transparent !important;
-  user-select: none; /* prevents text selection */
+  user-select: none; 
 }
-/* ========================================================== */
+
+
+

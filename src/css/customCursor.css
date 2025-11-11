@@ -1,0 +1,19 @@
+
+.cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 🔸 When hovering clickable things */
+.cursor.clickable {
+    transform: translate(-50%, -50%) scale(1.1);
+
+    border-color: transparent;
+}

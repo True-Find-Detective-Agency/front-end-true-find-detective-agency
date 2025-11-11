@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 .about-page {
     background: #0a0a0a;
@@ -40,8 +36,14 @@
 /* Story Section */
 .story-section {
     padding: 6rem 0;
-    background: #0f0f0f;
+    background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("https://media.istockphoto.com/id/1326248317/photo/shot-from-outside-the-window-businessmen-and-businesswomen-working-in-the-office-managers-and.jpg?s=612x612&w=0&k=20&c=uqwSU-4Xre9lg-yE58C1B9HAHm15pfSus17ag2ToJyI=");
+    background-size: cover; /* better for full coverage */
+    background-repeat: no-repeat;
+    background-position: center;
 }
+
 
 .story-content {
     display: grid;
