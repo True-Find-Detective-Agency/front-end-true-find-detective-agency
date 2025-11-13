@@ -8,10 +8,10 @@ function Branches() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('all');
 
-  
+
   const filteredBranches = branches.filter(branch => {
     const matchesSearch = branch.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         branch.state.toLowerCase().includes(searchQuery.toLowerCase());
+      branch.state.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesRegion = selectedRegion === 'all' || branch.region === selectedRegion;
     return matchesSearch && matchesRegion;
   });
@@ -66,8 +66,16 @@ function Branches() {
           <div className="container">
             {filteredBranches.length > 0 ? (
               <div className="branches-grid">
-                {filteredBranches.map((branch) => (
+                {filteredBranches.map((branch, index) => (
                   <div key={branch.id} className="branch-card">
+
+                    {/* Show image ONLY when index is odd */}
+                    {index % 2 !== 0 && (
+                      <div className="branch-img-box">
+                        <img src={branch.imgUrl} alt={branch.city} />
+                      </div>
+                    )}
+
                     <div className="branch-header">
                       <div className="branch-location">
                         <MapPin size={24} />
@@ -128,7 +136,11 @@ function Branches() {
                         ))}
                       </div>
                     </div>
-
+                    {index % 2 !== 1 && (
+                      <div className="branch-img-box">
+                        <img src={branch.imgUrl} alt={branch.city} />
+                      </div>
+                    )}
                     <LocationButton lat="23.2056" lng="77.0937" />
 
                   </div>
@@ -151,7 +163,7 @@ function Branches() {
             <p className="section-subtitle">
               With 10 strategically located offices, we provide comprehensive investigative services across the United States
             </p>
-            
+
             <div className="coverage-stats">
               <div className="coverage-stat">
                 <div className="stat-number">10</div>
@@ -179,7 +191,7 @@ function Branches() {
             <div className="cta-content">
               <h2>Can't Find a Branch Near You?</h2>
               <p>
-                We work with trusted investigators nationwide. Contact our main office 
+                We work with trusted investigators nationwide. Contact our main office
                 and we'll connect you with the right professional for your case.
               </p>
               <div className="cta-buttons">

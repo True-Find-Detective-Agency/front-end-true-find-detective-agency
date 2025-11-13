@@ -62,6 +62,7 @@ export default function Home() {
       <section className="about" id="about">
         <div className="container">
           <div className="about-content">
+
             <div className="about-text-wrapper">
               <div className="about-text">
                 <h2>Why Choose True Find?</h2>
@@ -83,20 +84,25 @@ export default function Home() {
                 </ul>
               </div>
             </div>
+            <div><AboutStats /></div>
 
-            <AboutStats />
-          </div>
-          <div className="features-grid">
-            {features.map((feature, index) => {
-              const IconComponent = iconMap[feature.icon];
-              return (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">{IconComponent && <IconComponent size={32} />}</div>
-                  <h3>{feature.title}</h3>
-                  <p>{feature.description}</p>
-                </div>
-              );
-            })}
+            <div className="features-box">
+              <div className="features-grid">
+                {features.map((feature, index) => {
+                  const IconComponent = iconMap[feature.icon];
+                  return (
+                    <div key={index} className="feature-card">
+                      <div className="feature-icon">{IconComponent && <IconComponent size={32} />}</div>
+                      <h3>{feature.title}</h3>
+                      <p>{feature.description}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+            <div >
+              <img src="https://images.stockcake.com/public/8/f/b/8fbde810-1ad9-4216-879c-1de352da85f1_large/mysterious-detective-reading-stockcake.jpg" alt="" />
+            </div>
           </div>
           <button className="service-btn" onClick={() => navTo("/why-us")}>
             View in Detailed <ArrowRight size={16} />

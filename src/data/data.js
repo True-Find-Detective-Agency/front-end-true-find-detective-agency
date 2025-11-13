@@ -1,17 +1,17 @@
 // data.js
 export const services = [
-  { icon: "Search", title: "Background Checks", description: "Comprehensive background investigations for personal and corporate needs", details: "Employment verification, personal history, and detailed screening services", bg:"https://media.istockphoto.com/id/1341253865/photo/businessman-using-smartphone-to-input-passcode-or-password-for-access-to-mobile-phone.jpg?s=612x612&w=0&k=20&c=KUuQpYu4LA0sMpL277GlbAdVvl1TSTXkK45iY71XLw8="},
-  { icon: "Shield", title: "Corporate Investigation", description: "Fraud detection, employee screening, and business intelligence", details: "Protect your business interests with thorough corporate investigations", bg:"https://img.freepik.com/free-photo/african-american-officers-examining-criminal-records-incident-room-planning-private-investigation-police-archive-man-woman-investors-analyzing-case-files-reading-statements_482257-61734.jpg?semt=ais_hybrid&w=740&q=80"},
-  { icon: "Eye", title: "Surveillance", description: "Professional surveillance services with detailed reporting", details: "Discreet monitoring with comprehensive documentation and evidence", bg:"https://media.gettyimages.com/id/1171004715/photo/hacker-using-laptops-and-stealing-credit-card-information.jpg?s=612x612&w=0&k=20&c=G3q-6JBeONHYjhNrTd_q_GtkX-e_z_c8MW2fL3dj3OY=" },
-  { icon: "UserRoundX", title: "Missing Persons", description: "Locate missing individuals with compassionate investigation", details: "Skip tracing, database searches, and thorough location services",  bg:"https://www.shutterstock.com/shutterstock/photos/752963539/display_1500/stock-vector-silhouette-missing-person-with-stamp-752963539.jpg" },
-  { icon: "Target", title: "Fraud Investigation", description: "Uncover fraud and financial irregularities", details: "Insurance fraud, identity theft, and asset verification services", bg:"https://img.freepik.com/free-photo/side-view-male-hacker-with-gloves-laptop_23-2148578161.jpg?semt=ais_hybrid&w=740&q=80" },
+  { icon: "Search", title: "Background Checks", description: "Comprehensive background investigations for personal and corporate needs", details: "Employment verification, personal history, and detailed screening services", bg: "https://media.istockphoto.com/id/1341253865/photo/businessman-using-smartphone-to-input-passcode-or-password-for-access-to-mobile-phone.jpg?s=612x612&w=0&k=20&c=KUuQpYu4LA0sMpL277GlbAdVvl1TSTXkK45iY71XLw8=" },
+  { icon: "Shield", title: "Corporate Investigation", description: "Fraud detection, employee screening, and business intelligence", details: "Protect your business interests with thorough corporate investigations", bg: "https://img.freepik.com/free-photo/african-american-officers-examining-criminal-records-incident-room-planning-private-investigation-police-archive-man-woman-investors-analyzing-case-files-reading-statements_482257-61734.jpg?semt=ais_hybrid&w=740&q=80" },
+  { icon: "Eye", title: "Surveillance", description: "Professional surveillance services with detailed reporting", details: "Discreet monitoring with comprehensive documentation and evidence", bg: "https://media.gettyimages.com/id/1171004715/photo/hacker-using-laptops-and-stealing-credit-card-information.jpg?s=612x612&w=0&k=20&c=G3q-6JBeONHYjhNrTd_q_GtkX-e_z_c8MW2fL3dj3OY=" },
+  { icon: "UserRoundX", title: "Missing Persons", description: "Locate missing individuals with compassionate investigation", details: "Skip tracing, database searches, and thorough location services", bg: "https://www.shutterstock.com/shutterstock/photos/752963539/display_1500/stock-vector-silhouette-missing-person-with-stamp-752963539.jpg" },
+  { icon: "Target", title: "Fraud Investigation", description: "Uncover fraud and financial irregularities", details: "Insurance fraud, identity theft, and asset verification services", bg: "https://img.freepik.com/free-photo/side-view-male-hacker-with-gloves-laptop_23-2148578161.jpg?semt=ais_hybrid&w=740&q=80" },
   {
-  icon: "GiWrappedHeart",
-  title: "Extra-Marital Affair Investigation",
-  description: "Find the truth about your partner’s loyalty with complete confidentiality.",
-  details: "Our team gathers solid proof through surveillance, background checks, and discreet investigation to confirm or clear doubts.",
-  bg: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201404/extra_storysize_650_042414121530.jpg"
-}
+    icon: "GiWrappedHeart",
+    title: "Extra-Marital Affair Investigation",
+    description: "Find the truth about your partner’s loyalty with complete confidentiality.",
+    details: "Our team gathers solid proof through surveillance, background checks, and discreet investigation to confirm or clear doubts.",
+    bg: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201404/extra_storysize_650_042414121530.jpg"
+  }
 
 
 ];
@@ -22,6 +22,7 @@ export const detailedServices = [
   {
     icon: "Search",
     title: "Background Checks",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Comprehensive background investigations for personal and professional purposes",
     features: [
       "Employment verification",
@@ -36,6 +37,7 @@ export const detailedServices = [
   {
     icon: "Briefcase",
     title: "Corporate Investigation",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Protect your business with thorough corporate investigative services",
     features: [
       "Employee misconduct investigations",
@@ -50,6 +52,7 @@ export const detailedServices = [
   {
     icon: "Eye",
     title: "Surveillance Services",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Professional surveillance with detailed documentation and evidence",
     features: [
       "Mobile surveillance",
@@ -64,6 +67,7 @@ export const detailedServices = [
   {
     icon: "FileSearch",
     title: "Fraud Investigation",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Uncover fraud and financial irregularities with expert analysis",
     features: [
       "Insurance fraud investigation",
@@ -78,6 +82,7 @@ export const detailedServices = [
   {
     icon: "Users",
     title: "Missing Persons",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Locate missing individuals with compassionate and thorough investigation",
     features: [
       "Skip tracing services",
@@ -92,6 +97,7 @@ export const detailedServices = [
   {
     icon: "Heart",
     title: "Matrimonial Investigation",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Discreet investigations for marital concerns and custody cases",
     features: [
       "Infidelity investigations",
@@ -106,6 +112,7 @@ export const detailedServices = [
   {
     icon: "Laptop",
     title: "Digital Forensics",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Advanced digital investigation and cyber crime analysis",
     features: [
       "Computer forensics",
@@ -120,6 +127,7 @@ export const detailedServices = [
   {
     icon: "Scale",
     title: "Legal Support",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Investigative services for legal proceedings and attorneys",
     features: [
       "Witness location and interviews",
@@ -134,6 +142,7 @@ export const detailedServices = [
   {
     icon: "Home",
     title: "Property Investigation",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Comprehensive property and real estate investigations",
     features: [
       "Property history research",
@@ -148,6 +157,7 @@ export const detailedServices = [
   {
     icon: "Lock",
     title: "Security Consulting",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Expert security assessments and risk management solutions",
     features: [
       "Vulnerability assessments",
@@ -162,6 +172,7 @@ export const detailedServices = [
   {
     icon: "Camera",
     title: "Process Serving",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Professional and reliable legal document delivery services",
     features: [
       "Court document serving",
@@ -176,6 +187,7 @@ export const detailedServices = [
   {
     icon: "Shield",
     title: "Personal Protection",
+    imgUrl: "https://images.stockcake.com/public/5/f/e/5fe7ac78-c49a-4914-9e39-f1c10bdd7b82_large/achievement-recognized-professionally-stockcake.jpg",
     description: "Executive protection and personal security services",
     features: [
       "Close protection officers",
@@ -283,152 +295,147 @@ export const detailedWhyChoose = [
 
 
 export const branches = [
-    {
-      id: 1,
-      city: "New York",
-      region: "northeast",
-      address: "123 Mystery Lane, Suite 400",
-      state: "NY",
-      zip: "10001",
-      phone: "+1 (555) 123-4567",
-      email: "newyork@truefind.com",
-      hours: "24/7 Available",
-      services: ["Corporate Investigation", "Background Checks", "Surveillance", "Digital Forensics"],
-      manager: "Robert Harrison",
-      established: "2005"
-    },
-    {
-      id: 2,
-      city: "Los Angeles",
-      region: "west",
-      address: "456 Investigation Ave, Floor 12",
-      state: "CA",
-      zip: "90001",
-      phone: "+1 (555) 234-5678",
-      email: "losangeles@truefind.com",
-      hours: "24/7 Available",
-      services: ["Entertainment Industry Cases", "Background Checks", "Surveillance", "Missing Persons"],
-      manager: "Sarah Mitchell",
-      established: "2008"
-    },
-    {
-      id: 3,
-      city: "Chicago",
-      region: "midwest",
-      address: "789 Detective Street, Suite 200",
-      state: "IL",
-      zip: "60601",
-      phone: "+1 (555) 345-6789",
-      email: "chicago@truefind.com",
-      hours: "24/7 Available",
-      services: ["Corporate Investigation", "Fraud Investigation", "Background Checks", "Legal Support"],
-      manager: "Michael Chen",
-      established: "2010"
-    },
-    {
-      id: 4,
-      city: "Houston",
-      region: "south",
-      address: "321 Evidence Blvd, Building A",
-      state: "TX",
-      zip: "77001",
-      phone: "+1 (555) 456-7890",
-      email: "houston@truefind.com",
-      hours: "24/7 Available",
-      services: ["Oil & Gas Industry", "Corporate Investigation", "Background Checks", "Surveillance"],
-      manager: "Jennifer Lopez",
-      established: "2012"
-    },
-    {
-      id: 5,
-      city: "Miami",
-      region: "south",
-      address: "654 Clue Avenue, Suite 150",
-      state: "FL",
-      zip: "33101",
-      phone: "+1 (555) 567-8901",
-      email: "miami@truefind.com",
-      hours: "24/7 Available",
-      services: ["Maritime Investigation", "Background Checks", "Surveillance", "Fraud Investigation"],
-      manager: "Carlos Rodriguez",
-      established: "2013"
-    },
-    {
-      id: 6,
-      city: "Boston",
-      region: "northeast",
-      address: "987 Sherlock Road, Floor 5",
-      state: "MA",
-      zip: "02101",
-      phone: "+1 (555) 678-9012",
-      email: "boston@truefind.com",
-      hours: "24/7 Available",
-      services: ["Academic Investigation", "Background Checks", "Corporate Investigation", "Digital Forensics"],
-      manager: "Emily Watson",
-      established: "2014"
-    },
-    {
-      id: 7,
-      city: "Seattle",
-      region: "west",
-      address: "147 Tech Park Lane, Suite 300",
-      state: "WA",
-      zip: "98101",
-      phone: "+1 (555) 789-0123",
-      email: "seattle@truefind.com",
-      hours: "24/7 Available",
-      services: ["Tech Industry Cases", "Digital Forensics", "Background Checks", "Corporate Investigation"],
-      manager: "David Kim",
-      established: "2015"
-    },
-    {
-      id: 8,
-      city: "Atlanta",
-      region: "south",
-      address: "258 Investigation Plaza, Building C",
-      state: "GA",
-      zip: "30301",
-      phone: "+1 (555) 890-1234",
-      email: "atlanta@truefind.com",
-      hours: "24/7 Available",
-      services: ["Background Checks", "Surveillance", "Corporate Investigation", "Missing Persons"],
-      manager: "Patricia Johnson",
-      established: "2016"
-    },
-    {
-      id: 9,
-      city: "Denver",
-      region: "midwest",
-      address: "369 Detective Drive, Suite 100",
-      state: "CO",
-      zip: "80201",
-      phone: "+1 (555) 901-2345",
-      email: "denver@truefind.com",
-      hours: "24/7 Available",
-      services: ["Background Checks", "Surveillance", "Fraud Investigation", "Asset Verification"],
-      manager: "James Anderson",
-      established: "2017"
-    },
-    {
-      id: 10,
-      city: "Phoenix",
-      region: "west",
-      address: "741 Truth Street, Floor 8",
-      state: "AZ",
-      zip: "85001",
-      phone: "+1 (555) 012-3456",
-      email: "phoenix@truefind.com",
-      hours: "24/7 Available",
-      services: ["Background Checks", "Surveillance", "Missing Persons", "Corporate Investigation"],
-      manager: "Lisa Martinez",
-      established: "2018"
-    }
-  ];
+  {
+    id: 1,
+    city: "New York",
+    region: "northeast",
+    address: "123 Mystery Lane, Suite 400",
+    state: "NY",
+    zip: "10001",
+    phone: "+1 (555) 123-4567",
+    email: "newyork@truefind.com",
+    hours: "24/7 Available",
+    services: ["Corporate Investigation", "Background Checks", "Surveillance", "Digital Forensics"],
+    manager: "Robert Harrison",
+    established: "2005", imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  {
+    id: 2,
+    city: "Los Angeles",
+    region: "west",
+    address: "456 Investigation Ave, Floor 12",
+    state: "CA",
+    zip: "90001",
+    phone: "+1 (555) 234-5678",
+    email: "losangeles@truefind.com",
+    hours: "24/7 Available",
+    services: ["Entertainment Industry Cases", "Background Checks", "Surveillance", "Missing Persons"],
+    manager: "Sarah Mitchell",
+    established: "2008",imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
 
-export  const regions = [
-    { value: 'all', label: 'All Regions' },
-    { value: 'northeast', label: 'Northeast' },
-    { value: 'south', label: 'South' },
-    { value: 'midwest', label: 'Midwest' },
-    { value: 'west', label: 'West' }
-  ];
+  },
+  {
+    id: 3,
+    city: "Chicago",
+    region: "midwest",
+    address: "789 Detective Street, Suite 200",
+    state: "IL",
+    zip: "60601",
+    phone: "+1 (555) 345-6789",
+    email: "chicago@truefind.com",
+    hours: "24/7 Available",
+    services: ["Corporate Investigation", "Fraud Investigation", "Background Checks", "Legal Support"],
+    manager: "Michael Chen",
+    established: "2010"
+    ,imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  {
+    id: 4,
+    city: "Houston",
+    region: "south",
+    address: "321 Evidence Blvd, Building A",
+    state: "TX",
+    zip: "77001",
+    phone: "+1 (555) 456-7890",
+    email: "houston@truefind.com",
+    hours: "24/7 Available",
+    services: ["Oil & Gas Industry", "Corporate Investigation", "Background Checks", "Surveillance"],
+    manager: "Jennifer Lopez",
+    established: "2012"
+    ,imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  {
+    id: 5,
+    city: "Miami",
+    region: "south",
+    address: "654 Clue Avenue, Suite 150",
+    state: "FL",
+    zip: "33101",
+    phone: "+1 (555) 567-8901",
+    email: "miami@truefind.com",
+    hours: "24/7 Available",
+    services: ["Maritime Investigation", "Background Checks", "Surveillance", "Fraud Investigation"],
+    manager: "Carlos Rodriguez",
+    established: "2013"
+    ,imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  {
+    id: 6,
+    city: "Boston",
+    region: "northeast",
+    address: "987 Sherlock Road, Floor 5",
+    state: "MA",
+    zip: "02101",
+    phone: "+1 (555) 678-9012",
+    email: "boston@truefind.com",
+    hours: "24/7 Available",
+    services: ["Academic Investigation", "Background Checks", "Corporate Investigation", "Digital Forensics"],
+    manager: "Emily Watson",
+    established: "2014"
+    ,imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  {
+    id: 7,
+    city: "Seattle",
+    region: "west",
+    address: "147 Tech Park Lane, Suite 300",
+    state: "WA",
+    zip: "98101",
+    phone: "+1 (555) 789-0123",
+    email: "seattle@truefind.com",
+    hours: "24/7 Available",
+    services: ["Tech Industry Cases", "Digital Forensics", "Background Checks", "Corporate Investigation"],
+    manager: "David Kim",
+    established: "2015"
+    ,imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  {
+    id: 8,
+    city: "Atlanta",
+    region: "south",
+    address: "258 Investigation Plaza, Building C",
+    state: "GA",
+    zip: "30301",
+    phone: "+1 (555) 890-1234",
+    email: "atlanta@truefind.com",
+    hours: "24/7 Available",
+    services: ["Background Checks", "Surveillance", "Corporate Investigation", "Missing Persons"],
+    manager: "Patricia Johnson",
+    established: "2016"
+    ,imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  {
+    id: 9,
+    city: "Denver",
+    region: "midwest",
+    address: "369 Detective Drive, Suite 100",
+    state: "CO",
+    zip: "80201",
+    phone: "+1 (555) 901-2345",
+    email: "denver@truefind.com",
+    hours: "24/7 Available",
+    services: ["Background Checks", "Surveillance", "Fraud Investigation", "Asset Verification"],
+    manager: "James Anderson",
+    established: "2017"
+    ,imgUrl: "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRdum466TlXRB9VWMEiFMQJUH4aL6r8Iv2S35M1VlxFM71a5lafjPZ35cymB246yNSyiggvlpgH4NlIQE-YQm9tato&s=19"
+  },
+  
+];
+
+export const regions = [
+  { value: 'all', label: 'All Regions' },
+  { value: 'northeast', label: 'Northeast' },
+  { value: 'south', label: 'South' },
+  { value: 'midwest', label: 'Midwest' },
+  { value: 'west', label: 'West' }
+];

@@ -2,6 +2,7 @@ import React from 'react';
 import { Shield, Award, Users, Eye, Target, CheckCircle } from 'lucide-react';
 import "../css/about.css"
 import AboutStats from '../components/AnimatedStat';
+import achievement from "../assets/achievment.png"
 
 function About() {
   const values = [
@@ -77,20 +78,20 @@ function About() {
               <div className="story-text">
                 <h2>Our Story</h2>
                 <p>
-                  Founded in 2005, True Find Detective Agency was established with a singular 
-                  mission: to provide professional, reliable, and discreet investigative services 
+                  Founded in 2005, True Find Detective Agency was established with a singular
+                  mission: to provide professional, reliable, and discreet investigative services
                   to individuals and businesses across the nation.
                 </p>
                 <p>
-                  What started as a small operation with three dedicated investigators has grown 
-                  into one of the most respected detective agencies in the country. Our success 
-                  is built on a foundation of integrity, expertise, and an unwavering commitment 
+                  What started as a small operation with three dedicated investigators has grown
+                  into one of the most respected detective agencies in the country. Our success
+                  is built on a foundation of integrity, expertise, and an unwavering commitment
                   to uncovering the truth.
                 </p>
                 <p>
-                  Today, we serve hundreds of clients annually, from individuals seeking peace 
-                  of mind to corporations protecting their interests. Every case we handle 
-                  receives the same level of dedication and professionalism that has become 
+                  Today, we serve hundreds of clients annually, from individuals seeking peace
+                  of mind to corporations protecting their interests. Every case we handle
+                  receives the same level of dedication and professionalism that has become
                   our trademark.
                 </p>
               </div>
@@ -106,14 +107,19 @@ function About() {
             <p className="section-description">
               The principles that guide every investigation we undertake
             </p>
-            <div className="values-grid">
-              {values.map((value, index) => (
-                <div key={index} className="feature-card">
-                  <div className="feature-icon">{value.icon}</div>
-                  <h3>{value.title}</h3>
-                  <p>{value.description}</p>
-                </div>
-              ))}
+            <div className='value-gird-container'>
+              <div className="values-grid features-grid">
+                {values.map((value, index) => (
+                  <div key={index} className="feature-card">
+                    <div className="feature-icon">{value.icon}</div>
+                    <h3>{value.title}</h3>
+                    <p>{value.description}</p>
+                  </div>
+                ))}
+              </div>
+              <div >
+                <img src="https://images.stockcake.com/public/8/1/3/81304422-3d32-4903-b271-42bc2251b046_large/mysterious-silhouetted-figure-stockcake.jpg" alt="" />
+              </div>
             </div>
           </div>
         </section>
@@ -145,13 +151,16 @@ function About() {
         <section className="achievements-section">
           <div className="container">
             <h2 className="section-title">Our Achievements</h2>
-            <div className="achievements-grid">
-              {achievements.map((achievement, index) => (
-                <div key={index} className="achievement-item">
-                  <CheckCircle size={24} />
-                  <span>{achievement}</span>
-                </div>
-              ))}
+            <div className="achievements-grid-container">
+                <img src={achievement} alt="" />
+              <div className="achievements-grid">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className="achievement-item">
+                    <CheckCircle size={24} />
+                    <span>{achievement}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
@@ -162,7 +171,7 @@ function About() {
             <div className="cta-content">
               <h2>Ready to Work With Us?</h2>
               <p>
-                Let our experienced team help you uncover the truth. 
+                Let our experienced team help you uncover the truth.
                 Contact us today for a confidential consultation.
               </p>
               <button className="cta-button">Get Started Today</button>

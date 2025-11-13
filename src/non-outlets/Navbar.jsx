@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Shield, Menu, X, Home, Info, Briefcase, Phone, MapPin } from "lucide-react";
-import logo from "../assets/logo1.png"
+import logo from "../assets/logo.png"
 
 import "../css/navbar.css"
 function Navbar() {

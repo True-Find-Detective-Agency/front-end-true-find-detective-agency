@@ -7,15 +7,14 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import WhyUs from "./pages/WhyUs";
+import Branches from "./pages/Branches";
 
 import ScrollToTop from "./utils/ScrollToTop";
-import PageTransition from "./utils/PageTransition"; // 👈 add this
-import Branches from "./pages/Branches";
+import PageTransition from "./utils/PageTransition";
 import CustomCursor from "./utils/CustomCursor";
 import SmoothScroll from "./utils/SmoothScroll";
 import Welcome from "./pages/Welcome";
 
-// Main App Component
 function App() {
   const [showWelcome, setShowWelcome] = useState(true);
 
@@ -25,14 +24,14 @@ function App() {
 
   return (
     <>
-      {/* Welcome Screen - Shows on initial load */}
-      {showWelcome && <Welcome onComplete={handleWelcomeComplete} />}
-      
-      {/* Main Application */}
-      <BrowserRouter>
-        <CustomCursor />
-        <ScrollToTop />
-        {/* <SmoothScroll > */}
+      {/* Welcome Screen - Only on first load */}
+      {showWelcome ? (
+        <Welcome onComplete={handleWelcomeComplete} />
+      ) : (
+        <BrowserRouter>
+          <CustomCursor /> {/* 👈 Cursor loads after welcome screen */}
+          <ScrollToTop />
+          {/* <SmoothScroll> */}
           <Routes>
             <Route element={<PageTransition />}>
               <Route path="/" element={<Layout />}>
@@ -46,8 +45,9 @@ function App() {
               </Route>
             </Route>
           </Routes>
-        {/* </SmoothScroll> */}
-      </BrowserRouter>
+          {/* </SmoothScroll> */}
+        </BrowserRouter>
+      )}
     </>
   );
 }

@@ -1,5 +1,3 @@
-
-
 .about-page {
     background: #0a0a0a;
     color: #e0e0e0;
@@ -36,10 +34,11 @@
 /* Story Section */
 .story-section {
     padding: 6rem 0;
-    background: 
+    background:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url("https://media.istockphoto.com/id/1326248317/photo/shot-from-outside-the-window-businessmen-and-businesswomen-working-in-the-office-managers-and.jpg?s=612x612&w=0&k=20&c=uqwSU-4Xre9lg-yE58C1B9HAHm15pfSus17ag2ToJyI=");
-    background-size: cover; /* better for full coverage */
+    background-size: cover;
+    /* better for full coverage */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -116,6 +115,17 @@
     color: #999;
     margin-bottom: 4rem;
     font-size: 1.1rem;
+}
+
+.value-gird-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.value-gird-container img {
+    height: 600px;
 }
 
 .values-grid {
@@ -227,9 +237,19 @@
     background: #0a0a0a;
 }
 
+
+.achievements-grid-container {
+    display: flex;
+}
+
+.achievements-grid-container img {
+    height: 700px;
+}
+
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 1px; /* smaller clean gap */
+    justify-content: space-around;
     gap: 1.5rem;
     max-width: 900px;
     margin: 0 auto;

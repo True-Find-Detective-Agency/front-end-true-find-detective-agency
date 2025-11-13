@@ -29,7 +29,7 @@ function Services() {
 
   const filteredServices = detailedServices.filter(service => {
     const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          service.description.toLowerCase().includes(searchQuery.toLowerCase());
+      service.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesCategory = selectedCategory === 'Select' || service.title === selectedCategory;
     return matchesSearch && matchesCategory;
   });
@@ -87,29 +87,68 @@ function Services() {
                 {filteredServices.map((service, index) => {
                   const Icon = iconMap[service.icon];
                   return (
-                    <div key={index}
-                      className={`service-card ${activeService === index ? "active" : ""}`}
-                      onClick={() => setActiveService(activeService === index ? null : index)}>
-                      
-                      <div className="service-icon">
-                        {Icon && <Icon size={40} />}
-                      </div>
+                    <div className="service-item" key={index}>
 
-                      <h3>{service.title}</h3>
-                      <p className="service-description">{service.description}</p>
+                      {/* If index is even → image first */}
+                      {index % 2 === 0 ? (
+                        <>
+                          <div className="service-img-box">
+                            <img src={service.imgUrl} alt={service.title} />
+                          </div>
 
-                      <div
-                        className={`service-details ${activeService === index ? "show" : ""}`}
-                      >
-                        <h4>What's Included:</h4>
-                        <ul className="features-list">
-                          {service.features.map((feature, idx) => (
-                            <li key={idx}>{feature}</li>
-                          ))}
-                        </ul>
-                        <div className="service-price">{service.price}</div>
-                      </div>
+                          <div
+                            className={`service-card ${activeService === index ? "active" : ""}`}
+                            onClick={() => setActiveService(activeService === index ? null : index)}
+                          >
+                            <div className="service-icon">
+                              {Icon && <Icon size={40} />}
+                            </div>
+                            <h3>{service.title}</h3>
+                            <p className="service-description">{service.description}</p>
+
+                            <div className={`service-details ${activeService === index ? "show" : ""}`}>
+                              <h4>What's Included:</h4>
+                              <ul className="features-list">
+                                {service.features.map((feature, idx) => (
+                                  <li key={idx}>{feature}</li>
+                                ))}
+                              </ul>
+                              <div className="service-price">{service.price}</div>
+                            </div>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          {/* If index is odd → card first */}
+                          <div
+                            className={`service-card ${activeService === index ? "active" : ""}`}
+                            onClick={() => setActiveService(activeService === index ? null : index)}
+                          >
+                            <div className="service-icon">
+                              {Icon && <Icon size={40} />}
+                            </div>
+                            <h3>{service.title}</h3>
+                            <p className="service-description">{service.description}</p>
+
+                            <div className={`service-details ${activeService === index ? "show" : ""}`}>
+                              <h4>What's Included:</h4>
+                              <ul className="features-list">
+                                {service.features.map((feature, idx) => (
+                                  <li key={idx}>{feature}</li>
+                                ))}
+                              </ul>
+                              <div className="service-price">{service.price}</div>
+                            </div>
+                          </div>
+
+                          <div className="service-img-box">
+                            <img src={service.imgUrl} alt={service.title} />
+                          </div>
+                        </>
+                      )}
+
                     </div>
+
                   );
                 })}
               </div>
