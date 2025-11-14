@@ -19,8 +19,12 @@ import Welcome from "./pages/Welcome";
 const hasVisited = sessionStorage.getItem("visited");
 
 function App() {
+
+  const [showWelcome, setShowWelcome] = useState(true);
+
   // Initialize showWelcome based on sessionStorage. If 'visited' is NOT present, show Welcome (true).
   const [showWelcome, setShowWelcome] = useState(!hasVisited);
+
 
   const handleWelcomeComplete = () => {
     // 1. Hide the welcome screen

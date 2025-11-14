@@ -31,7 +31,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="nav-container">
           <div className="nav-logo">
-            <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763115729/logo_qyoefw.png" onClick={() => navTo("/")} alt="" />
+            <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763140388/unnamed_jqn7fm.png" onClick={() => navTo("/")} alt="" />
 
           </div>
 

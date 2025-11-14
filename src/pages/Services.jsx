@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Shield, Eye, FileSearch, Users, Briefcase, Home, Heart, Scale, Laptop, Camera, Lock } from 'lucide-react';
-import "../css/services.css"
+import "../css/services.css";
 
 import { detailedServices } from '../data/data';
 
@@ -24,13 +24,25 @@ function Services() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Select');
 
-  // Get unique categories from services for dropdown
   const categories = ['Select', ...new Set(detailedServices.map(s => s.title))];
 
+  // 🔥 NEW SUPER SEARCH (search everything)
   const filteredServices = detailedServices.filter(service => {
-    const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      service.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const q = searchQuery.toLowerCase();
+
+    const textMatch =
+      service.title.toLowerCase().includes(q) ||
+      service.icon.toLowerCase().includes(q) ||
+      service.description.toLowerCase().includes(q) ||
+      service.price.toLowerCase().includes(q);
+
+    const featureMatch = service.features.some(f =>
+      f.toLowerCase().includes(q)
+    );
+
+    const matchesSearch = textMatch || featureMatch;
     const matchesCategory = selectedCategory === 'Select' || service.title === selectedCategory;
+
     return matchesSearch && matchesCategory;
   });
 
@@ -93,6 +105,7 @@ function Services() {
                           <img src={service.imgUrl} alt={service.title} />
                         </div>
                       )}
+
                       <div
                         className={`service-card ${activeService === index ? "active" : ""}`}
                         onClick={() => setActiveService(activeService === index ? null : index)}
@@ -100,6 +113,7 @@ function Services() {
                         <div className="service-icon">
                           {Icon && <Icon size={40} />}
                         </div>
+
                         <h3>{service.title}</h3>
                         <p className="service-description">{service.description}</p>
 
@@ -113,14 +127,14 @@ function Services() {
                           <div className="service-price">{service.price}</div>
                         </div>
                       </div>
+
                       {index % 2 !== 0 && (
                         <div className="service-img-box">
                           <img src={service.imgUrl} alt={service.title} />
                         </div>
                       )}
                     </div>
-
-                  )
+                  );
                 })}
               </div>
             ) : (

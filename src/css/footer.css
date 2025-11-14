@@ -1,0 +1,295 @@
+/* ======== Modern Elegant Footer Style ======== */
+
+.footer {
+  position: relative;
+  background: linear-gradient(120deg, #1a1a1f 75%, #101014 100%);
+  color: #ececec;
+  border-top: 1.5px solid rgba(218, 165, 32, 0.27);
+  box-shadow: 0 -10px 80px 2px rgba(218,165,32,0.08) inset, 0 -2px 24px rgba(0,0,0,0.43) inset;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at left 40%, rgba(218,165,32,0.10) 0, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 26px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 3rem;
+  padding: 2rem 0 2rem;   /* Reduce top/bottom padding to help with empty space */
+  position: relative;
+}
+
+.footer-section {
+  position: relative;
+}
+
+.footer-section h3 {
+  color: #efc554;
+  font-size: 1.3rem;
+  margin-bottom: 1.7rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 2px 20px rgba(218, 165, 32, 0.07);
+  background: linear-gradient(90deg, #DAA520 20%, #ffe784 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+.footer-section:not(:first-child) h3::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #daa520e0, #ffe784bb 70%);
+  opacity: 0.73;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #efc554;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 24px #daa52049;
+}
+.footer-logo svg {
+  color: #efc554;
+  filter: drop-shadow(0 2px 6px #daa52055);
+  flex-shrink: 0;
+}
+
+.footer-description {
+  color: #b3b3b3;
+  font-size: 1.03rem;
+  line-height: 1.6;
+  margin-bottom: 1.7rem;
+  letter-spacing: 0.02em;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.1rem;
+  margin-top: 4px;
+}
+.social-links a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(140deg, rgba(255,255,255,0.08), #131c1e 85%);
+  border-radius: 50%;
+  color: #efc554;
+  box-shadow: 0 2px 12px rgba(218, 165, 32, 0.12), 0 0 4px #222 inset;
+  border: 1.5px solid #daa5201c;
+  font-size: 1.05rem;
+  transition: all 0.28s cubic-bezier(0.55, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+.social-links a:hover {
+  background: linear-gradient(135deg, #f9eca6dd, #daa520fa 95%);
+  color: #1f2122;
+  transform: scale(1.14) translateY(-4px);
+  box-shadow: 0 8px 32px #f3d16854, 0 0 6px #efc55498 inset;
+  border-color: #ffeeaf49;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+.footer-links a {
+  color: #c5c5c5;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.02rem;
+  letter-spacing: 0.04em;
+  border-radius: 7px;
+  padding: 1.5px 7px;
+  transition: all 0.23s;
+  position: relative;
+}
+.footer-links a:before {
+  content: '';
+  position: absolute;
+  left: 2px; top: 55%;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #efd98c 0%, #daa520 100%);
+  opacity: 0;
+  transform: translateY(-50%) scale(0.9);
+  transition: opacity 0.21s, transform 0.21s;
+}
+.footer-links a:hover {
+  color: #efc554;
+  background: #18130831;
+  padding-left: 16px;
+}
+.footer-links a:hover:before {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.14);
+}
+
+/* Contact Info Section */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+.contact-item svg {
+  color: #efc554;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.contact-item p {
+  color: #b3b3b3;
+  margin-bottom: 4px;
+  font-size: 0.96rem;
+}
+.contact-item p:first-child {
+  color: #ececec;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  border-top: 1.5px solid rgba(218, 165, 32, 0.22);
+  background: rgba(20,18,18,0.89);
+  box-shadow: 0 2px 24px 0 #daa5200c inset;
+  padding: 1.2rem 0 1.2rem; /* Reduce padding to minimize height */
+  position: relative;
+}
+.footer-bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.footer-bottom-content p {
+  color: #b9b9b9;
+  font-size: 0.97rem;
+  font-weight: 400;
+}
+.footer-bottom-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.footer-bottom-links a {
+  color: #e6e1c2;
+  text-decoration: none;
+  font-size: 1.01rem;
+  letter-spacing: 0.03em;
+  opacity: 0.87;
+  transition: color 0.23s;
+}
+.footer-bottom-links a:hover {
+  color: #efc554;
+  opacity: 1;
+}
+.separator {
+  color: #cfc085;
+  font-weight: 900;
+  margin: 0 5px;
+}
+
+.license-text {
+  font-size: 0.90rem;
+  color: #f1d473cd;
+  font-style: italic;
+  margin-top: 0.3rem;
+  letter-spacing: 0.01em;
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 950px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    padding: 2.2rem 0 1.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 8px;
+  }
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.8rem 0 1.5rem;
+  }
+  .footer-section {
+    text-align: center;
+  }
+  .footer-logo {
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .social-links {
+    justify-content: center;
+    margin-bottom: 0.6rem;
+  }
+  .contact-item {
+    justify-content: center;
+    text-align: left;
+  }
+  .footer-bottom-content {
+    gap: 1rem;
+  }
+  .footer-bottom-links {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .separator {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .footer-logo span {
+    font-size: 0.98rem;
+  }
+  .social-links a {
+    width: 36px;
+    height: 36px;
+  }
+  .footer-bottom-content {
+    font-size: 0.91rem;
+  }
+}
+
