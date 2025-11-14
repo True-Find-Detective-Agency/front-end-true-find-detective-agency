@@ -1,8 +1,6 @@
-
-
 /* ========================================
-   HERO SECTION
-   ======================================== */
+    HERO SECTION
+    ======================================== */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -41,9 +39,9 @@
   right: 0;
   bottom: 0;
   background: linear-gradient(180deg,
-      rgba(10, 10, 10, 0.3) 0%,
-      rgba(10, 10, 10, 0.7) 50%,
-      rgba(10, 10, 10, 0.9) 100%);
+        rgba(10, 10, 10, 0.3) 0%,
+        rgba(10, 10, 10, 0.7) 50%,
+        rgba(10, 10, 10, 0.9) 100%);
 }
 
 .hero-content {
@@ -100,8 +98,8 @@
 }
 
 /* ========================================
-   FEATURES OVERVIEW SECTION
-   ======================================== */
+    FEATURES OVERVIEW SECTION
+    ======================================== */
 .features-overview {
   padding: 5rem 0;
   background: var(--dark-bg-secondary);
@@ -117,9 +115,9 @@ section::before {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg,
-      transparent 0%,
-      var(--primary-gold) 50%,
-      transparent 100%);
+        transparent 0%,
+        var(--primary-gold) 50%,
+        transparent 100%);
 }
 
 .features-grid {
@@ -147,9 +145,9 @@ section::before {
   width: 100%;
   height: 100%;
   background: linear-gradient(90deg,
-      transparent 0%,
-      rgba(218, 165, 32, 0.1) 50%,
-      transparent 100%);
+        transparent 0%,
+        rgba(218, 165, 32, 0.1) 50%,
+        transparent 100%);
   transition: left 0.5s ease;
 }
 
@@ -189,8 +187,8 @@ section::before {
 }
 
 /* ========================================
-   SERVICES SECTION
-   ======================================== */
+    SERVICES SECTION
+    ======================================== */
 .services {
   padding: 6rem 0;
   background: var(--dark-bg);
@@ -217,9 +215,9 @@ section::before {
   width: 80px;
   height: 3px;
   background: linear-gradient(90deg,
-      transparent 0%,
-      var(--primary-gold) 50%,
-      transparent 100%);
+        transparent 0%,
+        var(--primary-gold) 50%,
+        transparent 100%);
 }
 
 .section-subtitle {
@@ -261,8 +259,8 @@ section::before {
   right: 0;
   height: 4px;
   background: linear-gradient(90deg,
-      var(--primary-gold) 0%,
-      var(--primary-gold-light) 100%);
+        var(--primary-gold) 0%,
+        var(--primary-gold-light) 100%);
   transform: scaleX(0);
   transition: transform var(--transition-normal);
 }
@@ -306,7 +304,7 @@ section::before {
   color: var(--text-tertiary);
   line-height: 1.8;
   margin-bottom: 1rem;
-   transition: color var(--transition-fast);
+    transition: color var(--transition-fast);
 }
 
 .service-card:hover p {
@@ -360,8 +358,8 @@ section .service-btn {
 
 
 /* ========================================
-   ABOUT SECTION
-   ======================================== */
+    ABOUT SECTION
+    ======================================== */
 .about {
   padding: 6rem 0;
   background: var(--dark-bg-secondary);
@@ -439,8 +437,8 @@ section .service-btn {
 
 .about-highlight {
   background: linear-gradient(135deg,
-      rgba(218, 165, 32, 0.1) 0%,
-      rgba(218, 165, 32, 0.05) 100%);
+        rgba(218, 165, 32, 0.1) 0%,
+        rgba(218, 165, 32, 0.05) 100%);
   padding: 1.5rem;
   border-left: 4px solid var(--primary-gold);
   border-radius: 6px;
@@ -543,8 +541,8 @@ section .service-btn {
 }
 
 /* ========================================
-   PROCESS SECTION
-   ======================================== */
+    PROCESS SECTION
+    ======================================== */
 
 /* 🧭 Process Section with Background */
 .process-wrapper {
@@ -597,10 +595,10 @@ section .service-btn {
   right: 0;
   height: 2px;
   background: linear-gradient(90deg,
-      transparent 0%,
-      var(--primary-gold) 25%,
-      var(--primary-gold) 75%,
-      transparent 100%);
+        transparent 0%,
+        var(--primary-gold) 25%,
+        var(--primary-gold) 75%,
+        transparent 100%);
   z-index: 0;
 }
 
@@ -640,8 +638,8 @@ section .service-btn {
   transform: translateY(-8px);
   box-shadow: var(--shadow-gold);
   background: linear-gradient(135deg,
-      var(--dark-bg-tertiary) 0%,
-      rgba(218, 165, 32, 0.05) 100%);
+        var(--dark-bg-tertiary) 0%,
+        rgba(218, 165, 32, 0.05) 100%);
 }
 
 .process-step {
@@ -677,8 +675,8 @@ section .service-btn {
 }
 
 /* ========================================
-   TESTIMONIALS SECTION
-   ======================================== */
+    TESTIMONIALS SECTION
+    ======================================== */
 .testimonials-section {
   padding: 6rem 0;
   background: var(--dark-bg-secondary);
@@ -721,8 +719,8 @@ section .service-btn {
   width: 100%;
   height: 4px;
   background: linear-gradient(90deg,
-      var(--primary-gold) 0%,
-      var(--primary-gold-light) 100%);
+        var(--primary-gold) 0%,
+        var(--primary-gold-light) 100%);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-normal);
@@ -789,7 +787,7 @@ section .service-btn {
 }
 
 /* ========================================
-   CONTACT SECTION
+    CONTACT SECTION
 ======================================== */
 .contact {
   padding: 6rem 0;
@@ -929,13 +927,13 @@ section .service-btn {
 }
 
 /* ========================================
-   CTA BANNER SECTION
-   ======================================== */
+    CTA BANNER SECTION
+    ======================================== */
 .cta-banner {
   padding: 5rem 0;
   background: linear-gradient(135deg,
-      var(--dark-bg-tertiary) 0%,
-      var(--dark-bg) 100%);
+        var(--dark-bg-tertiary) 0%,
+        var(--dark-bg) 100%);
   border-top: 1px solid var(--dark-border);
   position: relative;
   overflow: hidden;
@@ -949,9 +947,9 @@ section .service-btn {
   right: 0;
   height: 1px;
   background: linear-gradient(90deg,
-      transparent 0%,
-      var(--primary-gold) 50%,
-      transparent 100%);
+        transparent 0%,
+        var(--primary-gold) 50%,
+        transparent 100%);
 }
 
 .cta-banner::after {
@@ -990,8 +988,8 @@ section .service-btn {
 }
 
 /* ========================================
-   ANIMATIONS & UTILITIES
-   ======================================== */
+    ANIMATIONS & UTILITIES
+    ======================================== */
 @keyframes pulse {
 
   0%,
@@ -1075,8 +1073,8 @@ section .service-btn {
 }
 
 /* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+    RESPONSIVE DESIGN
+    ======================================== */
 
 /* Large Tablets & Small Desktops */
 @media (max-width: 1024px) {
@@ -1296,8 +1294,8 @@ section .service-btn {
 }
 
 /* ========================================
-   PRINT STYLES
-   ======================================== */
+    PRINT STYLES
+    ======================================== */
 @media print {
 
   .hero-video,
@@ -1331,8 +1329,8 @@ section .service-btn {
 }
 
 /* ========================================
-   ACCESSIBILITY ENHANCEMENTS
-   ======================================== */
+    ACCESSIBILITY ENHANCEMENTS
+    ======================================== */
 @media (prefers-reduced-motion: reduce) {
 
   *,
@@ -1374,6 +1372,3 @@ textarea:focus {
     --dark-bg-tertiary: #141414;
   }
 }
-
-
-
