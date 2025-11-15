@@ -48,10 +48,10 @@ function Welcome({ onComplete }) {
                         <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763182929/unnamed_1_-_Copy_-_Copy_dlfnrm.png" alt="" />
                     </div>
                     <div className="welcome-logo">
-                        <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763182157/unnamed_imgupscaler.ai_V1_Fast__2K_a61ci.png" alt="" />
+                        <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763182157/unnamed_imgupscaler.ai_V1_Fast__2K_a61c5i.png" alt="" />
                     </div>
 
-                    {/* Text Content */}
+                    {/* Text Contentt */}
 
                     <p className="welcome-tagline">Uncovering Truth in the Shadows</p>
 
