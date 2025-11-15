@@ -25,7 +25,7 @@ function GetInTouch() {
                     <div className="marquee-content reverse">
                         {[...Array(4)].map((_, i) => (
                             <div key={i} className="marquee-item">
-                                <span className="marquee-text" onClick={() => navTo("/contact")}>CONTACT US</span>
+                                <span className="marquee-text" onClick={() => window.location.href = "tel:+919977014334"}>CONTACT US</span>
                                 <span className="marquee-separator">★</span>
                             </div>
                         ))}

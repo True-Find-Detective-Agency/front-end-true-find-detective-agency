@@ -2,61 +2,22 @@ import React from 'react';
 import { Shield, Award, Users, Eye, Target, CheckCircle } from 'lucide-react';
 import "../css/about.css"
 import AboutStats from '../components/AnimatedStat';
+import { useNavigate } from 'react-router-dom';
+import { achievements, team , values} from '../data/data';
 
+const iconMap = {
+  Shield: Shield,
+  Eye: Eye,
+  Target: Target,
+  Award: Award,
+};
 
 function About() {
-  const values = [
-    {
-      icon: <Shield size={40} />,
-      title: "Integrity",
-      description: "We operate with the highest ethical standards and complete transparency"
-    },
-    {
-      icon: <Eye size={40} />,
-      title: "Discretion",
-      description: "Your privacy and confidentiality are our top priorities in every case"
-    },
-    {
-      icon: <Target size={40} />,
-      title: "Precision",
-      description: "Meticulous attention to detail ensures accurate and reliable results"
-    },
-    {
-      icon: <Award size={40} />,
-      title: "Excellence",
-      description: "Committed to delivering superior investigative services every time"
-    }
-  ];
+  const navTo = useNavigate();
 
-  const team = [
-    {
-      name: "Robert Harrison",
-      role: "Chief Investigator",
-      experience: "25+ Years Experience",
-      specialization: "Corporate Fraud & Criminal Investigation"
-    },
-    {
-      name: "Sarah Mitchell",
-      role: "Senior Detective",
-      experience: "18+ Years Experience",
-      specialization: "Surveillance & Background Checks"
-    },
-    {
-      name: "Michael Chen",
-      role: "Forensic Analyst",
-      experience: "15+ Years Experience",
-      specialization: "Digital Forensics & Cyber Investigation"
-    }
-  ];
 
-  const achievements = [
-    "Licensed Private Investigation Agency",
-    "Certified by National Association of Private Investigators",
-    "Over 2000 Successfully Resolved Cases",
-    "98% Client Satisfaction Rate",
-    "24/7 Emergency Response Team",
-    "Court-Admissible Evidence Collection"
-  ];
+
+
 
   return (
     <>
@@ -109,13 +70,19 @@ function About() {
             </p>
             <div className='value-gird-container'>
               <div className="values-grid features-grid">
-                {values.map((value, index) => (
-                  <div key={index} className="feature-card">
-                    <div className="feature-icon">{value.icon}</div>
-                    <h3>{value.title}</h3>
-                    <p>{value.description}</p>
-                  </div>
-                ))}
+                {values.map((value, index) => {
+                  const Icon = iconMap[value.icon]; // convert name to icon
+                  return (
+                    <div key={index} className="feature-card">
+                      <div className="feature-icon">
+                        <Icon size={40} />
+                      </div>
+                      <h3>{value.title}</h3>
+                      <p>{value.description}</p>
+                    </div>
+                  );
+                })}
+
               </div>
               <div >
                 <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763190857/dsd_auxf8r.png" alt="" />
@@ -152,7 +119,7 @@ function About() {
           <div className="container">
             <h2 className="section-title">Our Achievements</h2>
             <div className="achievements-grid-container">
-                <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763190170/achievment_mapmsd_r18tls.png" alt="" />
+              <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763190170/achievment_mapmsd_r18tls.png" alt="" />
               <div className="achievements-grid">
                 {achievements.map((achievement, index) => (
                   <div key={index} className="achievement-item">
@@ -174,7 +141,7 @@ function About() {
                 Let our experienced team help you uncover the truth.
                 Contact us today for a confidential consultation.
               </p>
-              <button className="cta-button">Get Started Today</button>
+              <button className="cta-button" onClick={() => navTo("/contact")}>Get Started Today</button>
             </div>
           </div>
         </section>

@@ -1,23 +1,11 @@
 import React, { useState } from 'react';
-import { Search, Shield, Eye, FileSearch, Users, Briefcase, Home, Heart, Scale, Laptop, Camera, Lock } from 'lucide-react';
+import { Search, Shield, Eye, FileSearch, Users, Briefcase, Home, Heart, Scale, Laptop, Camera, Lock, HeartCrack, FileWarning, UserSearch, Activity, Phone, UserCheck } from "lucide-react";
+
 import "../css/services.css";
 
 import { detailedServices } from '../data/data';
 
-const iconMap = {
-  Search,
-  Briefcase,
-  Eye,
-  FileSearch,
-  Users,
-  Heart,
-  Laptop,
-  Scale,
-  Home,
-  Lock,
-  Camera,
-  Shield,
-};
+const iconMap = { Search, Shield, Eye, FileSearch, Users, Briefcase, Home, Heart, Scale, Laptop, Camera, Lock, HeartCrack, FileWarning, UserSearch, Activity, Phone, UserCheck };
 
 function Services() {
   const [activeService, setActiveService] = useState(null);
@@ -26,25 +14,29 @@ function Services() {
 
   const categories = ['Select', ...new Set(detailedServices.map(s => s.title))];
 
-  // 🔥 NEW SUPER SEARCH (search everything)
   const filteredServices = detailedServices.filter(service => {
     const q = searchQuery.toLowerCase();
 
     const textMatch =
       service.title.toLowerCase().includes(q) ||
       service.icon.toLowerCase().includes(q) ||
-      service.description.toLowerCase().includes(q) ||
-      service.price.toLowerCase().includes(q);
+      service.description.toLowerCase().includes(q);
 
     const featureMatch = service.features.some(f =>
-      f.toLowerCase().includes(q)
+      f.title.toLowerCase().includes(q) ||
+      f.desc.toLowerCase().includes(q)
     );
 
     const matchesSearch = textMatch || featureMatch;
-    const matchesCategory = selectedCategory === 'Select' || service.title === selectedCategory;
+    const matchesCategory =
+      selectedCategory === 'Select' || service.title === selectedCategory;
 
     return matchesSearch && matchesCategory;
   });
+
+  const toggleService = (index) => {
+    setActiveService(activeService === index ? null : index);
+  };
 
   return (
     <>
@@ -86,7 +78,8 @@ function Services() {
             </div>
 
             <p className="results-count">
-              Showing {filteredServices.length} {filteredServices.length === 1 ? 'service' : 'services'}
+              Showing {filteredServices.length}{" "}
+              {filteredServices.length === 1 ? "service" : "services"}
             </p>
           </div>
         </section>
@@ -98,18 +91,27 @@ function Services() {
               <div className="services-grid">
                 {filteredServices.map((service, index) => {
                   const Icon = iconMap[service.icon];
+                  const showMore = activeService === index;
+
                   return (
-                    <div className="service-item" key={index}>
+                    <div
+                      className="service-item"
+                      key={index}
+                      style={{
+                        backgroundImage: `url(${service.imgUrl})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                      }}
+                    >
+
+
                       {index % 2 === 0 && (
                         <div className="service-img-box">
                           <img src={service.imgUrl} alt={service.title} />
                         </div>
                       )}
 
-                      <div
-                        className={`service-card ${activeService === index ? "active" : ""}`}
-                        onClick={() => setActiveService(activeService === index ? null : index)}
-                      >
+                      <div className="service-card" >
                         <div className="service-icon">
                           {Icon && <Icon size={40} />}
                         </div>
@@ -117,22 +119,47 @@ function Services() {
                         <h3>{service.title}</h3>
                         <p className="service-description">{service.description}</p>
 
-                        <div className={`service-details ${activeService === index ? "show" : ""}`}>
-                          <h4>What's Included:</h4>
-                          <ul className="features-list">
-                            {service.features.map((feature, idx) => (
-                              <li key={idx}>{feature}</li>
-                            ))}
-                          </ul>
-                          <div className="service-price">{service.price}</div>
+                        {/* Always show first 4 features */}
+                        <ul className="features-list">
+                          {service.features.slice(0, 4).map((feature, idx) => (
+                            <li key={idx}>
+                              <strong>{feature.title}:</strong> {feature.desc}
+                            </li>
+                          ))}
+                        </ul>
+
+
+
+                        {/* Extra Hidden Features */}
+                        <div className={`service-details ${showMore ? "show" : ""}`}>
+                          {showMore && (
+                            <ul className="features-list">
+                              {service.features.slice(4).map((feature, idx) => (
+                                <li key={idx}>
+                                  <strong>{feature.title}:</strong> {feature.desc}
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </div>
+                        {/* Show More Button */}
+                        {service.features.length > 4 && (
+                          <button
+                            className="show-more-btn"
+                            onClick={() => toggleService(index)}
+                          >
+                            {showMore ? "Show Less" : "Show More"}
+                          </button>
+                        )}
                       </div>
+
 
                       {index % 2 !== 0 && (
                         <div className="service-img-box">
                           <img src={service.imgUrl} alt={service.title} />
                         </div>
                       )}
+
                     </div>
                   );
                 })}
@@ -141,7 +168,7 @@ function Services() {
               <div className="no-results">
                 <Search size={64} />
                 <h3>No services found</h3>
-                <p>Try adjusting your search or filter criteria</p>
+                <p>Try adjusting your search or filter</p>
               </div>
             )}
           </div>

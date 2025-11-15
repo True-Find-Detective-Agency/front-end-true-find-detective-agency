@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { env } from "../data/data";
 
 export function AnimatedStat({ target, suffix = "", startAnimation }) {
   const [count, setCount] = useState(0);
@@ -27,8 +28,8 @@ export function AnimatedStat({ target, suffix = "", startAnimation }) {
 export default function AboutStats() {
   const statsRef = useRef(null);
   const [startAnimation, setStartAnimation] = useState(false);
-  const currentYear = new Date().getFullYear();
-  const years = currentYear - 2021;
+
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,20 +52,28 @@ export default function AboutStats() {
   return (
     <div className="about-stats" ref={statsRef}>
       <div className="stat">
-        <AnimatedStat target={700} suffix="+" startAnimation={startAnimation} />
+        <AnimatedStat target={env.totalCases} suffix="+" startAnimation={startAnimation} />
+        <div className="stat-label">Total Cases</div>
+      </div>
+      <div className="stat">
+        <AnimatedStat target={env.caseSolved} suffix="+" startAnimation={startAnimation} />
         <div className="stat-label">Cases Solved</div>
       </div>
       <div className="stat">
-        <AnimatedStat target={98} suffix="%" startAnimation={startAnimation} />
+        <AnimatedStat target={env.successRate} suffix="%" startAnimation={startAnimation} />
         <div className="stat-label">Success Rate</div>
       </div>
       <div className="stat">
-        <AnimatedStat target={years} suffix="+" startAnimation={startAnimation} />
-        <div className="stat-label">Years Experience</div>
+        <AnimatedStat target={env.noOfClients} suffix="+" startAnimation={startAnimation} />
+        <div className="stat-label">Clients</div>
       </div>
       <div className="stat">
-        <AnimatedStat target={30} suffix="+" startAnimation={startAnimation} />
+        <AnimatedStat target={env.teamExperts} suffix="+" startAnimation={startAnimation} />
         <div className="stat-label">Expert Team</div>
+      </div>
+      <div className="stat">
+        <AnimatedStat target={env.yearOfExperience} suffix="+" startAnimation={startAnimation} />
+        <div className="stat-label">Years Experience</div>
       </div>
     </div>
   );
