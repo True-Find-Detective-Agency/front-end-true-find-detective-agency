@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // DetectiveAgency.jsx
 import React, { useEffect } from "react";
 import {
@@ -177,7 +178,7 @@ export default function Home() {
             {/* Image Box: Comes from the left */}
             <div data-aos="fade-left" data-aos-delay="200">
               <img
-                src="https://images.stockcake.com/public/8/f/b/8fbde810-1ad9-4216-879c-1de352da85f1_large/mysterious-detective-reading-stockcake.jpg"
+                src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763189014/mysterious-detective-reading-stockcake_kd4ojv.jpg"
                 alt=""
               />
             </div>

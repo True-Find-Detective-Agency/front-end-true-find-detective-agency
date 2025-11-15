@@ -44,7 +44,9 @@ function Welcome({ onComplete }) {
                     </div>
 
                     {/* Logo */}
-                    <div className="welcome-logo">
+                    <div className="welcome-logo cap">
+                        <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763182929/unnamed_1_-_Copy_-_Copy_dlfnrm.png" alt="" />
+                    </div><div className="welcome-logo">
                         <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763182157/unnamed_imgupscaler.ai_V1_Fast__2K_a61c5i.png" alt="" />
                     </div>
 
