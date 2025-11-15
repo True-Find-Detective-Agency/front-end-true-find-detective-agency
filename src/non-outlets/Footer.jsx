@@ -17,7 +17,7 @@ function Footer() {
             {/* About Section */}
             <div className="footer-section">
               <div className="footer-logo">
-                <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763182157/unnamed_imgupscaler.ai_V1_Fast__2K_a61c5i.png" alt="" />
+                <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763133066/ChatGPT_Image_Nov_13_2025_11_28_05_PM-Photoroom_samgrp.png" alt="" />
               </div>
               <p className="footer-description">
                 Professional investigative services with over {years}+ years of experience.
@@ -39,6 +39,7 @@ function Footer() {
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/services">Our Services</Link></li>
                 <li><Link to="/why-us">Why Choose Us</Link></li>
+                <li><Link to="/branches">Branches</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
@@ -47,11 +48,12 @@ function Footer() {
             <div className="footer-section">
               <h3>Services</h3>
               <ul className="footer-links">
-                <li><Link to="/services/background-checks">Background Checks</Link></li>
-                <li><Link to="/services/corporate">Corporate Investigation</Link></li>
-                <li><Link to="/services/surveillance">Surveillance</Link></li>
-                <li><Link to="/services/fraud">Fraud Detection</Link></li>
-                <li><Link to="/services/missing-persons">Missing Persons</Link></li>
+                <li><Link to="/services">Background Checks</Link></li>
+                <li><Link to="/services">Corporate Investigation</Link></li>
+                <li><Link to="/services">Surveillance</Link></li>
+                <li><Link to="/services">Fraud Detection</Link></li>
+                <li><Link to="/services">Missing Persons</Link></li>
+                <li><Link to="/services">Matrimonial Investigation</Link></li>
               </ul>
             </div>
           </div>

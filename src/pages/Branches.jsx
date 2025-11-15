@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 
 
-import { branches, regions } from '../data/data';
+import { branches, env, regions } from '../data/data';
 import LocationButton from '../components/LocationButton';
 
 import { AnimatedStat } from '../components/AnimatedStat';
@@ -204,7 +204,7 @@ function Branches() {
                       </div>
 
                       {/* Map Button */}
-                      <LocationButton lat="23.2056" lng="77.0937" />
+                      <LocationButton lat={branch.lat} lng={branch.lng} />
 
                     </div>
 
@@ -248,17 +248,17 @@ function Branches() {
           <div className="container">
             <h2 className="section-title">Nationwide Coverage</h2>
             <p className="section-subtitle">
-              With 10 strategically located offices, we provide comprehensive investigative services across the United States
+              With {env.branchCount} strategically located offices, we provide comprehensive investigative services across the United States
             </p>
 
             <div className="coverage-stats" ref={coverageRef}>
               <div className="coverage-stat">
-                <AnimatedStat target={10} startAnimation={startAnimation} />
+                <AnimatedStat target={env.branchCount} startAnimation={startAnimation} />
                 <div className="stat-label">Office Locations</div>
               </div>
 
               <div className="coverage-stat">
-                <AnimatedStat target={50} startAnimation={startAnimation} />
+                <AnimatedStat target={env.stateCovered} startAnimation={startAnimation} />
                 <div className="stat-label">States Covered</div>
               </div>
 
@@ -268,7 +268,7 @@ function Branches() {
               </div>
 
               <div className="coverage-stat">
-                <AnimatedStat target={100} suffix="+" startAnimation={startAnimation} />
+                <AnimatedStat target={env.teamExperts} suffix="+" startAnimation={startAnimation} />
                 <div className="stat-label">Investigators</div>
               </div>
             </div>
