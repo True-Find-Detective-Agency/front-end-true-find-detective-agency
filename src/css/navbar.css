@@ -12,35 +12,37 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-position: fixed;
-top: 1rem;
-left: 50%;
-/* 🛠️ Entrance Animation के लिए transform अपडेट किया गया */
-transform: translate(-50%, 0); 
-/* 🛠️ Navbar जंप को रोकने के लिए width को 98% पर लॉक किया गया */
-width: 98%; 
-max-width: 1300px;
-z-index: 1000;
-background: rgb(14, 14, 14);
-border-radius: 20px;
-border: 1px solid rgba(218, 165, 32, 0.2);
-box-shadow:
-0 8px 32px rgba(0, 0, 0, 0.6),
-inset 0 1px 0 rgb(0, 0, 0);
-display: flex;
-align-items: center;
-justify-content: space-between;
-padding: 0.5rem 2rem;
-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  /* 🛠️ Entrance Animation के लिए transform अपडेट किया गया */
+  transform: translate(-50%, 0);
+  /* 🛠️ Navbar जंप को रोकने के लिए width को 98% पर लॉक किया गया */
+  width: 98%;
+  max-width: 1300px;
+  z-index: 1000;
+  background: rgb(14, 14, 14);
+  border-radius: 20px;
+  border: 1px solid rgba(218, 165, 32, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
-/* 🛠️ Entrance Animation लागू करें */
-opacity: 0; /* एनीमेशन शुरू होने से पहले छिपाने के लिए */
-animation: slideDownEntrance 0.8s ease-out 0.2s forwards; /* 0.2s विलंब के साथ शुरू */
+  /* 🛠️ Entrance Animation लागू करें */
+  opacity: 0;
+  /* एनीमेशन शुरू होने से पहले छिपाने के लिए */
+  animation: slideDownEntrance 0.8s ease-out 0.2s forwards;
+  /* 0.2s विलंब के साथ शुरू */
 
 }
 
 .nav-links .nav-call {
-display: none;
+  display: none;
 }
 
 /* Scrolled state - enhanced glass effect */
@@ -48,18 +50,18 @@ display: none;
 
   background: rgba(8, 8, 8, 0.95);
   border-bottom: 1px solid rgba(218, 165, 32, 0.25);
-  box-shadow: 
+  box-shadow:
     0 8px 40px rgba(0, 0, 0, 0.7),
     0 0 60px rgba(218, 165, 32, 0.08);
 
-/* 🛠️ जंप को रोकने के लिए top और width को सामान्य .navbar के समान रखा गया */
-top: 1rem;
-width: 98%;
-border-color: rgba(218, 165, 32, 0.3);
-box-shadow:
-0 12px 48px rgba(0, 0, 0, 0.8),
-0 0 80px rgba(218, 165, 32, 0.1),
-inset 0 1px 0 rgba(255, 255, 255,
+  /* 🛠️ जंप को रोकने के लिए top और width को सामान्य .navbar के समान रखा गया */
+  top: 1rem;
+  width: 98%;
+  border-color: rgba(218, 165, 32, 0.3);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(218, 165, 32, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255),
 }
 
 /* Navbar inner container */
@@ -73,16 +75,11 @@ inset 0 1px 0 rgba(255, 255, 255,
   margin: 0 auto;
   padding: 1rem 3rem;
   gap: 3rem;
-=======
-display: flex;
-align-items: center;
-justify-content: space-between;
-width: 100%;
-gap: 2rem;
-
-  
-  
-  >>> main
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 2rem;
 }
 
 /* Logo with subtle animation */
@@ -102,10 +99,10 @@ gap: 2rem;
   transform: translateX(-50%) scaleX(0);
   width: 80%;
   height: 2px;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(218, 165, 32, 0.8), 
-    transparent);
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(218, 165, 32, 0.8),
+      transparent);
   transition: transform 0.4s ease;
 }
 
@@ -123,24 +120,23 @@ gap: 2rem;
 .nav-logo:hover img {
   filter: drop-shadow(0 4px 16px rgba(218, 165, 32, 0.6));
   transform: translateY(-2px);
-position: relative;
-cursor: pointer;
-display: flex;
-align-items: center;
-transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
 .nav-logo img {
-height: 55px;
-display: block;
-filter: drop-shadow(0 1px 1px rgba(218, 165, 32, 0.4)) brightness(1.05);
-transition: all 0.3s ease, filter 0.3s ease;
+  height: 55px;
+  display: block;
+  filter: drop-shadow(0 1px 1px rgba(218, 165, 32, 0.4)) brightness(1.05);
+  transition: all 0.3s ease, filter 0.3s ease;
 }
 
 .nav-logo:hover img {
-filter:
-drop-shadow(0 0 2px #ffd9008a) brightness(1.15);
-transform: scale(1.08);
+  filter: drop-shadow(0 0 2px #ffd9008a) brightness(1.15);
+  transform: scale(1.08);
 }
 
 /* Navigation links - horizontal pill style */
@@ -172,32 +168,32 @@ transform: scale(1.08);
 
 .nav-links li svg {
   transition: all 0.3s ease;
-display: flex;
-align-items: center;
-/* gap: 1rem; */
-list-style: none;
-margin: 0;
-padding: 0;
+  display: flex;
+  align-items: center;
+  /* gap: 1rem; */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .nav-links li a {
-display: flex;
-align-items: center;
-/* vertically center icon + text */
+  display: flex;
+  align-items: center;
+  /* vertically center icon + text */
 }
 
 .nav-links li svg {
-padding: 0;
-margin: 0;
-vertical-align: middle;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
 }
 
 .nav-links a {
@@ -216,33 +212,21 @@ vertical-align: middle;
 }
 
 /* Animated background on hover */
-.nav-links a::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, 
-    transparent, 
-    rgba(218, 165, 32, 0.15), 
-    transparent);
-  transition: left 0.5s ease;
-}
+
 
 .nav-links a:hover::before {
   left: 100%;
-display: block;
-padding: 0.75rem 1.25rem;
-color: var(--text-secondary);
-text-decoration: none;
-font-weight: 600;
-font-size: 0.925rem;
-letter-spacing: 0.5px;
-text-transform: uppercase;
-position: relative;
-border-radius: 12px;
-transition: all 0.3s ease;
+  display: block;
+  padding: 0.75rem 1.25rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.925rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -250,9 +234,9 @@ transition: all 0.3s ease;
   background: rgba(218, 165, 32, 0.12);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(218, 165, 32, 0.2);
-color: var(--primary-gold-light);
-transform: translateY(-2px);
-text-shadow: 0 0 20px rgba(218, 165, 32, 0.5), 0 0 40px rgba(218, 165, 32, 0.2);
+  color: var(--primary-gold-light);
+  transform: translateY(-2px);
+  text-shadow: 0 0 20px rgba(218, 165, 32, 0.5), 0 0 40px rgba(218, 165, 32, 0.2);
 }
 
 .nav-links a:hover svg {
@@ -263,20 +247,18 @@ text-shadow: 0 0 20px rgba(218, 165, 32, 0.5), 0 0 40px rgba(218, 165, 32, 0.2);
 /* Active link - distinct pill style */
 .nav-links a.active {
   color: #fff;
-  background: linear-gradient(135deg, 
-    rgba(218, 165, 32, 0.25) 0%, 
-    rgba(218, 165, 32, 0.15) 100%);
+  background: linear-gradient(135deg,
+      rgba(218, 165, 32, 0.25) 0%,
+      rgba(218, 165, 32, 0.15) 100%);
   border: 1px solid rgba(218, 165, 32, 0.3);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
     0 4px 20px rgba(218, 165, 32, 0.2);
-color: var(--primary-gold);
-background: rgba(218, 165, 32, 0.12);
-box-shadow:
-inset 0 0 20px rgba(218, 165, 32, 0.1),
-0 4px 15px rgba(218, 165, 32, 0.15);
-/* 🛠️ FIX: एक्टिव होने पर साइज़ को स्थिर रखने के लिए */
-transform: translateY(0);
+  color: var(--primary-gold);
+  background: rgba(218, 165, 32, 0.12);
+  box-shadow: inset 0 0 20px rgba(218, 165, 32, 0.1),
+    0 4px 15px rgba(218, 165, 32, 0.15);
+  /* 🛠️ FIX: एक्टिव होने पर साइज़ को स्थिर रखने के लिए */
+  transform: translateY(0);
 }
 
 /* Menu toggle */
@@ -326,32 +308,32 @@ transform: translateY(0);
 
 .menu-toggle:hover svg {
   transform: rotate(90deg);
-display: none;
-position: relative;
-align-items: center;
-justify-content: center;
-background: rgba(218, 165, 32, 0.1);
-border: none;
-border-radius: 12px;
-color: var(--primary-gold);
-cursor: pointer;
-padding: 0.75rem;
-transition: all 0.3s ease;
-z-index: 10000;
+  display: none;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  background: rgba(218, 165, 32, 0.1);
+  border: none;
+  border-radius: 12px;
+  color: var(--primary-gold);
+  cursor: pointer;
+  padding: 0.75rem;
+  transition: all 0.3s ease;
+  z-index: 10000;
 }
 
 .menu-toggle:hover {
-background: rgba(218, 165, 32, 0.15);
-transform: scale(1.1);
-box-shadow: 0 0 30px rgba(218, 165, 32, 0.4), inset 0 0 20px rgba(218, 165, 32, 0.1);
+  background: rgba(218, 165, 32, 0.15);
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(218, 165, 32, 0.4), inset 0 0 20px rgba(218, 165, 32, 0.1);
 }
 
 .menu-toggle svg {
-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .menu-toggle:hover svg {
-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Responsive */
@@ -375,9 +357,9 @@ transform: rotate(180deg);
     align-items: stretch;
     gap: 0.5rem;
     padding: 6rem 2rem 3rem;
-    background: linear-gradient(180deg, 
-      rgba(15, 15, 15, 0.98) 0%, 
-      rgba(8, 8, 8, 0.98) 100%);
+    background: linear-gradient(180deg,
+        rgba(15, 15, 15, 0.98) 0%,
+        rgba(8, 8, 8, 0.98) 100%);
     backdrop-filter: blur(30px) saturate(200%);
     box-shadow: -15px 0 50px rgba(0, 0, 0, 0.9);
     border-left: 2px solid rgba(218, 165, 32, 0.25);
@@ -393,9 +375,9 @@ transform: rotate(180deg);
     left: 0;
     right: 0;
     height: 200px;
-    background: radial-gradient(ellipse at top, 
-      rgba(218, 165, 32, 0.1) 0%, 
-      transparent 70%);
+    background: radial-gradient(ellipse at top,
+        rgba(218, 165, 32, 0.1) 0%,
+        transparent 70%);
     pointer-events: none;
   }
 
@@ -410,12 +392,29 @@ transform: rotate(180deg);
     animation: slideIn 0.5s forwards;
   }
 
-  .nav-links.active li:nth-child(1) { animation-delay: 0.1s; }
-  .nav-links.active li:nth-child(2) { animation-delay: 0.15s; }
-  .nav-links.active li:nth-child(3) { animation-delay: 0.2s; }
-  .nav-links.active li:nth-child(4) { animation-delay: 0.25s; }
-  .nav-links.active li:nth-child(5) { animation-delay: 0.3s; }
-  .nav-links.active li:nth-child(6) { animation-delay: 0.35s; }
+  .nav-links.active li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  .nav-links.active li:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .nav-links.active li:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .nav-links.active li:nth-child(4) {
+    animation-delay: 0.25s;
+  }
+
+  .nav-links.active li:nth-child(5) {
+    animation-delay: 0.3s;
+  }
+
+  .nav-links.active li:nth-child(6) {
+    animation-delay: 0.35s;
+  }
 
   .nav-links .nav-call {
     display: flex;
@@ -442,102 +441,104 @@ transform: rotate(180deg);
   .nav-container .not-active {
     display: none;
   }
-.menu-toggle {
-display: flex;
-}
 
-.nav-links {
-position: fixed;
-top: -6rem;
-right: -120%;
-height: 100vh;
-width: min(400px, 90vw);
-flex-direction: column;
-justify-content: center;
-align-items: stretch;
-gap: 0;
-padding: 3rem 2rem;
-background: linear-gradient(165deg, rgba(26, 26, 26, 0.98) 0%, rgba(15, 15, 15, 0.98) 100%);
-backdrop-filter: blur(20px) saturate(180%);
-box-shadow: -20px 0 60px rgba(0, 0, 0, 0.9), inset 1px 0 0 rgba(218, 165, 32, 0.2);
-border-left: 2px solid rgba(218, 165, 32, 0.3);
-transition: right 0.5s ease;
-}
+  .menu-toggle {
+    display: flex;
+  }
 
-.nav-links.active {
-right: 0;
-width: fit-content;
+  .nav-links {
+    position: fixed;
+    top: -6rem;
+    right: -120%;
+    height: 100vh;
+    width: min(400px, 90vw);
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+    padding: 3rem 2rem;
+    background: linear-gradient(165deg, rgba(26, 26, 26, 0.98) 0%, rgba(15, 15, 15, 0.98) 100%);
+    backdrop-filter: blur(20px) saturate(180%);
+    box-shadow: -20px 0 60px rgba(0, 0, 0, 0.9), inset 1px 0 0 rgba(218, 165, 32, 0.2);
+    border-left: 2px solid rgba(218, 165, 32, 0.3);
+    transition: right 0.5s ease;
+  }
 
-}
+  .nav-links.active {
+    right: 0;
+    width: fit-content;
 
-.nav-links li {
-width: 100%;
-position: relative;
-/* top: -5rem; */
-opacity: 0;
-transform: translateX(80px);
-animation: slideIn 0.6s forwards;
-}
+  }
+
+  .nav-links li {
+    width: 100%;
+    position: relative;
+    /* top: -5rem; */
+    opacity: 0;
+    transform: translateX(80px);
+    animation: slideIn 0.6s forwards;
+  }
 
 
-.nav-links.active li {
-justify-content: flex-start;
-padding: 1px;
-margin: 0;
-}
+  .nav-links.active li {
+    justify-content: flex-start;
+    padding: 1px;
+    margin: 0;
+  }
 
-.nav-links.active li:nth-child(1) {
-animation-delay: 0.1s;
-}
+  .nav-links.active li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
 
-.nav-links.active li:nth-child(2) {
-animation-delay: 0.15s;
-}
+  .nav-links.active li:nth-child(2) {
+    animation-delay: 0.15s;
+  }
 
-.nav-links.active li:nth-child(3) {
-animation-delay: 0.2s;
-}
+  .nav-links.active li:nth-child(3) {
+    animation-delay: 0.2s;
+  }
 
-.nav-links.active li:nth-child(4) {
-animation-delay: 0.25s;
-}
+  .nav-links.active li:nth-child(4) {
+    animation-delay: 0.25s;
+  }
 
-.nav-links .nav-call {
-display: block;
-}
+  .nav-links .nav-call {
+    display: block;
+  }
 
-.nav-links a {
-border-radius: 16px;
-margin-bottom: 0.75rem;
-border: 1px solid rgba(218, 165, 32, 0.15);
-background: rgba(26, 26, 26, 0.5);
-}
+  .nav-links a {
+    border-radius: 16px;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(218, 165, 32, 0.15);
+    background: rgba(26, 26, 26, 0.5);
+  }
 
-.nav-container .not-active {
-display: none;
-background-color: red;
-}
+  .nav-container .not-active {
+    display: none;
+    background-color: red;
+  }
 }
 
 @keyframes slideIn {
-to {
-opacity: 1;
-transform: translateX(0);
-}
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* 🛠️ Entrance Animation Keyframes */
 @keyframes slideDownEntrance {
-from {
-/* Navbar को शुरू में स्क्रीन से ऊपर छिपा दें */
-transform: translate(-50%, -80px); 
-opacity: 0;
-}
-to {
-/* Navbar को उसकी सामान्य स्थिति पर लाएँ */
-transform: translate(-50%, 0);
-opacity: 1;
-}
+  from {
+    /* Navbar को शुरू में स्क्रीन से ऊपर छिपा दें */
+    transform: translate(-50%, -80px);
+    opacity: 0;
+  }
+
+  to {
+    /* Navbar को उसकी सामान्य स्थिति पर लाएँ */
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
 }
 
 
@@ -556,29 +557,18 @@ opacity: 1;
   border-radius: 50%;
   overflow: visible;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
-    0 4px 20px rgba(37, 211, 102, 0.4),
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
 /* Pulse animation */
-.nav-call::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50%;
-  border: 2px solid rgba(37, 211, 102, 0.6);
-  animation: pulse 2s infinite;
-}
 
 @keyframes pulse {
   0% {
     transform: scale(1);
     opacity: 1;
   }
+
   100% {
     transform: scale(1.5);
     opacity: 0;
@@ -588,8 +578,7 @@ opacity: 1;
 .nav-call:hover {
   background: linear-gradient(135deg, #2FE072 0%, #25D366 100%);
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 
-    0 8px 30px rgba(37, 211, 102, 0.6),
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6),
     0 0 40px rgba(37, 211, 102, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
@@ -609,88 +598,64 @@ opacity: 1;
 }
 
 @keyframes wiggle {
-  0%, 100% { transform: scale(1.15) rotate(-5deg); }
-  25% { transform: scale(1.2) rotate(-10deg); }
-  75% { transform: scale(1.2) rotate(0deg); }
-display: flex;
-align-items: center;
-justify-content: center;
-width: 40px;
-height: 40px;
-background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
-/* green tones */
-border: 2px solid #34d058;
-color: #fff;
-cursor: pointer;
-position: relative;
-border-radius: 50%;
-overflow: hidden;
-transition: all 0.3s ease;
-box-shadow:
-0 4px 15px rgba(40, 167, 69, 0.4),
-inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+  0%,
+  100% {
+    transform: scale(1.15) rotate(-5deg);
+  }
+
+  25% {
+    transform: scale(1.2) rotate(-10deg);
+  }
+
+  75% {
+    transform: scale(1.2) rotate(0deg);
+  }
+
+
 }
 
-/* Animated shine effect */
-.nav-call::before {
-content: '';
-position: absolute;
-/* top: 9rem; */
-left: -100%;
-width: 50%;
-height: 100%;
-background: linear-gradient(90deg,
-transparent,
-rgba(255, 255, 255, 0.3),
-transparent);
-transform: skewX(-20deg);
-transition: left 0.6s ease;
-}
 
-.nav-call:hover::before {
-left: 150%;
-}
 
 .nav-call:hover {
-background: linear-gradient(135deg, #34d058 0%, #28a745 100%);
-transform: scale(1.1);
-box-shadow:
-0 8px 25px rgba(40, 167, 69, 0.6),
-0 0 40px rgba(40, 167, 69, 0.3),
-inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #34d058 0%, #28a745 100%);
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6),
+    0 0 40px rgba(40, 167, 69, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .nav-call svg {
-margin: 0;
-/* removes any unwanted gap */
-padding-left: 3px;
-/* balances spacing */
-width: 22px;
-/* keeps icon proportional */
-height: 22px;
-transition: all 0.3s ease;
-filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  margin: 0;
+  /* removes any unwanted gap */
+  padding-left: 3px;
+  /* balances spacing */
+  width: 22px;
+  /* keeps icon proportional */
+  height: 22px;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .nav-call:hover svg {
-transform: rotate(15deg) scale(1.2);
-filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
-animation: phoneRing 0.6s ease-in-out;
+  transform: rotate(15deg) scale(1.2);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  animation: phoneRing 0.6s ease-in-out;
 }
 
 
 @keyframes phoneRing {
 
-0%,
-100% {
-transform: rotate(15deg) scale(1.2);
-}
+  0%,
+  100% {
+    transform: rotate(15deg) scale(1.2);
+  }
 
-25% {
-transform: rotate(20deg) scale(1.25);
-}
+  25% {
+    transform: rotate(20deg) scale(1.25);
+  }
 
-75% {
-transform: rotate(10deg) scale(1.25);
-}
+  75% {
+    transform: rotate(10deg) scale(1.25);
+  }
 }
