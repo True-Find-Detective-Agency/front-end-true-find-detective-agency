@@ -1,13 +1,22 @@
 /* eslint-disable no-unused-vars */
 
-import { Phone, Mail, MapPin, Clock, MessageSquare, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import "../css/contact.css"
 import ContactForm from '../components/ContactForm';
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function Contact() {
 
-
-
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+    });
+    AOS.refresh();
+  }, []);
 
   const contactInfo = [
     {
@@ -43,11 +52,12 @@ function Contact() {
   return (
     <div className="main-container">
       <div className="contact-page">
+
         {/* Hero Section */}
-        <section className="contact-hero">
+        <section className="contact-hero" data-aos="fade-up">
           <div className="container">
-            <h1 className="page-title">Contact Us</h1>
-            <p className="page-subtitle">
+            <h1 className="page-title" data-aos="fade-up">Contact Us</h1>
+            <p className="page-subtitle" data-aos="fade-up" data-aos-delay="100">
               Get in touch for a confidential consultation. We're here to help 24/7.
             </p>
           </div>
@@ -58,7 +68,12 @@ function Contact() {
           <div className="container">
             <div className="contact-info-grid">
               {contactInfo.map((info, index) => (
-                <div key={index} className="info-card">
+                <div
+                  key={index}
+                  className="info-card"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 120}
+                >
                   <div className="info-icon">{info.icon}</div>
                   <h3>{info.title}</h3>
                   <p className="info-primary">{info.primary}</p>
@@ -74,11 +89,14 @@ function Contact() {
         <section className="main-contact-section">
           <div className="container">
             <div className="contact-content">
+
               {/* Contact Form */}
-              
-<ContactForm />
+              <div data-aos="fade-right">
+                <ContactForm />
+              </div>
+
               {/* Additional Info */}
-              <div className="additional-info">
+              <div className="additional-info" data-aos="fade-left">
                 <div className="info-box">
                   <h3>Why Contact Us?</h3>
                   <ul>
@@ -111,24 +129,24 @@ function Contact() {
                   </a>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
 
         {/* Map Section */}
-        <section className="map-section">
+        <section className="map-section" data-aos="fade-up">
           <div className="container">
-            <h2 className="section-title">Visit Our Office</h2>
-            <div className="map-placeholder">
+            <h2 className="section-title" data-aos="fade-up">Visit Our Office</h2>
+            <div className="map-placeholder" data-aos="zoom-in">
               <MapPin size={48} />
               <p>123 Mystery Lane, Suite 400<br/>New York, NY 10001</p>
               <p className="map-note">By appointment only - Call ahead to schedule</p>
             </div>
           </div>
         </section>
+
       </div>
-
-
     </div>
   );
 }

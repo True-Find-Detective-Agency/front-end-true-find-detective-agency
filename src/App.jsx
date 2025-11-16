@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // useEffect imported
+import React, { useEffect, useState } from "react"; // useEffect imported
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./layouts/Layout";
@@ -14,6 +14,7 @@ import PageTransition from "./utils/PageTransition";
 import CustomCursor from "./utils/CustomCursor";
 import SmoothScroll from "./utils/SmoothScroll";
 import Welcome from "./pages/Welcome";
+import AOS from "aos";
 
 // Function to check if the user has visited this session
 const hasVisited = sessionStorage.getItem("visited");
@@ -28,6 +29,14 @@ function App() {
     // 2. Set the flag in sessionStorage so it doesn't show up again this session
     sessionStorage.setItem("visited", "true");
   };
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false, // important for scroll repeat
+      mirror: true,
+    });
+  }, []);
 
   return (
     <>

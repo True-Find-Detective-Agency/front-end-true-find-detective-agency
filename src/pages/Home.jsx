@@ -21,8 +21,8 @@ import { GiWrappedHeart } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 
 // AOS Library Imports (यदि आप App.jsx में Initialize नहीं करते हैं तो इन्हें यहाँ रखें)
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import "../css/home.css";
 import AboutStats from "../components/AnimatedStat";
@@ -55,6 +55,9 @@ export default function Home() {
   const navTo = useNavigate();
 
   // (Note: Assuming AOS.init is correctly done in App.jsx or main entry file)
+useEffect(() => {
+  AOS.refresh();
+}, []);
 
   return (
     <div className="app">
@@ -198,7 +201,7 @@ export default function Home() {
       <section className="process-section">
         <div className="process-wrapper">
           <div className="container">
-            <h2 className="section-title" data-aos="fade-up">
+            <h2 className="section-title">
               Our Investigation Process
             </h2>
             <p
@@ -230,7 +233,7 @@ export default function Home() {
       {/* Testimonials Section */}
       <section className="testimonials-section">
         <div className="container">
-          <h2 className="section-title" data-aos="fade-up">
+          <h2 className="section-title" >
             What Our Clients Say
           </h2>
           <p
@@ -279,7 +282,7 @@ export default function Home() {
       <section className="contact" id="contact">
         <div className="contact-wrapper">
           <div className="container">
-            <h2 className="section-title" data-aos="fade-up">
+            <h2 className="section-title" >
               Get In Touch
             </h2>
             <p

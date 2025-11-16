@@ -7,11 +7,24 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import LocationButton from "../components/LocationButton";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 function BranchCard({ branch, index }) {
   const imgRef = useRef(null);
   const contentRef = useRef(null);
 
-  // Match image box height === content box height
+  // init AOS once
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+    });
+    AOS.refresh();
+  }, []);
+
+  // Match image height
   useEffect(() => {
     if (imgRef.current && contentRef.current) {
       imgRef.current.style.height = contentRef.current.offsetHeight + "px";
@@ -19,11 +32,19 @@ function BranchCard({ branch, index }) {
   }, []);
 
   return (
-    <div className={`branch-card ${index % 2 === 0 ? "even-card" : "odd-card"}`}>
-      
+    <div
+      className={`branch-card ${index % 2 === 0 ? "even-card" : "odd-card"}`}
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+    >
       {/* IMAGE LEFT (even index) */}
       {index % 2 === 0 && (
-        <div className="branch-img-box" ref={imgRef}>
+        <div
+          className="branch-img-box"
+          ref={imgRef}
+          data-aos="fade-right"
+          data-aos-delay={index * 120}
+        >
           <Swiper
             slidesPerView={1}
             loop={true}
@@ -41,8 +62,12 @@ function BranchCard({ branch, index }) {
       )}
 
       {/* CONTENT */}
-      <div className="branch-content" ref={contentRef}>
-        
+      <div
+        className="branch-content"
+        ref={contentRef}
+        data-aos="fade-up"
+        data-aos-delay={index * 150}
+      >
         <div className="branch-header">
           <div className="branch-location">
             <MapPin size={24} />
@@ -60,7 +85,9 @@ function BranchCard({ branch, index }) {
             <div>
               <strong>Address</strong>
               <p>{branch.address}</p>
-              <p>{branch.city}, {branch.state} {branch.zip}</p>
+              <p>
+                {branch.city}, {branch.state} {branch.zip}
+              </p>
             </div>
           </div>
 
@@ -97,18 +124,24 @@ function BranchCard({ branch, index }) {
           <strong>Services Available:</strong>
           <div className="services-tags">
             {branch.services.map((service, i) => (
-              <span key={i} className="service-tag">{service}</span>
+              <span key={i} className="service-tag">
+                {service}
+              </span>
             ))}
           </div>
         </div>
 
-        <LocationButton lat="23.2056" lng="77.0937" />
-
+        <LocationButton lat={branch.lat} lng={branch.lng} />
       </div>
 
       {/* IMAGE RIGHT (odd index) */}
       {index % 2 !== 0 && (
-        <div className="branch-img-box" ref={imgRef}>
+        <div
+          className="branch-img-box"
+          ref={imgRef}
+          data-aos="fade-left"
+          data-aos-delay={index * 120}
+        >
           <Swiper
             slidesPerView={1}
             loop={true}

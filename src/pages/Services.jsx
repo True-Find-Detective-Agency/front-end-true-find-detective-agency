@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
-import { Search, Shield, Eye, FileSearch, Users, Briefcase, Home, Heart, Scale, Laptop, Camera, Lock, HeartCrack, FileWarning, UserSearch, Activity, Phone, UserCheck } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import {
+  Search, Shield, Eye, FileSearch, Users, Briefcase, Home,
+  Heart, Scale, Laptop, Camera, Lock, HeartCrack,
+  FileWarning, UserSearch, Activity, Phone, UserCheck
+} from "lucide-react";
 
 import "../css/services.css";
-
 import { detailedServices } from '../data/data';
 
-const iconMap = { Search, Shield, Eye, FileSearch, Users, Briefcase, Home, Heart, Scale, Laptop, Camera, Lock, HeartCrack, FileWarning, UserSearch, Activity, Phone, UserCheck };
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+const iconMap = {
+  Search, Shield, Eye, FileSearch, Users, Briefcase, Home, Heart,
+  Scale, Laptop, Camera, Lock, HeartCrack, FileWarning,
+  UserSearch, Activity, Phone, UserCheck
+};
 
 function Services() {
   const [activeService, setActiveService] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Select');
+
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+    });
+
+    AOS.refresh();
+  }, []);
 
   const categories = ['Select', ...new Set(detailedServices.map(s => s.title))];
 
@@ -43,20 +63,20 @@ function Services() {
       <div className="services-page">
 
         {/* Hero Section */}
-        <section className="services-hero">
+        <section className="services-hero" data-aos="fade-up">
           <div className="container">
-            <h1 className="page-title">Our Services</h1>
-            <p className="page-subtitle">
+            <h1 className="page-title" data-aos="fade-up">Our Services</h1>
+            <p className="page-subtitle" data-aos="fade-up" data-aos-delay="150">
               Professional investigative solutions tailored to your specific needs
             </p>
           </div>
         </section>
 
-        {/* Search & Filter Section */}
+        {/* Search Filter */}
         <section className="search-filter-section">
-          <div className="container">
+          <div className="container" data-aos="fade-up">
             <div className="search-filter-wrapper">
-              <div className="search-box">
+              <div className="search-box" data-aos="fade-right">
                 <Search size={20} />
                 <input
                   type="text"
@@ -69,6 +89,7 @@ function Services() {
               <select
                 className="region-filter"
                 value={selectedCategory}
+                data-aos="fade-left"
                 onChange={(e) => setSelectedCategory(e.target.value)}
               >
                 {categories.map((cat, idx) => (
@@ -77,14 +98,14 @@ function Services() {
               </select>
             </div>
 
-            <p className="results-count">
+            <p className="results-count" data-aos="zoom-in">
               Showing {filteredServices.length}{" "}
               {filteredServices.length === 1 ? "service" : "services"}
             </p>
           </div>
         </section>
 
-        {/* Services Grid */}
+        {/* Services List */}
         <section className="services-grid-section">
           <div className="container">
             {filteredServices.length > 0 ? (
@@ -97,6 +118,8 @@ function Services() {
                     <div
                       className="service-item"
                       key={index}
+                      data-aos="fade-up"
+                      data-aos-delay={index * 120}
                       style={{
                         backgroundImage: `url(${service.imgUrl})`,
                         backgroundSize: "cover",
@@ -104,14 +127,15 @@ function Services() {
                       }}
                     >
 
-
+                      {/* Image left – alternate */}
                       {index % 2 === 0 && (
-                        <div className="service-img-box">
+                        <div className="service-img-box" data-aos="fade-right">
                           <img src={service.imgUrl} alt={service.title} />
                         </div>
                       )}
 
-                      <div className="service-card" >
+                      {/* Main Card */}
+                      <div className="service-card" data-aos="zoom-in">
                         <div className="service-icon">
                           {Icon && <Icon size={40} />}
                         </div>
@@ -119,8 +143,8 @@ function Services() {
                         <h3>{service.title}</h3>
                         <p className="service-description">{service.description}</p>
 
-                        {/* Always show first 4 features */}
-                        <ul className="features-list">
+                        {/* First 4 features */}
+                        <ul className="features-list" data-aos="fade-up">
                           {service.features.slice(0, 4).map((feature, idx) => (
                             <li key={idx}>
                               <strong>{feature.title}:</strong> {feature.desc}
@@ -128,12 +152,10 @@ function Services() {
                           ))}
                         </ul>
 
-
-
-                        {/* Extra Hidden Features */}
+                        {/* More features */}
                         <div className={`service-details ${showMore ? "show" : ""}`}>
                           {showMore && (
-                            <ul className="features-list">
+                            <ul className="features-list" data-aos="fade-up">
                               {service.features.slice(4).map((feature, idx) => (
                                 <li key={idx}>
                                   <strong>{feature.title}:</strong> {feature.desc}
@@ -142,20 +164,22 @@ function Services() {
                             </ul>
                           )}
                         </div>
+
                         {/* Show More Button */}
                         {service.features.length > 4 && (
                           <button
                             className="show-more-btn"
                             onClick={() => toggleService(index)}
+                            data-aos="fade-up"
                           >
                             {showMore ? "Show Less" : "Show More"}
                           </button>
                         )}
                       </div>
 
-
+                      {/* Image Right – alternate */}
                       {index % 2 !== 0 && (
-                        <div className="service-img-box">
+                        <div className="service-img-box" data-aos="fade-left">
                           <img src={service.imgUrl} alt={service.title} />
                         </div>
                       )}
@@ -165,7 +189,7 @@ function Services() {
                 })}
               </div>
             ) : (
-              <div className="no-results">
+              <div className="no-results" data-aos="zoom-in">
                 <Search size={64} />
                 <h3>No services found</h3>
                 <p>Try adjusting your search or filter</p>
@@ -173,6 +197,7 @@ function Services() {
             )}
           </div>
         </section>
+
       </div>
     </div>
   );

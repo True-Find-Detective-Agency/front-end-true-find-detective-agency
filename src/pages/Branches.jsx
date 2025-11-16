@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useRef, useState } from "react";
-import { MapPin, Phone, Mail, Clock, Search, } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Search } from "lucide-react";
 import "../css/branches.css";
 
 import { Autoplay } from "swiper/modules";
@@ -8,17 +8,32 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/autoplay";
 
+import { branches, env, regions } from "../data/data";
+import LocationButton from "../components/LocationButton";
+import { AnimatedStat } from "../components/AnimatedStat";
 
-import { branches, env, regions } from '../data/data';
-import LocationButton from '../components/LocationButton';
-
-import { AnimatedStat } from '../components/AnimatedStat';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function Branches() {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedRegion, setSelectedRegion] = useState('all');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedRegion, setSelectedRegion] = useState("all");
+
   const coverageRef = useRef(null);
   const [startAnimation, setStartAnimation] = useState(false);
+
+  // AOS Setup
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+    });
+
+    AOS.refresh();
+  }, []);
+
+  // Intersection Observer for Stats
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,42 +48,38 @@ function Branches() {
     if (coverageRef.current) observer.observe(coverageRef.current);
     return () => observer.disconnect();
   }, []);
-  const filteredBranches = branches.filter(branch => {
+
+  const filteredBranches = branches.filter((branch) => {
     const matchesSearch =
       branch.city.toLowerCase().includes(searchQuery.toLowerCase()) ||
       branch.state.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const matchesRegion = selectedRegion === 'all' || branch.region === selectedRegion;
+    const matchesRegion =
+      selectedRegion === "all" || branch.region === selectedRegion;
 
     return matchesSearch && matchesRegion;
   });
-
-
-
-
-
 
   return (
     <div className="main-container">
       <div className="branches-page">
 
-        {/* Hero */}
-        <section className="branches-hero">
+        {/* HERO SECTION */}
+        <section className="branches-hero" data-aos="fade-up">
           <div className="container">
-
-            <h1 className="page-title">Our Branches</h1>
-            <p className="page-subtitle">
+            <h1 className="page-title" data-aos="fade-up">Our Branches</h1>
+            <p className="page-subtitle" data-aos="fade-up" data-aos-delay="100">
               Nationwide coverage with professional investigators in major cities across India
             </p>
           </div>
         </section>
 
-        {/* Search + Filters */}
+        {/* SEARCH + FILTER */}
         <section className="search-filter-section">
           <div className="container">
-
             <div className="search-filter-wrapper">
-              <div className="search-box">
+
+              <div className="search-box" data-aos="fade-right">
                 <Search size={20} />
                 <input
                   type="text"
@@ -81,6 +92,7 @@ function Branches() {
               <select
                 className="region-filter"
                 value={selectedRegion}
+                data-aos="fade-left"
                 onChange={(e) => setSelectedRegion(e.target.value)}
               >
                 {regions.map((region) => (
@@ -89,16 +101,17 @@ function Branches() {
                   </option>
                 ))}
               </select>
+
             </div>
-            <p className="results-count">
-              Showing {filteredBranches.length} {filteredBranches.length === 1 ? 'branch' : 'branches'}
+
+            <p className="results-count" data-aos="zoom-in">
+              Showing {filteredBranches.length}{" "}
+              {filteredBranches.length === 1 ? "branch" : "branches"}
             </p>
-
-
           </div>
         </section>
 
-        {/* Branches Grid */}
+        {/* BRANCHES GRID */}
         <section className="branches-grid-section">
           <div className="container">
 
@@ -108,15 +121,13 @@ function Branches() {
                 {filteredBranches.map((branch, index) => (
                   <div
                     key={branch.id}
-                    className={`branch-card odd-card"}`}
+                    className="branch-card"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 150}
                   >
 
-
-
-                    {/* ALL CONTENT IN ONE COLUMN */}
-                    <div className="branch-content" >
-
-                      {/* Branch Header */}
+                    {/* INFO COLUMN */}
+                    <div className="branch-content" data-aos="fade-right">
                       <div className="branch-header">
                         <div className="branch-location">
                           <MapPin size={24} />
@@ -128,7 +139,6 @@ function Branches() {
                         <div className="branch-badge">Est. {branch.established}</div>
                       </div>
 
-                      {/* Details */}
                       <div className="branch-details">
 
                         <div className="detail-item">
@@ -163,14 +173,13 @@ function Branches() {
                             <p>{branch.hours}</p>
                           </div>
                         </div>
+
                       </div>
 
-                      {/* Manager */}
                       <div className="branch-manager">
                         <strong>Branch Manager:</strong> {branch.manager}
                       </div>
 
-                      {/* Services */}
                       <div className="branch-services">
                         <strong>Services Available:</strong>
                         <div className="services-tags">
@@ -180,16 +189,13 @@ function Branches() {
                             </span>
                           ))}
                         </div>
-
                       </div>
 
-                      {/* Map Button */}
                       <LocationButton lat={branch.lat} lng={branch.lng} />
-
                     </div>
 
-
-                    <div className="branch-img-box">
+                    {/* IMAGES CAROUSEL */}
+                    <div className="branch-img-box" data-aos="fade-left">
                       <Swiper
                         slidesPerView={1}
                         loop={true}
@@ -205,65 +211,63 @@ function Branches() {
                       </Swiper>
                     </div>
 
-
-
                   </div>
                 ))}
 
               </div>
             ) : (
-
-              <div className="no-results">
+              <div className="no-results" data-aos="zoom-in">
                 <Search size={64} />
                 <h3>No branches found</h3>
                 <p>Try adjusting your search or filter criteria</p>
               </div>
-
             )}
 
           </div>
         </section>
 
-        {/* Coverage */}
-        <section className="coverage-section">
+        {/* COVERAGE NUMBERS */}
+        <section className="coverage-section" data-aos="fade-up">
           <div className="container">
-            <h2 className="section-title">Nationwide Coverage</h2>
-            <p className="section-subtitle">
-              With {env.branchCount} strategically located offices, we provide comprehensive investigative services across the United States
+            <h2 className="section-title" data-aos="fade-up">Nationwide Coverage</h2>
+            <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+              With {env.branchCount} strategically located offices, we provide full nationwide coverage
             </p>
 
             <div className="coverage-stats" ref={coverageRef}>
-              <div className="coverage-stat">
+
+              <div className="coverage-stat" data-aos="zoom-in">
                 <AnimatedStat target={env.branchCount} startAnimation={startAnimation} />
                 <div className="stat-label">Office Locations</div>
               </div>
 
-              <div className="coverage-stat">
+              <div className="coverage-stat" data-aos="zoom-in">
                 <AnimatedStat target={env.stateCovered} startAnimation={startAnimation} />
                 <div className="stat-label">States Covered</div>
               </div>
 
-              <div className="coverage-stat">
+              <div className="coverage-stat" data-aos="zoom-in">
                 <AnimatedStat target={24} suffix="/7" startAnimation={startAnimation} />
                 <div className="stat-label">Availability</div>
               </div>
 
-              <div className="coverage-stat">
+              <div className="coverage-stat" data-aos="zoom-in">
                 <AnimatedStat target={env.teamExperts} suffix="+" startAnimation={startAnimation} />
                 <div className="stat-label">Investigators</div>
               </div>
+
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="cta-section">
+        <section className="cta-section" data-aos="fade-up">
           <div className="container">
-            <div className="cta-content">
+            <div className="cta-content" data-aos="zoom-in">
               <h2>Can't Find a Branch Near You?</h2>
               <p>
                 We work with trusted investigators nationwide. Contact our main office
-                and we'll connect you with the right professional for your case.
+                and we'll connect you with the best expert for your case.
               </p>
               <div className="cta-buttons">
                 <button className="cta-button primary">Contact Main Office</button>

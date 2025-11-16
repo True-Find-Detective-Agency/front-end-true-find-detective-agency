@@ -1,10 +1,32 @@
-import React from "react";
-import { Shield, Award, Clock, Lock, Target, Users, CheckCircle, Star, TrendingUp, FileCheck, Headphones, Globe, ArrowRight } from "lucide-react";
+import React, { useEffect } from "react";
+import {
+  Shield,
+  Award,
+  Clock,
+  Lock,
+  Target,
+  Users,
+  CheckCircle,
+  Star,
+  TrendingUp,
+  FileCheck,
+  Headphones,
+  Globe,
+  ArrowRight,
+} from "lucide-react";
 
 import "../css/whyUs.css";
 
-import { mainReasons, advantages, testimonials, comparisonData } from "../data/data";
-import AboutStats from "../components/AnimatedStat"
+import {
+  mainReasons,
+  advantages,
+  testimonials,
+  comparisonData,
+} from "../data/data";
+import AboutStats from "../components/AnimatedStat";
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const iconMap = {
   Shield: <Shield size={48} />,
@@ -13,23 +35,34 @@ const iconMap = {
   Target: <Target size={48} />,
   Clock: <Clock size={48} />,
   Users: <Users size={48} />,
+
   FileCheck: <FileCheck size={32} />,
   TrendingUp: <TrendingUp size={32} />,
   Headphones: <Headphones size={32} />,
   Globe: <Globe size={32} />,
   Star: <Star size={32} />,
-  CheckCircle: <CheckCircle size={32} />
+  CheckCircle: <CheckCircle size={32} />,
 };
 
 function WhyUs() {
+  // ⭐ Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true,
+    });
+    AOS.refresh();
+  }, []);
+
   return (
     <div className="main-container">
       <div className="whyus-page">
         {/* Hero */}
-        <section className="whyus-hero">
+        <section className="whyus-hero" data-aos="fade-up">
           <div className="container">
-            <h1 className="page-title">Why Choose True Find?</h1>
-            <p className="page-subtitle">
+            <h1 className="page-title" data-aos="fade-up">Why Choose True Find?</h1>
+            <p className="page-subtitle" data-aos="fade-up" data-aos-delay="150">
               The difference is in our commitment, expertise, and proven results
             </p>
           </div>
@@ -39,9 +72,15 @@ function WhyUs() {
         <section className="main-reasons-section">
           <div className="container">
             <h2 className="section-title">What Sets Us Apart</h2>
+
             <div className="reasons-grid">
               {mainReasons.map((item, i) => (
-                <div key={i} className="reason-card">
+                <div
+                  key={i}
+                  className="reason-card"
+                  data-aos="fade-up"
+                  data-aos-delay={i * 150}
+                >
                   <div className="reason-icon">{iconMap[item.icon]}</div>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
@@ -52,7 +91,7 @@ function WhyUs() {
         </section>
 
         {/* Stats */}
-        <section className="stats-banner">
+        <section className="stats-banner" data-aos="zoom-in">
           <div className="container">
             <AboutStats />
           </div>
@@ -61,10 +100,16 @@ function WhyUs() {
         {/* Advantages */}
         <section className="advantages-section">
           <div className="container">
-            <h2 className="section-title">Additional Advantages</h2>
+            <h2 className="section-title" >Additional Advantages</h2>
+
             <div className="advantages-grid">
               {advantages.map((adv, index) => (
-                <div key={index} className="advantage-card">
+                <div
+                  key={index}
+                  className="advantage-card"
+                  data-aos="flip-up"
+                  data-aos-delay={index * 120}
+                >
                   <div className="advantage-icon">{iconMap[adv.icon]}</div>
                   <h4>{adv.title}</h4>
                   <p>{adv.description}</p>
@@ -77,20 +122,29 @@ function WhyUs() {
         {/* Comparison */}
         <section className="comparison-section">
           <div className="container">
-            <h2 className="section-title">True Find vs Others</h2>
-            <p className="section-subtitle">
+            <h2 className="section-title" >True Find vs Others</h2>
+            <p
+              className="section-subtitle"
+              data-aos="fade-up"
+              data-aos-delay="120"
+            >
               See how we compare to other investigation agencies
             </p>
 
             <div className="comparison-table">
-              <div className="table-header">
+              <div className="table-header" data-aos="fade-right">
                 <div className="header-cell">Feature</div>
                 <div className="header-cell highlight">True Find</div>
                 <div className="header-cell">Other Agencies</div>
               </div>
 
               {comparisonData.map((row, index) => (
-                <div key={index} className="table-row">
+                <div
+                  key={index}
+                  className="table-row"
+                  data-aos="fade-up"
+                  data-aos-delay={index * 100}
+                >
                   <div className="table-cell">{row.feature}</div>
 
                   <div className="table-cell highlight">
@@ -115,18 +169,31 @@ function WhyUs() {
         {/* Testimonials */}
         <section className="testimonials-section">
           <div className="container">
-            <h2 className="section-title">What Our Clients Say</h2>
-            <p className="section-subtitle">Real experiences from our clients</p>
+            <h2 className="section-title" >What Our Clients Say</h2>
+            <p
+              className="section-subtitle"
+              data-aos="fade-up"
+              data-aos-delay="120"
+            >
+              Real experiences from our clients
+            </p>
 
             <div className="testimonials-grid">
               {testimonials.map((t, index) => (
-                <div key={index} className="testimonial-card">
+                <div
+                  key={index}
+                  className="testimonial-card"
+                  data-aos="fade-down"
+                  data-aos-delay={index * 120}
+                >
                   <div className="testimonial-rating">
                     {[...Array(t.rating)].map((_, i) => (
                       <Star key={i} size={18} fill="#DAA520" />
                     ))}
                   </div>
+
                   <p className="testimonial-text">"{t.text}"</p>
+
                   <div className="testimonial-author">
                     <strong>{t.name}</strong>
                     <span>{t.role}</span>
@@ -140,6 +207,7 @@ function WhyUs() {
               onClick={() =>
                 window.open("https://g.page/r/CToGJ1ZyK_KkEAI/review", "_blank")
               }
+              data-aos="zoom-in"
             >
               All reviews <ArrowRight size={16} />
             </button>
@@ -147,14 +215,14 @@ function WhyUs() {
         </section>
 
         {/* Guarantee */}
-        <section className="guarantee-section">
+        <section className="guarantee-section" data-aos="fade-up">
           <div className="container">
-            <div className="guarantee-content">
+            <div className="guarantee-content" data-aos="zoom-in">
               <Shield size={64} />
               <h2>Our Commitment to You</h2>
               <p>
-                We stand behind our work. If results are not delivered,
-                we continue working with no extra cost.
+                We stand behind our work. If results are not delivered, we continue
+                working with no extra cost.
               </p>
 
               <div className="guarantee-features">
@@ -180,9 +248,9 @@ function WhyUs() {
         </section>
 
         {/* CTA */}
-        <section className="cta-section">
+        <section className="cta-section" data-aos="fade-up">
           <div className="container">
-            <div className="cta-content">
+            <div className="cta-content" data-aos="zoom-in">
               <h2>Experience the True Find Difference</h2>
               <p>Contact us today for your free consultation.</p>
               <button className="cta-button">Get Started Today</button>
