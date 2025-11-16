@@ -39,7 +39,7 @@ function Services() {
   };
 
   return (
-    <>
+    <div className="main-container">
       <div className="services-page">
 
         {/* Hero Section */}
@@ -174,7 +174,7 @@ function Services() {
           </div>
         </section>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -20,7 +20,7 @@ function About() {
 
 
   return (
-    <>
+    <div className="main-container">
       <div className="about-page">
         {/* Hero Section */}
         <section className="about-hero">
@@ -147,7 +147,7 @@ function About() {
         </section>
       </div>
 
-    </>
+    </div>
   );
 }
 

@@ -49,7 +49,7 @@ function Branches() {
 
 
   return (
-    <>
+    <div className="main-container">
       <div className="branches-page">
 
         {/* Hero */}
@@ -293,7 +293,7 @@ function Branches() {
         </section>
 
       </div>
-    </>
+    </div>
   );
 }
 

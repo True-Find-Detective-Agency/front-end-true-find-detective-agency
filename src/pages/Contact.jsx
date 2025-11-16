@@ -41,7 +41,7 @@ function Contact() {
   ];
 
   return (
-    <>
+    <div className="main-container">
       <div className="contact-page">
         {/* Hero Section */}
         <section className="contact-hero">
@@ -129,7 +129,7 @@ function Contact() {
       </div>
 
 
-    </>
+    </div>
   );
 }
 

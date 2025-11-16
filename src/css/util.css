@@ -87,6 +87,9 @@ body {
   min-height: 100vh;
   position: relative;
 }
+.main-container{
+  padding-top: 8rem;
+}
 
 .container {
   max-width: 1200px;
