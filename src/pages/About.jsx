@@ -71,7 +71,7 @@ function About() {
         {/* Values Section */}
         <section className="values-section" data-aos="fade-up">
           <div className="container">
-            <h2 className="section-title" data-aos="fade-up">Our Core Values</h2>
+            <h2 className="section-title">Our Core Values</h2>
             <p className="section-description" data-aos="fade-up" data-aos-delay="150">
               The principles that guide every investigation we undertake
             </p>
@@ -107,7 +107,7 @@ function About() {
         {/* Team Section */}
         <section className="team-section" data-aos="fade-up">
           <div className="container">
-            <h2 className="section-title" data-aos="fade-up">Meet Our Leadership</h2>
+            <h2 className="section-title">Meet Our Leadership</h2>
             <p className="section-description" data-aos="fade-up" data-aos-delay="100">
               Experienced professionals dedicated to your case
             </p>
@@ -136,7 +136,7 @@ function About() {
         {/* Achievements Section */}
         <section className="achievements-section" data-aos="fade-up">
           <div className="container">
-            <h2 className="section-title" data-aos="fade-up">Our Achievements</h2>
+            <h2 className="section-title" >Our Achievements</h2>
 
             <div className="achievements-grid-container">
               <img

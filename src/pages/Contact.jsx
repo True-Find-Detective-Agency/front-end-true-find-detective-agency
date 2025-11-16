@@ -133,7 +133,7 @@ useEffect(() => {
         {/* Map Section */}
         <section className="map-section" data-aos="fade-up">
           <div className="container">
-            <h2 className="section-title" data-aos="fade-up">Visit Our Office</h2>
+            <h2 className="section-title">Visit Our Office</h2>
             <div className="map-placeholder" data-aos="zoom-in">
               <MapPin size={48} />
               <p>123 Mystery Lane, Suite 400<br/>New York, NY 10001</p>

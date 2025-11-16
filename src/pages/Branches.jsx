@@ -224,7 +224,7 @@ useEffect(() => {
         {/* COVERAGE NUMBERS */}
         <section className="coverage-section" data-aos="fade-up">
           <div className="container">
-            <h2 className="section-title" data-aos="fade-up">Nationwide Coverage</h2>
+            <h2 className="section-title" >Nationwide Coverage</h2>
             <p className="section-subtitle" data-aos="fade-up" data-aos-delay="100">
               With {env.branchCount} strategically located offices, we provide full nationwide coverage
             </p>
