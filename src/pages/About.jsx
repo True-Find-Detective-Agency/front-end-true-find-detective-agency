@@ -97,7 +97,7 @@ function About() {
                 })}
               </div>
 
-              <div data-aos="fade-left">
+              <div >
                 <img src="https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763190857/dsd_auxf8r.png" alt="" />
               </div>
             </div>
