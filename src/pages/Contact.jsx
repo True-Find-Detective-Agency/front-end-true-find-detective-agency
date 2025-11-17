@@ -6,7 +6,7 @@ import ContactForm from "../components/ContactForm";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
-import { contactInfo } from "../data/data";
+import { contactInfo, env } from "../data/data";
 
 function Contact() {
   useEffect(() => {
@@ -102,9 +102,10 @@ function Contact() {
                 <div className="info-box urgent-box">
                   <h3>Emergency Cases</h3>
                   <p>For urgent help, call our 24/7 hotline:</p>
-                  <a href="tel:+15551234567" className="emergency-phone">
-                    +1 (555) 123-4567
+                  <a href="tel:+919977014334" className="emergency-phone">
+                    +91 99770 14334
                   </a>
+
                 </div>
               </div>
 

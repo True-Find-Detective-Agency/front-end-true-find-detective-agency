@@ -237,11 +237,25 @@
 }
 
 .achievements-grid-container {
-    display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  justify-self: center;
 }
+
+@media (max-width: 900px) {
+  .achievements-grid-container {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+    gap: 1.5rem;
+  }
+}
+
 
 .achievements-grid-container img {
     height: 700px;
+    max-width: 90vw;
+    height: auto;
+    margin: auto;
 }
 
 .achievements-grid {
@@ -318,4 +332,31 @@
     background: var(--gold-light);
     transform: translateY(-3px);
     box-shadow: 0 10px 30px var(--gold-shadow-40);
+}
+
+
+.story-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+@media (max-width: 1200px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    
+
+    .story-text {
+        order: 1;
+    }
+
+    .story-content>div:last-child {
+        order: 2;
+    }
 }

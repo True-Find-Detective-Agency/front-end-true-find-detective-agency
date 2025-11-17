@@ -100,12 +100,10 @@ function Navbar() {
           <li><Link to="/why-us" onClick={closeMenu}><Shield size={18} /> Why Us</Link></li>
 
           {/* MOBILE SOCIAL DROPDOWN */}
-          <li className="social-dropdown-mobile">
-            <button className="social-dropdown-btn" onClick={toggleSocialDropdown}>
-              <Share2 size={18} /> Social Media
-              <ChevronDown size={16} style={{ rotate: socialDropdown ? "180deg" : "0deg" }} />
-            </button>
-
+          <li className="social-dropdown-mobile" onClick={toggleSocialDropdown}>
+            <Link>   <Share2 size={18} /> Social Media
+            <ChevronDown size={16} /></Link>
+           
             {socialDropdown && (
               <div className="social-dropdown-menu-mobile">
                 {socialLinks

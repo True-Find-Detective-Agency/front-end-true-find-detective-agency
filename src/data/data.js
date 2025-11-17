@@ -918,7 +918,7 @@ export const contactInfo = [
     primary: env.facebook,
     secondary: "Social Profile",
     detail: "Official Facebook Page",
-    link: env.facebook,
+    link: env.fb,
     btn: "View Page"
   },
   {
@@ -942,15 +942,16 @@ export const contactInfo = [
   {
     icon: "Clock",
     title: "Business Hours",
-    primary: "Mon – Sat: 10AM to 7PM",
-    secondary: "",
-    detail: "Sunday closed",
+    primary: "Tue – Sun: 24/7",
+    secondary: "Emergency on Monday",
+    detail: "Monday Closed",
     link: null
-  },
+  }
+  ,
   {
     icon: "MapPin",
     title: "Location",
-    primary: "Jabalpur, Madhya Pradesh",
+    primary: "True Find Detective Agency, Suraj Nagar, Bhopal (M.P.)",
     secondary: "",
     detail: "Visit our office",
     link: null

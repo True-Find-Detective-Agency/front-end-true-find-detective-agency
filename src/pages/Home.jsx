@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 // DetectiveAgency.jsx
+import * as Icons from "lucide-react";
 import React, { useEffect } from "react";
 import {
   Search,
@@ -32,6 +33,7 @@ import {
   testimonials,
   process,
   aboutFeatures,
+  contactInfo,
 } from "../data/data";
 import HeroSection from "../components/HeroSection";
 import ContactForm from "../components/ContactForm";
@@ -294,52 +296,49 @@ export default function Home() {
             >
               Confidential consultation available 24/7
             </p>
-            <div className="contact-content">
+            <div className="contact-content home-contact-content">
               {/* Contact Info (Left): Comes from the right */}
-              <div className="contact-info">
-                <div
-                  className="contact-item"
-                  data-aos="fade-right"
-                  data-aos-delay="200"
-                >
-                  <Phone size={24} />
-                  <div>
-                    <h4>Phone</h4>
-                    <p>+91 898 7883 739</p>
-                    <span className="contact-note">Available 24/7</span>
+              <section className="contact-info-section">
+       
+                  <div className="contact-info-grid">
+                    {contactInfo.slice(0,4).map((info, index) => {
+                      const Icon = Icons[info.icon];
+
+                      return (
+                        <div
+                          key={index}
+                          className="info-card"
+                          data-aos="fade-up"
+                          data-aos-delay={index * 120}
+                        >
+                          <div className="info-icon">
+                            <Icon size={28} />
+                          </div>
+
+                          <h3>{info.title}</h3>
+
+                          {info.link ? (
+                            <a
+                              href={info.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="info-primary link-with-icon"
+                            >
+                              <Icon size={16} style={{ marginRight: "6px" }} />
+                              {info.btn}
+                            </a>
+                          ) : (
+                            <p className="info-primary">{info.primary}</p>
+                          )}
+
+                          <p className="info-secondary">{info.secondary}</p>
+                          <p className="info-detail">{info.detail}</p>
+                        </div>
+                      );
+                    })}
                   </div>
-                </div>
-                <div
-                  className="contact-item"
-                  data-aos="fade-right"
-                  data-aos-delay="300"
-                >
-                  <Mail size={24} />
-                  <div>
-                    <h4>Email</h4>
-                    <p>info@truefind.com</p>
-                    <span className="contact-note">
-                      Response within 24 hours
-                    </span>
-                  </div>
-                </div>
-                <div
-                  className="contact-item"
-                  data-aos="fade-right"
-                  data-aos-delay="400"
-                >
-                  <MapPin size={24} />
-                  <div>
-                    <h4>Location</h4>
-                    <p>
-                      123 Mystery Lane, Suite 400
-                      <br />
-                      New York, NY 10001
-                    </p>
-                    <span className="contact-note">By appointment only</span>
-                  </div>
-                </div>
-              </div>
+        
+              </section>
               {/* Contact Form (Right): Comes from the left */}
               <ContactForm data-aos="fade-left" data-aos-delay="200" />
             </div>

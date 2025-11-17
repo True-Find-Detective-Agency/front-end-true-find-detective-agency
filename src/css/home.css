@@ -127,7 +127,7 @@ section::before {
 
 .feature-card {
   background: var(--dark-bg-tertiary);
-  padding: 2.5rem;
+  /* padding: 2.5rem; */
   border-radius: 10px;
   border: 1px solid var(--dark-border);
   text-align: center;
@@ -377,6 +377,7 @@ section .service-btn {
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+  max-width: 85vw;
 }
 
 .about-content>div:nth-child(4) {
@@ -485,7 +486,7 @@ section .service-btn {
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
-  max-width: 80vw;
+
 }
 
 .stat::before {
@@ -736,6 +737,7 @@ section .service-btn {
   padding-left: 1.5rem;
 }
 
+
 .testimonial-text::before {
   content: '"';
   position: absolute;
@@ -790,10 +792,8 @@ section .service-btn {
 }
 
 .contact-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  margin-top: 4rem;
+  grid-template-columns: 1fr;
+  justify-content: center ;
 }
 
 .contact-info {
@@ -1169,6 +1169,7 @@ contact-item p {
 
 /* Mobile Portrait */
 @media (max-width: 480px) {
+  
   .container {
     padding: 0 15px;
   }
@@ -1242,6 +1243,17 @@ contact-item p {
     font-size: 10rem;
     top: 20px;
     left: 20px;
+  }
+
+
+  .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container{
+    padding: 0;
+    overflow: hidden;
   }
 }
 
@@ -1338,3 +1350,17 @@ textarea:focus {
 }
 
 
+
+
+.home-contact-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* left big, right small */
+  gap: 2rem;
+}
+
+@media (max-width: 1500px) {
+  .home-contact-content {
+    grid-template-columns: 1fr !important ; 
+    gap: 1.5rem;
+  }
+}

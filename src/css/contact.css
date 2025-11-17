@@ -51,6 +51,7 @@
 .contact-info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-content: center;
   gap: 2rem;
 }
 
@@ -167,12 +168,19 @@
   padding: 6rem 0; 
   background: var(--dark-bg); 
 }
-
 .contact-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 2fr 1fr; /* left big, right small */
+  gap: 2rem;
 }
+
+@media (max-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr; /* stack on mobile */
+    gap: 1.5rem;
+  }
+}
+
 
 /* Additional Boxes */
 .additional-info { 
@@ -257,13 +265,18 @@
     var(--dark-bg-tertiary) 100%
   );
   border-color: var(--primary-gold);
-  animation: pulse 3s ease-in-out infinite;
+ 
 }
 
 @keyframes pulse {
-  0%,100% { box-shadow: 0 0 0 0 rgba(var(--gold-rgb), 0); }
-  50% { box-shadow: 0 0 20px 5px rgba(var(--gold-rgb), 0.3); }
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(var(--gold-rgb), 0.08);
+  }
+  50% {
+    box-shadow: 0 0 6px 1px rgba(var(--gold-rgb), 0.15);
+  }
 }
+
 
 .emergency-phone {
   display: block;
@@ -277,6 +290,7 @@
   border-radius: 8px;
   padding: 1rem;
   transition: 0.3s ease;
+ animation: pulse 3s ease-in-out infinite;
 }
 
 .emergency-phone:hover {
