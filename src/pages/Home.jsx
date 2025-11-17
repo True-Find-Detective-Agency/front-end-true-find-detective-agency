@@ -118,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section className="about" id="about">
+      <section className="about " id="about">
         <div className="container">
           <div className="about-content">
             {/* About Text: Comes from the right */}
@@ -158,7 +158,7 @@ export default function Home() {
             </div>
 
             {/* Features Box: Flips up */}
-            <div className="features-box" data-aos="fade-up">
+            <div className="features-box con" data-aos="fade-up">
               <div className="features-grid">
                 {features.map((feature, index) => {
                   const IconComponent = iconMap[feature.icon];

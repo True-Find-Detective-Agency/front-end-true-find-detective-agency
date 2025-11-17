@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState, useRef } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
+
 import { env } from "../data/data";
 
 export function AnimatedStat({ target, suffix = "", startAnimation, delay = 0 }) {
@@ -26,7 +26,7 @@ export function AnimatedStat({ target, suffix = "", startAnimation, delay = 0 })
   }, [target, startAnimation]);
 
   return (
-    <div className="stat-number" data-aos="zoom-in" data-aos-delay={delay}>
+    <div className="stat-number" >
       {count}
       {suffix}
     </div>
@@ -37,11 +37,7 @@ export default function AboutStats() {
   const statsRef = useRef(null);
   const [startAnimation, setStartAnimation] = useState(false);
 
-  // init AOS once
-  useEffect(() => {
-  AOS.refresh();
-}, []);
-
+  
   // start counting when visible
   useEffect(() => {
     const observer = new IntersectionObserver(
