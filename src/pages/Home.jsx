@@ -54,10 +54,12 @@ const iconMap = {
 export default function Home() {
   const navTo = useNavigate();
 
-  // (Note: Assuming AOS.init is correctly done in App.jsx or main entry file)
-useEffect(() => {
-  AOS.refresh();
-}, []);
+  useEffect(() => {
+    setTimeout(() => {
+      AOS.refresh();
+    }, 10);
+  }, []);
+
 
   return (
     <div className="app">

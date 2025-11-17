@@ -1,6 +1,10 @@
+/* ================================
+   WHY US PAGE - PART 1
+   ================================ */
+
 .whyus-page {
-    background: #0a0a0a;
-    color: #e0e0e0;
+    background: var(--dark-bg);
+    color: var(--text-primary);
     min-height: 100vh;
 }
 
@@ -10,44 +14,51 @@
     padding: 0 20px;
 }
 
-
-/* Hero Section */
+/* ================================
+   HERO SECTION
+   ================================ */
 .whyus-hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(
+        135deg,
+        var(--dark-bg) 0%,
+        var(--dark-bg-tertiary) 100%
+    );
     padding: 8rem 0 4rem;
     text-align: center;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid var(--dark-border);
 }
 
 .page-title {
     font-size: 3rem;
-    color: #fff;
+    color: var(--grey-light);
     margin-bottom: 1rem;
     font-weight: 800;
 }
 
 .page-subtitle {
     font-size: 1.25rem;
-    color: #DAA520;
+    color: var(--primary-gold);
     font-weight: 500;
 }
 
-/* Main Reasons Section */
+/* ================================
+   MAIN REASONS SECTION
+   ================================ */
 .main-reasons-section {
     padding: 6rem 0;
-    background: #0f0f0f;
+    background: var(--dark-bg-secondary);
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--grey-light);
     margin-bottom: 1rem;
 }
 
 .section-subtitle {
     text-align: center;
-    color: #999;
+    color: var(--text-tertiary);
     margin-bottom: 4rem;
     font-size: 1.1rem;
 }
@@ -58,23 +69,24 @@
     gap: 2.5rem;
 }
 
+/* REASON CARD */
 .reason-card {
-    background: #1a1a1a;
+    background: var(--dark-bg-tertiary);
     padding: 3rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--dark-border);
     transition: all 0.3s ease;
     text-align: center;
 }
 
 .reason-card:hover {
     transform: translateY(-5px);
-    border-color: #DAA520;
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2);
+    border-color: var(--primary-gold);
+    box-shadow: var(--shadow-gold);
 }
 
 .reason-icon {
-    color: #DAA520;
+    color: var(--primary-gold);
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
@@ -82,20 +94,22 @@
 
 .reason-card h3 {
     font-size: 1.75rem;
-    color: #fff;
+    color: var(--grey-light);
     margin-bottom: 1rem;
 }
 
 .reason-card p {
-    color: #c0c0c0;
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.05rem;
 }
 
-/* Stats Banner */
+/* ================================
+   STATS BANNER
+   ================================ */
 .stats-banner {
     padding: 4rem 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    background: var(--gradient-gold-subtle);
 }
 
 .stats-banner .container .about-stats {
@@ -103,10 +117,7 @@
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    /* align-items: center; */
 }
-
-
 
 .stats-grid {
     display: grid;
@@ -120,6 +131,104 @@
     }
 }
 
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-gold);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-tertiary);
+    font-size: 1.1rem;
+}
+
+/* ========================================
+   MAIN REASONS SECTION
+======================================== */
+.main-reasons-section {
+    padding: 6rem 0;
+    background: var(--dark-bg-secondary);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-tertiary);
+    margin-bottom: 4rem;
+    font-size: 1.1rem;
+}
+
+.reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.reason-card {
+    background: var(--dark-bg-tertiary);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--dark-border);
+    transition: var(--transition-normal);
+    text-align: center;
+}
+
+.reason-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+    box-shadow: var(--shadow-gold);
+}
+
+.reason-icon {
+    color: var(--primary-gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.reason-card h3 {
+    font-size: 1.75rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.reason-card p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* ========================================
+   STATS BANNER
+======================================== */
+.stats-banner {
+    padding: 4rem 0;
+    background: var(--gradient-dark);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 .stat-item {
     text-align: center;
@@ -129,19 +238,22 @@
 .stat-number {
     font-size: 3.5rem;
     font-weight: bold;
-    color: #DAA520;
-    margin-bottom: 0.5rem;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .stat-label {
-    color: #999;
+    color: var(--text-tertiary);
     font-size: 1.1rem;
 }
 
-/* Advantages Section */
+/* ========================================
+   ADVANTAGES SECTION
+======================================== */
 .advantages-section {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: var(--dark-bg);
 }
 
 .advantages-grid {
@@ -151,76 +263,78 @@
 }
 
 .advantage-card {
-    background: #1a1a1a;
+    background: var(--dark-bg-tertiary);
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--dark-border);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: var(--transition-normal);
 }
 
 .advantage-card:hover {
-    border-color: #DAA520;
+    border-color: var(--primary-gold);
     transform: translateY(-3px);
 }
 
 .advantage-icon {
-    color: #DAA520;
+    color: var(--primary-gold);
     margin-bottom: 1rem;
 }
 
 .advantage-card h4 {
-    color: #fff;
+    color: var(--text-primary);
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
 }
 
 .advantage-card p {
-    color: #999;
+    color: var(--text-tertiary);
     font-size: 0.95rem;
 }
 
-/* Comparison Section */
+/* ========================================
+   COMPARISON SECTION
+======================================== */
 .comparison-section {
     padding: 6rem 0;
-    background: #0f0f0f;
+    background: var(--dark-bg-secondary);
 }
 
 .comparison-table {
     max-width: 900px;
     margin: 0 auto;
-    background: #1a1a1a;
+    background: var(--dark-bg-tertiary);
     border-radius: 8px;
     overflow: hidden;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--dark-border);
 }
 
 .table-header {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    background: #0a0a0a;
-    border-bottom: 2px solid #DAA520;
+    background: var(--dark-bg);
+    border-bottom: 2px solid var(--primary-gold);
 }
 
 .header-cell {
     padding: 1.5rem;
     font-weight: bold;
-    color: #fff;
+    color: var(--text-primary);
     text-align: center;
 }
 
 .header-cell.highlight {
-    background: rgba(218, 165, 32, 0.1);
-    color: #DAA520;
+    background: var(--gold-10);
+    color: var(--primary-gold);
 }
 
 .table-row {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid var(--dark-border);
 }
 
 .table-row:last-child {
@@ -229,7 +343,7 @@
 
 .table-cell {
     padding: 1.25rem;
-    color: #c0c0c0;
+    color: var(--text-secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -241,26 +355,24 @@
 }
 
 .table-cell.highlight {
-    background: rgba(218, 165, 32, 0.05);
+    background: var(--gold-05);
 }
 
 .check-icon {
-    color: #DAA520;
+    color: var(--primary-gold);
 }
 
-.check-icon-gray {
-    color: #666;
-}
-
+.check-icon-gray,
 .cross {
-    color: #666;
-    font-size: 1.5rem;
+    color: var(--text-muted);
 }
 
-/* Testimonials Section */
+/* ========================================
+   TESTIMONIALS SECTION
+======================================== */
 .testimonials-section {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: var(--dark-bg);
 }
 
 .testimonials-grid {
@@ -270,15 +382,15 @@
 }
 
 .testimonial-card {
-    background: #1a1a1a;
+    background: var(--dark-bg-tertiary);
     padding: 2.5rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
-    transition: all 0.3s ease;
+    border: 1px solid var(--dark-border);
+    transition: var(--transition-normal);
 }
 
 .testimonial-card:hover {
-    border-color: #DAA520;
+    border-color: var(--primary-gold);
     transform: translateY(-5px);
 }
 
@@ -288,8 +400,12 @@
     margin-bottom: 1.5rem;
 }
 
+.rating svg {
+    color: var(--primary-gold);
+}
+
 .testimonial-text {
-    color: #c0c0c0;
+    color: var(--text-secondary);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-style: italic;
@@ -297,42 +413,44 @@
 }
 
 .testimonial-author {
-    border-top: 1px solid #2a2a2a;
+    border-top: 1px solid var(--dark-border);
     padding-top: 1rem;
 }
 
 .author-name {
-    color: #fff;
+    color: var(--text-primary);
     font-weight: 600;
     margin-bottom: 0.25rem;
 }
 
 .author-role {
-    color: #DAA520;
+    color: var(--primary-gold);
     font-size: 0.9rem;
 }
 
-/* Guarantee Section */
+/* ========================================
+   GUARANTEE SECTION
+======================================== */
 .guarantee-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    background: var(--gradient-dark);
 }
 
 .guarantee-content {
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    color: #DAA520;
+    color: var(--primary-gold);
 }
 
 .guarantee-content h2 {
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-primary);
     margin: 1.5rem 0;
 }
 
-.guarantee-content>p {
-    color: #c0c0c0;
+.guarantee-content > p {
+    color: var(--text-secondary);
     line-height: 1.8;
     font-size: 1.1rem;
     margin-bottom: 3rem;
@@ -348,14 +466,20 @@
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    color: #DAA520;
+    color: var(--primary-gold);
     font-weight: 500;
 }
 
-/* CTA Section */
+.guarantee-item svg {
+    color: var(--primary-gold);
+}
+
+/* ========================================
+   CTA SECTION
+======================================== */
 .cta-section {
     padding: 6rem 0;
-    background: #0f0f0f;
+    background: var(--dark-bg-secondary);
 }
 
 .cta-content {
@@ -366,36 +490,38 @@
 
 .cta-content h2 {
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
 .cta-content p {
-    color: #c0c0c0;
+    color: var(--text-secondary);
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2.5rem;
 }
 
 .cta-button {
-    background: #DAA520;
-    color: #0a0a0a;
+    background: var(--gradient-gold);
+    color: var(--dark-bg);
     padding: 1.25rem 3rem;
     font-size: 1.1rem;
     font-weight: 600;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-gold);
 }
 
 .cta-button:hover {
-    background: #FFD700;
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.4);
+    box-shadow: var(--shadow-gold-lg);
 }
 
-/* Responsive Design */
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
 @media (max-width: 768px) {
     .page-title {
         font-size: 2rem;
@@ -405,16 +531,15 @@
         padding: 6rem 0 3rem;
     }
 
-    .reasons-grid {
+    .reasons-grid,
+    .advantages-grid,
+    .testimonials-grid,
+    .guarantee-features {
         grid-template-columns: 1fr;
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .advantages-grid {
-        grid-template-columns: 1fr;
     }
 
     .table-header,
@@ -426,14 +551,6 @@
     .table-cell {
         padding: 1rem 0.5rem;
         font-size: 0.9rem;
-    }
-
-    .testimonials-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .guarantee-features {
-        grid-template-columns: 1fr;
     }
 
     .section-title {

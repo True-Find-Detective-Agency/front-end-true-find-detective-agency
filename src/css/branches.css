@@ -1,14 +1,6 @@
-/* ========================================
-   BRANCHES PAGE - ADVANCED CSS
-   ======================================== */
-
-/* ========================================
-   ROOT VARIABLES
-   ======================================== */
-
-/* ========================================
-   BASE STYLES
-   ======================================== */
+/* ===============================
+   BRANCHES PAGE BASE & LAYOUT
+=============================== */
 .branches-page {
     background: var(--dark-bg);
     color: var(--text-primary);
@@ -22,11 +14,16 @@
     padding: 0 2rem;
 }
 
-/* ========================================
+/* ===============================
    HERO SECTION
-   ======================================== */
+=============================== */
 .branches-hero {
-    background: var(--gradient-dark);
+    background: linear-gradient(
+        135deg,
+        rgba(var(--gold-rgb), 0.07) 0%,
+        rgba(10,10,10,1) 50%,
+        rgba(26,26,26,1) 100%
+    );
     padding: 8rem 0 6rem;
     text-align: center;
     position: relative;
@@ -36,43 +33,18 @@
 .branches-hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(218, 165, 32, 0.08) 0%, transparent 70%);
+    inset: 0;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(var(--gold-rgb), 0.12) 0%,
+        transparent 70%
+    );
     animation: pulse 4s ease-in-out infinite;
 }
 
 @keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 0.5;
-    }
-
-    50% {
-        opacity: 1;
-    }
-}
-
-.hero-icon {
-    color: var(--primary-gold);
-    margin-bottom: 1.5rem;
-    animation: float 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.5));
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
 }
 
 .page-title {
@@ -83,20 +55,13 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
-    animation: slideDown 0.8s ease-out;
     letter-spacing: -0.02em;
+    animation: slideDown 0.8s ease-out;
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .page-subtitle {
@@ -109,37 +74,29 @@
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* ========================================
+/* ===============================
    SEARCH & FILTER SECTION
-   ======================================== */
+=============================== */
 .search-filter-section {
     padding: 3rem 0;
     background: var(--dark-bg-secondary);
     border-bottom: 1px solid var(--dark-border);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .search-filter-wrapper {
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap;
 }
 
 .search-box {
     flex: 1;
     min-width: 280px;
-    position: relative;
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -167,12 +124,12 @@
 
 .search-box input {
     flex: 1;
-    background: transparent;
     border: none;
-    outline: none;
+    background: transparent;
     color: var(--text-primary);
     font-size: 1rem;
     padding: 1rem 0;
+    outline: none;
 }
 
 .search-box input::placeholder {
@@ -185,11 +142,10 @@
     border: 2px solid var(--dark-border);
     border-radius: 12px;
     padding: 1rem 1.25rem;
-    color: var(--text-primary);
     font-size: 1rem;
+    color: var(--text-primary);
     cursor: pointer;
     transition: all var(--transition-normal);
-    outline: none;
 }
 
 .region-filter:hover,
@@ -206,13 +162,13 @@
 
 .results-count {
     color: var(--text-tertiary);
-    font-size: 0.95rem;
     text-align: center;
+    font-size: 0.95rem;
 }
 
-/* ========================================
+/* ===============================
    BRANCHES GRID SECTION
-   ======================================== */
+=============================== */
 .branches-grid-section {
     padding: 4rem 0 6rem;
     background: var(--dark-bg);
@@ -224,29 +180,25 @@
     gap: 3rem;
 }
 
-/* ========================================
+/* ===============================
    BRANCH CARD
-   ======================================== */
+=============================== */
 .branch-card {
     background: var(--dark-bg-secondary);
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--dark-border);
-    transition: all var(--transition-normal);
-    animation: slideUp 0.6s ease-out backwards;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 0;
+    transition: all var(--transition-normal);
     position: relative;
-
+    animation: slideUp 0.6s ease-out backwards;
 }
 
 .branch-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0;
     height: 4px;
     background: var(--gradient-gold);
     opacity: 0;
@@ -263,65 +215,58 @@
 }
 
 @keyframes slideUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* Stagger animation for cards */
-.branch-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
+/* each card animation delay */
+.branch-card:nth-child(1) { animation-delay: 0.1s; }
+.branch-card:nth-child(2) { animation-delay: 0.2s; }
+.branch-card:nth-child(3) { animation-delay: 0.3s; }
+.branch-card:nth-child(4) { animation-delay: 0.4s; }
+.branch-card:nth-child(5) { animation-delay: 0.5s; }
 
-.branch-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.branch-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.branch-card:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.branch-card:nth-child(5) {
-    animation-delay: 0.5s;
-}
-
-/* ========================================
-   BRANCH IMAGE
-   ======================================== */
-
+/* ===============================
+   IMAGE BOX / SLIDER
+=============================== */
 .branch-img-box {
-    width: 5%;
-    height: 100%;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    border-radius: 16px;
-    background: var(--dark-bg-tertiary);
+    width: 100%;
+    height: 650px;
     margin: 1rem;
-      display: flex;
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--dark-bg-tertiary);
+    display: flex;
 }
 
-.branch-img{
+.branch-img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
 }
 
+/* Swiper override */
+.swiper-slide img {
+    object-fit: contain;
+}
 
+/* Responsive heights */
+@media (max-width: 1024px) {
+  .branch-img-box { height: 420px; }
+}
 
-/* ========================================
+@media (max-width: 768px) {
+  .branch-img-box { height: 320px; }
+}
+
+@media (max-width: 480px) {
+  .branch-img-box { height: 250px; }
+}
+
+/* ===============================
    BRANCH CONTENT
-   ======================================== */
+=============================== */
 .branch-content {
     padding: 2.5rem;
     display: flex;
@@ -329,9 +274,9 @@
     gap: 1.5rem;
 }
 
-/* ========================================
-   BRANCH HEADER
-   ======================================== */
+/* ===============================
+   HEADER (city, state, est badge)
+=============================== */
 .branch-header {
     display: flex;
     justify-content: space-between;
@@ -351,23 +296,22 @@
     color: var(--primary-gold);
     flex-shrink: 0;
     margin-top: 0.25rem;
-    filter: drop-shadow(0 0 8px rgba(218, 165, 32, 0.5));
+    filter: drop-shadow(0 0 8px rgba(var(--gold-rgb), 0.45));
 }
 
 .branch-location h3 {
     font-size: 1.75rem;
     font-weight: 700;
-    margin: 0 0 0.25rem 0;
     color: var(--text-primary);
-    letter-spacing: -0.01em;
+    margin: 0 0 0.25rem 0;
 }
 
 .branch-state {
     color: var(--text-tertiary);
     font-size: 0.95rem;
-    font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    font-weight: 500;
 }
 
 .branch-badge {
@@ -381,34 +325,33 @@
     box-shadow: var(--shadow-gold);
 }
 
-/* ========================================
-   BRANCH DETAILS
-   ======================================== */
+/* ===============================
+   DETAILS (address, phone, email)
+=============================== */
 .branch-details {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 1.5rem;
 }
 
 .detail-item {
     display: flex;
-    gap: 1rem;
     align-items: flex-start;
+    gap: 1rem;
 }
 
 .detail-item svg {
     color: var(--primary-gold);
-    flex-shrink: 0;
     margin-top: 0.25rem;
     opacity: 0.8;
 }
 
 .detail-item strong {
-    display: block;
     color: var(--text-primary);
     font-size: 0.85rem;
     font-weight: 600;
     margin-bottom: 0.35rem;
+    display: block;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -417,7 +360,6 @@
     color: var(--text-tertiary);
     font-size: 0.95rem;
     margin: 0.15rem 0;
-    line-height: 1.5;
 }
 
 .detail-item a {
@@ -430,8 +372,8 @@
 .detail-item a::after {
     content: '';
     position: absolute;
-    bottom: -2px;
     left: 0;
+    bottom: -2px;
     width: 0;
     height: 2px;
     background: var(--primary-gold);
@@ -446,9 +388,9 @@
     width: 100%;
 }
 
-/* ========================================
+/* ===============================
    BRANCH MANAGER
-   ======================================== */
+=============================== */
 .branch-manager {
     background: var(--dark-bg-tertiary);
     padding: 1rem 1.5rem;
@@ -459,21 +401,16 @@
 
 .branch-manager strong {
     color: var(--text-primary);
-    margin-right: 0.5rem;
 }
 
-/* ========================================
-   BRANCH SERVICES
-   ======================================== */
-.branch-services {
-    margin-top: 0.5rem;
-}
-
+/* ===============================
+   SERVICES TAGS
+=============================== */
 .branch-services strong {
     display: block;
     color: var(--text-primary);
-    font-size: 0.9rem;
     margin-bottom: 1rem;
+    font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -489,23 +426,22 @@
     color: var(--text-primary);
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all var(--transition-fast);
     border: 1px solid var(--dark-border);
+    font-size: 0.85rem;
+    transition: all var(--transition-fast);
 }
 
 .service-tag:hover {
     background: var(--primary-gold);
     color: var(--dark-bg);
+    border-color: var(--primary-gold);
     transform: translateY(-2px);
     box-shadow: var(--shadow-gold);
-    border-color: var(--primary-gold);
 }
 
-/* ========================================
+/* ===============================
    NO RESULTS
-   ======================================== */
+=============================== */
 .no-results {
     text-align: center;
     padding: 6rem 2rem;
@@ -513,13 +449,13 @@
 
 .no-results svg {
     color: var(--text-muted);
-    margin-bottom: 1.5rem;
     opacity: 0.5;
+    margin-bottom: 1.5rem;
 }
 
 .no-results h3 {
-    font-size: 1.75rem;
     color: var(--text-primary);
+    font-size: 1.75rem;
     margin-bottom: 0.75rem;
 }
 
@@ -528,9 +464,10 @@
     font-size: 1.05rem;
 }
 
-/* ========================================
+
+/* ===============================
    COVERAGE SECTION
-   ======================================== */
+=============================== */
 .coverage-section {
     padding: 6rem 0;
     background: var(--gradient-dark);
@@ -541,11 +478,12 @@
 .coverage-section::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 30% 50%, rgba(218, 165, 32, 0.05) 0%, transparent 60%);
+    inset: 0;
+    background: radial-gradient(
+        circle at 30% 50%, 
+        var(--gold-05) 0%, 
+        transparent 60%
+    );
 }
 
 .section-title {
@@ -571,7 +509,7 @@
 
 .coverage-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 2rem;
     position: relative;
     z-index: 1;
@@ -591,9 +529,7 @@
 .coverage-stat::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    inset: 0 0 auto 0;
     height: 4px;
     background: var(--gradient-gold);
     transform: scaleX(0);
@@ -617,8 +553,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    line-height: 1;
     margin-bottom: 1rem;
+    line-height: 1;
 }
 
 .stat-label {
@@ -627,12 +563,11 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-top: 1rem;
 }
 
-/* ========================================
+/* ===============================
    CTA SECTION
-   ======================================== */
+=============================== */
 .cta-section {
     padding: 6rem 0;
     background: var(--dark-bg-secondary);
@@ -648,8 +583,8 @@
 .cta-content h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
     color: var(--text-primary);
+    margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
 }
 
@@ -673,10 +608,10 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all var(--transition-normal);
     border: 2px solid transparent;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    transition: all var(--transition-normal);
 }
 
 .cta-button.primary {
@@ -703,15 +638,14 @@
     box-shadow: var(--shadow-gold);
 }
 
-/* ========================================
-   RESPONSIVE DESIGN
-   ======================================== */
+/* ===============================
+   RESPONSIVE
+=============================== */
 
 /* Tablets */
 @media (max-width: 1024px) {
-    .page-title {
-        font-size: 3rem;
-    }
+    .page-title { font-size: 3rem; }
+    .section-title { font-size: 2.5rem; }
 
     .branch-card {
         grid-template-columns: 1fr;
@@ -720,274 +654,62 @@
     .branch-img-box {
         min-height: 350px;
     }
-
-    .section-title {
-        font-size: 2.5rem;
-    }
 }
 
-/* Mobile */
+/* Mobiles */
 @media (max-width: 768px) {
-    .container {
-        padding: 0 1.5rem;
-    }
 
-    .branches-hero {
-        padding: 5rem 0 4rem;
-    }
+    .page-title { font-size: 2.25rem; }
+    .page-subtitle { font-size: 1.05rem; }
 
-    .page-title {
-        font-size: 2.25rem;
-    }
+    .branches-hero { padding: 5rem 0 4rem; }
 
-    .page-subtitle {
-        font-size: 1.05rem;
-    }
+    .search-filter-wrapper { flex-direction: column; }
+    .search-box, .region-filter { width: 100%; }
 
-    .search-filter-section {
-        padding: 2rem 0;
-    }
-
-    .search-filter-wrapper {
-        flex-direction: column;
-    }
-
-    .search-box,
-    .region-filter {
-        width: 100%;
-    }
-
-    .branches-grid-section {
-        padding: 3rem 0 4rem;
-    }
-
-    .branches-grid {
-        gap: 2rem;
-    }
-
-    .branch-content {
-        padding: 1.5rem;
-    }
+    .branch-content { padding: 1.5rem; }
 
     .branch-header {
         flex-direction: column;
         gap: 1rem;
     }
 
-    .branch-location h3 {
-        font-size: 1.5rem;
-    }
-
     .branch-details {
         grid-template-columns: 1fr;
-        gap: 1.25rem;
     }
 
     .branch-img-box {
-        min-height: 280px;
+        height: 320px;
     }
 
-    .coverage-section {
-        padding: 4rem 0;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 3rem;
-    }
+    .coverage-section { padding: 4rem 0; }
+    .section-title { font-size: 2rem; }
 
     .coverage-stats {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
         gap: 1.5rem;
     }
 
-    .coverage-stat {
-        padding: 2rem 1.5rem;
-    }
-
-    .stat-number {
-        font-size: 3rem;
-    }
-
-    .cta-section {
-        padding: 4rem 0;
-    }
-
-    .cta-content h2 {
-        font-size: 1.75rem;
-    }
-
-    .cta-content p {
-        font-size: 1rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-    }
-
-    .cta-button {
-        width: 100%;
-    }
+    .cta-buttons { flex-direction: column; }
+    .cta-button { width: 100%; }
 }
 
+/* Small Phones */
 @media (max-width: 480px) {
-    .coverage-stats {
-        grid-template-columns: 1fr;
-    }
+    .page-title { font-size: 1.875rem; }
+    .coverage-stats { grid-template-columns: 1fr; }
 
-    .hero-icon {
-        width: 48px;
-        height: 48px;
-    }
-
-    .page-title {
-        font-size: 1.875rem;
-    }
+    .branch-img-box { height: 250px; }
 }
 
-/* ========================================
-   UTILITY ANIMATIONS
-   ======================================== */
+/* ===============================
+   UTILS / ANIMATIONS
+=============================== */
 @keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
-
-    100% {
-        background-position: 1000px 0;
-    }
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
 }
 
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
-
-/* Selection color */
-::selection {
-    background: var(--primary-gold);
-    color: var(--dark-bg);
-}
-
-::-moz-selection {
-    background: var(--primary-gold);
-    color: var(--dark-bg);
-}
-
-/* Tablet */
-@media (max-width: 1024px) {
-    .branch-img-box {
-        aspect-ratio: 16 / 11;
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .branch-img-box {
-        aspect-ratio: 16 / 12;
-    }
-}
-
-/* Small phones */
-@media (max-width: 480px) {
-    .branch-img-box {
-        aspect-ratio: 16 / 14;
-    }
-}
-
-@media (max-width: 1024px) {
-  .branch-img-box {
-    height: 420px;
-  }
-}
-
-@media (max-width: 768px) {
-  .branch-img-box {
-    height: 320px;
-  }
-}
-
-@media (max-width: 480px) {
-  .branch-img-box {
-    height: 250px;
-  }
-}
-
-.branch-img-box {
-  width: 100%;
-  height: 650px;
-  overflow: hidden;
-  border-radius: 16px;
-  margin: 1rem;
-}
-
-.branch-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .branch-img-box {
-    height: 420px;
-  }
-}
-
-@media (max-width: 768px) {
-  .branch-img-box {
-    height: 320px;
-  }
-}
-
-@media (max-width: 480px) {
-  .branch-img-box {
-    height: 250px;
-  }
-}
-
-.branch-img-box {
-  width: 100%;
-  height: 650px;
-  margin: 1rem;
-  border-radius: 16px;
-  overflow: hidden;
-  background: var(--dark-bg-tertiary);
-}
-
-.branch-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .branch-img-box {
-    height: 420px;
-  }
-}
-
-@media (max-width: 768px) {
-  .branch-img-box {
-    height: 320px;
-  }
-}
-
-@media (max-width: 480px) {
-  .branch-img-box {
-    height: 250px;
-  }
-}
-
-
-.swiper-slide img{
-    object-fit: contain ;
-}
-

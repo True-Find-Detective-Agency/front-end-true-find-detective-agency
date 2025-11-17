@@ -1,3 +1,4 @@
+
 /* ========================================
     HERO SECTION
     ======================================== */
@@ -17,7 +18,6 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* z-index: -1; */
   filter: brightness(0.6) contrast(1.1);
 }
 
@@ -27,7 +27,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(218, 165, 32, 0.15) 0%, transparent 60%);
+  background: radial-gradient(circle at 30% 50%, rgba(var(--gold-rgb), 0.15) 0%, transparent 60%);
   z-index: -1;
 }
 
@@ -68,10 +68,10 @@
   font-size: 3.5rem;
   font-weight: 900;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--text-primary);
   text-shadow:
     2px 2px 4px rgba(0, 0, 0, 0.8),
-    0 0 30px rgba(218, 165, 32, 0.3);
+    0 0 30px rgba(var(--gold-rgb), 0.3);
   line-height: 1.2;
   letter-spacing: -1px;
   animation: fadeInUp 1s ease 0.2s both;
@@ -146,7 +146,7 @@ section::before {
   height: 100%;
   background: linear-gradient(90deg,
         transparent 0%,
-        rgba(218, 165, 32, 0.1) 50%,
+        rgba(var(--gold-rgb), 0.1) 50%,
         transparent 100%);
   transition: left 0.5s ease;
 }
@@ -175,7 +175,7 @@ section::before {
 
 .feature-card h3 {
   font-size: 1.25rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
   position: relative;
 }
@@ -199,7 +199,7 @@ section::before {
   text-align: center;
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
   position: relative;
   display: inline-block;
   left: 50%;
@@ -247,10 +247,6 @@ section::before {
   overflow: hidden;
 }
 
-
-.service-card:hover::after {
-  background: rgba(0,0,0,0.3); /* darker on hover */
-}
 .service-card::before {
   content: '';
   position: absolute;
@@ -272,7 +268,6 @@ section::before {
 .service-card:hover {
   background-size: cover;
   background-repeat: no-repeat;
-  
 }
 
 .service-icon {
@@ -281,22 +276,22 @@ section::before {
   display: flex;
   justify-content: center;
   transition: all var(--transition-normal);
-  filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.3));
+  filter: drop-shadow(0 0 10px rgba(var(--gold-rgb), 0.3));
 }
 
 .service-card:hover .service-icon {
   transform: scale(1.2) rotateY(360deg);
-  filter: drop-shadow(0 0 20px rgba(218, 165, 32, 0.6));
+  filter: drop-shadow(0 0 20px rgba(var(--gold-rgb), 0.6));
 }
 
 .service-card h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #fff;
+  color: var(--text-primary);
   transition: color var(--transition-fast);
 }
 
-.service-card:hover h3 {
+service-card:hover h3 {
   color: var(--primary-gold-light);
 }
 
@@ -304,11 +299,11 @@ section::before {
   color: var(--text-tertiary);
   line-height: 1.8;
   margin-bottom: 1rem;
-    transition: color var(--transition-fast);
+  transition: color var(--transition-fast);
 }
 
 .service-card:hover p {
-  color: white;
+  color: var(--text-primary);
 }
 
 .service-details {
@@ -317,7 +312,7 @@ section::before {
   margin-bottom: 1.5rem;
   font-style: italic;
   padding: 0.75rem;
-  background: rgba(218, 165, 32, 0.05);
+  background: rgba(var(--gold-rgb), 0.05);
   border-radius: 6px;
   border-left: 2px solid var(--primary-gold);
 }
@@ -337,7 +332,6 @@ section::before {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-size: 0.9rem;
-
 }
 
 section .service-btn {
@@ -347,15 +341,12 @@ section .service-btn {
   margin: 2rem auto 0;
 }
 
-
-
 .service-btn:hover {
   background: var(--primary-gold);
   color: var(--dark-bg);
   transform: translateX(5px);
   box-shadow: var(--shadow-gold);
 }
-
 
 /* ========================================
     ABOUT SECTION
@@ -374,7 +365,7 @@ section .service-btn {
   right: -200px;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.1) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -393,8 +384,6 @@ section .service-btn {
   align-items: center;
 }
 
-
-/* 🕵️ About Section Background */
 .about-text-wrapper {
   background-image: url("https://res.cloudinary.com/dmqa8d6yq/image/upload/v1763116085/back-side-detective_xweqix.jpg");
   background-size: cover;
@@ -403,22 +392,19 @@ section .service-btn {
   padding: 80px 40px;
   border-radius: 16px;
   position: relative;
-  color: #fff;
+  color: var(--text-primary);
   overflow: hidden;
 }
-
-
-
 
 .about-text h2 {
   font-size: 2.8rem;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--text-primary);
   position: relative;
   display: inline-block;
 }
 
-.about-text h2::after {
+about-text h2::after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -428,7 +414,7 @@ section .service-btn {
   background: var(--primary-gold);
 }
 
-.about-text p {
+about-text p {
   color: var(--text-secondary);
   line-height: 1.9;
   margin-bottom: 1.5rem;
@@ -437,8 +423,8 @@ section .service-btn {
 
 .about-highlight {
   background: linear-gradient(135deg,
-        rgba(218, 165, 32, 0.1) 0%,
-        rgba(218, 165, 32, 0.05) 100%);
+        rgba(var(--gold-rgb), 0.1) 0%,
+        rgba(var(--gold-rgb), 0.05) 100%);
   padding: 1.5rem;
   border-left: 4px solid var(--primary-gold);
   border-radius: 6px;
@@ -457,7 +443,7 @@ section .service-btn {
   box-shadow: 0 0 20px var(--primary-gold);
 }
 
-.about-features {
+about-features {
   list-style: none;
   margin-top: 2rem;
   display: grid;
@@ -465,7 +451,7 @@ section .service-btn {
   gap: 1rem;
 }
 
-.about-features li {
+about-features li {
   color: var(--text-secondary);
   font-size: 1.05rem;
   padding: 0.75rem;
@@ -475,10 +461,10 @@ section .service-btn {
   transition: all var(--transition-fast);
 }
 
-.about-features li:hover {
+about-features li:hover {
   border-color: var(--primary-gold);
   transform: translateX(5px);
-  background: rgba(218, 165, 32, 0.05);
+  background: rgba(var(--gold-rgb), 0.05);
 }
 
 .about-stats {
@@ -498,20 +484,20 @@ section .service-btn {
   overflow: hidden;
 }
 
-.stat::before {
+stat::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.1) 0%, transparent 70%);
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity var(--transition-normal);
 }
 
-.stat:hover::before {
+stat:hover::before {
   opacity: 1;
 }
 
@@ -543,14 +529,11 @@ section .service-btn {
 /* ========================================
     PROCESS SECTION
     ======================================== */
-
-/* 🧭 Process Section with Background */
 .process-wrapper {
   background-image: url("https://images.unsplash.com/photo-1608311430809-596bee7b41fe?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1631");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  /* nice parallax effect */
   position: relative;
   padding: 80px 0;
   border-radius: 12px;
@@ -567,10 +550,6 @@ section .service-btn {
   background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
-
-
-
-
 
 .process-section {
   padding: 6rem 0;
@@ -639,7 +618,7 @@ section .service-btn {
   box-shadow: var(--shadow-gold);
   background: linear-gradient(135deg,
         var(--dark-bg-tertiary) 0%,
-        rgba(218, 165, 32, 0.05) 100%);
+        rgba(var(--gold-rgb), 0.05) 100%);
 }
 
 .process-step {
@@ -659,7 +638,7 @@ section .service-btn {
 }
 
 .process-item h3 {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
   transition: color var(--transition-fast);
@@ -690,7 +669,7 @@ section .service-btn {
   top: 50px;
   left: 50px;
   font-size: 20rem;
-  color: rgba(218, 165, 32, 0.05);
+  color: rgba(var(--gold-rgb), 0.05);
   font-family: Georgia, serif;
   pointer-events: none;
 }
@@ -711,7 +690,7 @@ section .service-btn {
   overflow: hidden;
 }
 
-.testimonial-card::before {
+testimonials-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -774,7 +753,7 @@ section .service-btn {
 }
 
 .testimonial-author strong {
-  color: #fff;
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 1.1rem;
 }
@@ -806,9 +785,6 @@ section .service-btn {
   overflow: hidden;
 }
 
-
-
-
 .contact-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -835,7 +811,7 @@ section .service-btn {
   overflow: hidden;
 }
 
-.contact-item::before {
+contact-item::before {
   content: '';
   position: absolute;
   left: 0;
@@ -859,16 +835,16 @@ section .service-btn {
 .contact-item svg {
   color: var(--primary-gold);
   flex-shrink: 0;
-  filter: drop-shadow(0 0 10px rgba(218, 165, 32, 0.5));
+  filter: drop-shadow(0 0 10px rgba(var(--gold-rgb), 0.5));
 }
 
 .contact-item h4 {
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
   font-size: 1.25rem;
 }
 
-.contact-item p {
+contact-item p {
   color: var(--text-secondary);
   line-height: 1.6;
 }
@@ -880,8 +856,6 @@ section .service-btn {
   margin-top: 0.5rem;
   font-style: italic;
 }
-
-
 
 .form-title {
   color: var(--primary-gold);
@@ -902,9 +876,6 @@ section .service-btn {
   background: var(--primary-gold);
 }
 
-
-
-
 .form-select {
   cursor: pointer;
   appearance: none;
@@ -921,7 +892,7 @@ section .service-btn {
   text-align: center;
   margin: -0.5rem 0 0;
   padding: 1rem;
-  background: rgba(218, 165, 32, 0.05);
+  background: rgba(var(--gold-rgb), 0.05);
   border-radius: 6px;
   border-left: 3px solid var(--primary-gold);
 }
@@ -960,7 +931,7 @@ section .service-btn {
   transform: translate(-50%, -50%);
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(var(--gold-rgb), 0.1) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -975,7 +946,7 @@ section .service-btn {
 
 .cta-content h2 {
   font-size: 2.8rem;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 1.5rem;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
@@ -991,24 +962,20 @@ section .service-btn {
     ANIMATIONS & UTILITIES
     ======================================== */
 @keyframes pulse {
-
   0%,
   100% {
     transform: scale(1);
   }
-
   50% {
     transform: scale(1.05);
   }
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-10px);
   }
@@ -1019,7 +986,6 @@ section .service-btn {
     opacity: 0;
     transform: translateX(-50px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1031,7 +997,6 @@ section .service-btn {
     opacity: 0;
     transform: translateX(50px);
   }
-
   to {
     opacity: 1;
     transform: translateX(0);
@@ -1042,7 +1007,6 @@ section .service-btn {
   from {
     transform: rotate(0deg);
   }
-
   to {
     transform: rotate(360deg);
   }
@@ -1058,7 +1022,7 @@ section .service-btn {
 
 /* Glowing Effect Utility */
 .glow {
-  box-shadow: 0 0 20px rgba(218, 165, 32, 0.5);
+  box-shadow: 0 0 20px rgba(var(--gold-rgb), 0.5);
 }
 
 /* Loading Animation */
@@ -1066,15 +1030,15 @@ section .service-btn {
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 3px solid rgba(218, 165, 32, 0.3);
+  border: 3px solid rgba(var(--gold-rgb), 0.3);
   border-radius: 50%;
   border-top-color: var(--primary-gold);
   animation: rotate 1s linear infinite;
 }
 
 /* ========================================
-    RESPONSIVE DESIGN
-    ======================================== */
+    RESPONSIVE DESIGN (kept and improved)
+======================================== */
 
 /* Large Tablets & Small Desktops */
 @media (max-width: 1024px) {
@@ -1184,7 +1148,6 @@ section .service-btn {
     font-size: 1rem;
   }
 
-
   .feature-card,
   .service-card,
   .testimonial-card {
@@ -1237,7 +1200,6 @@ section .service-btn {
   .about-text p {
     font-size: 1rem;
   }
-
 
   .form-title {
     font-size: 1.5rem;
@@ -1295,9 +1257,8 @@ section .service-btn {
 
 /* ========================================
     PRINT STYLES
-    ======================================== */
+======================================== */
 @media print {
-
   .hero-video,
   .hero-overlay,
   .btn{
@@ -1330,9 +1291,8 @@ section .service-btn {
 
 /* ========================================
     ACCESSIBILITY ENHANCEMENTS
-    ======================================== */
+======================================== */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -1342,7 +1302,6 @@ section .service-btn {
   }
 }
 
-/* Focus Styles for Keyboard Navigation */
 a:focus,
 button:focus,
 input:focus,
@@ -1354,7 +1313,6 @@ textarea:focus {
 
 /* High Contrast Mode Support */
 @media (prefers-contrast: high) {
-
   .btn,
   .service-card,
   .feature-card,
@@ -1364,161 +1322,3 @@ textarea:focus {
   }
 }
 
-/* Dark Mode Enhancements (if system preference) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --dark-bg: #000000;
-    --dark-bg-secondary: #0a0a0a;
-    --dark-bg-tertiary: #141414;
-  }
-
-}
-
-
-
-/* ========================================
-   ABOUT SECTION - RESPONSIVE FIXES
-   ======================================== */
-
-/* Base styles - keep your existing styles */
-.about-content {
-  margin-bottom: 3rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-/* Make the image responsive */
-.about-content > div:nth-child(4) img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  border: 2px solid var(--dark-border);
-  transition: all var(--transition-normal);
-}
-
-.about-content > div:nth-child(4) img:hover {
-  border-color: var(--primary-gold);
-  box-shadow: var(--shadow-gold);
-  transform: scale(1.02);
-}
-
-/* ========================================
-   RESPONSIVE BREAKPOINTS
-   ======================================== */
-
-/* Tablets & Below (max-width: 968px) */
-@media (max-width: 968px) {
-  .about-content {
-    grid-template-columns: 1fr; /* Single column layout */
-    gap: 3rem;
-  }
-
-  .about-text-wrapper {
-    padding: 60px 30px; /* Reduce padding */
-  }
-
-  /* Reorder elements for better mobile flow */
-  .about-content > div:nth-child(1) { order: 1; } /* Text wrapper first */
-  .about-content > div:nth-child(2) { order: 2; } /* Stats second */
-  .about-content > div:nth-child(3) { order: 4; } /* Features grid last */
-  .about-content > div:nth-child(4) { order: 3; } /* Image third */
-}
-
-/* Mobile Landscape (max-width: 768px) */
-@media (max-width: 768px) {
-  .about-content {
-    gap: 2rem;
-  }
-
-  .about-text-wrapper {
-    padding: 40px 24px; /* Further reduce padding */
-  }
-
-  .about-text h2 {
-    font-size: 2rem;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-  }
-
-  .about-features {
-    grid-template-columns: 1fr; /* Stack features on mobile */
-    gap: 0.75rem;
-  }
-
-  .features-grid {
-    grid-template-columns: 1fr; /* Stack feature cards */
-  }
-}
-
-/* Mobile Portrait (max-width: 480px) */
-@media (max-width: 480px) {
-  .about-content {
-    gap: 1.5rem;
-  }
-
-  .about-text-wrapper {
-    padding: 30px 20px;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .about-text h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-
-  .about-text p {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-
-  .about-highlight {
-    padding: 1rem;
-  }
-
-  .about-features li {
-    padding: 0.6rem;
-    font-size: 0.95rem;
-  }
-
-  .feature-card {
-    padding: 2rem;
-  }
-
-  .feature-card h3 {
-    font-size: 1.15rem;
-  }
-
-  .feature-card p {
-    font-size: 0.9rem;
-  }
-}
-
-/* Extra Small Devices (max-width: 360px) */
-@media (max-width: 360px) {
-  .about-text-wrapper {
-    padding: 24px 16px;
-  }
-
-  .about-text h2 {
-    font-size: 1.5rem;
-  }
-
-  .about-text p {
-    font-size: 0.9rem;
-  }
-
-  .about-features li {
-    font-size: 0.9rem;
-    padding: 0.5rem;
-  }
-
-  .feature-card {
-    padding: 1.5rem;
-  }
-
-}

@@ -1,103 +1,84 @@
 /* eslint-disable no-unused-vars */
 
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
-import "../css/contact.css"
-import ContactForm from '../components/ContactForm';
+import * as Icons from "lucide-react";
+import "../css/contact.css";
+import ContactForm from "../components/ContactForm";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { contactInfo } from "../data/data";
 
 function Contact() {
-
-useEffect(() => {
-  AOS.refresh();
-}, []);
-
-
-  const contactInfo = [
-    {
-      icon: <Phone size={28} />,
-      title: "Phone",
-      primary: "+1 (555) 123-4567",
-      secondary: "Available 24/7",
-      detail: "Emergency hotline available"
-    },
-    {
-      icon: <Mail size={28} />,
-      title: "Email",
-      primary: "info@truefind.com",
-      secondary: "support@truefind.com",
-      detail: "Response within 24 hours"
-    },
-    {
-      icon: <MapPin size={28} />,
-      title: "Office Location",
-      primary: "123 Mystery Lane, Suite 400",
-      secondary: "New York, NY 10001",
-      detail: "By appointment only"
-    },
-    {
-      icon: <Clock size={28} />,
-      title: "Business Hours",
-      primary: "24/7 Emergency Services",
-      secondary: "Office: Mon-Fri 9AM-6PM",
-      detail: "Weekend consultations available"
-    }
-  ];
+  useEffect(() => {
+    AOS.refresh();
+  }, []);
 
   return (
     <div className="main-container">
       <div className="contact-page">
 
-        {/* Hero Section */}
         <section className="contact-hero" data-aos="fade-up">
-  <div className="container">
-    <h1 className="page-title" data-aos="fade-up">
-      Contact Us
-    </h1>
-    <p
-      className="page-subtitle"
-      data-aos="fade-up"
-      data-aos-delay="100"
-    >
-      Reach out for a confidential discussion. Our team is available round the clock to assist you.
-    </p>
-  </div>
-</section>
+          <div className="container">
+            <h1 className="page-title">Contact Us</h1>
+            <p className="page-subtitle" data-aos-delay="100">
+              Reach out for a confidential discussion. Our team is available round the clock to assist you.
+            </p>
+          </div>
+        </section>
 
-        {/* Contact Info Cards */}
         <section className="contact-info-section">
           <div className="container">
             <div className="contact-info-grid">
-              {contactInfo.map((info, index) => (
-                <div
-                  key={index}
-                  className="info-card"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 120}
-                >
-                  <div className="info-icon">{info.icon}</div>
-                  <h3>{info.title}</h3>
-                  <p className="info-primary">{info.primary}</p>
-                  <p className="info-secondary">{info.secondary}</p>
-                  <p className="info-detail">{info.detail}</p>
-                </div>
-              ))}
+              {contactInfo.map((info, index) => {
+                const Icon = Icons[info.icon];
+
+                return (
+                  <div
+                    key={index}
+                    className="info-card"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 120}
+                  >
+                    <div className="info-icon">
+                      <Icon size={28} />
+                    </div>
+
+                    <h3>{info.title}</h3>
+
+                    {info.link ? (
+                      <a
+                        href={info.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="info-primary link-with-icon"
+                      >
+                        <Icon size={16} style={{ marginRight: "6px" }} />
+                        {info.btn}
+                      </a>
+                    ) : (
+                      <p className="info-primary">{info.primary}</p>
+                    )}
+
+                    <p className="info-secondary">{info.secondary}</p>
+                    <p className="info-detail">{info.detail}</p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
+
+
+
 
         {/* Main Contact Section */}
         <section className="main-contact-section">
           <div className="container">
             <div className="contact-content">
-
-              {/* Contact Form */}
               <div data-aos="fade-right">
                 <ContactForm />
               </div>
 
-              {/* Additional Info */}
               <div className="additional-info" data-aos="fade-left">
                 <div className="info-box">
                   <h3>Why Contact Us?</h3>
@@ -114,18 +95,13 @@ useEffect(() => {
                 <div className="info-box">
                   <h3>What to Expect</h3>
                   <p>
-                    After submitting your inquiry, one of our experienced investigators 
-                    will review your case and contact you within 24 hours. We'll discuss 
-                    your needs, answer any questions, and provide a detailed plan of action.
+                    After submitting your inquiry, one of our investigators will contact you within 24 hours.
                   </p>
                 </div>
 
                 <div className="info-box urgent-box">
                   <h3>Emergency Cases</h3>
-                  <p>
-                    For urgent matters requiring immediate attention, please call our 
-                    24/7 emergency hotline:
-                  </p>
+                  <p>For urgent help, call our 24/7 hotline:</p>
                   <a href="tel:+15551234567" className="emergency-phone">
                     +1 (555) 123-4567
                   </a>
@@ -141,8 +117,8 @@ useEffect(() => {
           <div className="container">
             <h2 className="section-title">Visit Our Office</h2>
             <div className="map-placeholder" data-aos="zoom-in">
-              <MapPin size={48} />
-              <p>123 Mystery Lane, Suite 400<br/>New York, NY 10001</p>
+              <Icons.MapPin size={48} />
+              <p>123 Mystery Lane, Suite 400<br />New York, NY 10001</p>
               <p className="map-note">By appointment only - Call ahead to schedule</p>
             </div>
           </div>

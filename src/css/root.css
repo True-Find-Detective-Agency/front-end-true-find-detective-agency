@@ -1,0 +1,112 @@
+/* =========================================================
+   ROOT VARIABLES (merged: your original + extended aliases)
+========================================================= */
+:root {
+  /* primary / gold aliases */
+  --primary-gold: #DAA520;
+  --primary-gold-light: #FFD700;
+  --primary-gold-dark: #B8860B;
+
+  /* additional gold system (aliases for ease) */
+  --gold: var(--primary-gold);
+  --gold-light: var(--primary-gold-light);
+  --gold-dark: var(--primary-gold-dark);
+
+  --gold-rgb: 218, 165, 32;
+  --gold-light-rgb: 255, 215, 0;
+
+  --gold-transparent-10: rgba(var(--gold-rgb), 0.1);
+  --gold-transparent-20: rgba(var(--gold-rgb), 0.2);
+  --gold-transparent-30: rgba(var(--gold-rgb), 0.3);
+  --gold-transparent-40: rgba(var(--gold-rgb), 0.4);
+
+  --gradient-gold: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+  --gradient-gold-subtle: linear-gradient(135deg, rgba(var(--gold-light-rgb), 0.08), rgba(var(--gold-rgb), 0.08));
+
+  /* dark system */
+  --dark-bg: #0a0a0a;
+  --dark-bg-secondary: #0f0f0f;
+  --dark-bg-tertiary: #1a1a1a;
+  --dark-border: #2a2a2a;
+
+  /* text */
+  --text-primary: #e0e0e0;
+  --text-secondary: #c0c0c0;
+  --text-tertiary: #999;
+  --text-muted: #666;
+
+  /* shadows & glass */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  --shadow-gold: 0 10px 30px rgba(var(--gold-rgb), 0.2);
+  --shadow-gold-lg: 0 15px 40px rgba(var(--gold-rgb), 0.35);
+
+  --glass-dark: rgba(14, 14, 14, 0.85);
+  --glass-strong: rgba(14, 14, 14, 0.95);
+
+  /* brands */
+  --brand-whatsapp: #25D366;
+  --brand-facebook: #1877F2;
+  --brand-twitter: #1DA1F2;
+  --brand-instagram: #E4405F;
+
+  /* transitions & spacing */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+
+  --dark-bg-hero: #0a0a0a;
+  --dark-bg-alt: #0f0f0f;
+  --dark-bg-card: #1a1a1a;
+
+  --gold: #DAA520;
+  --gold-light: #FFD700;
+
+  --grey-light: #e0e0e0;
+  --grey-mid: #c0c0c0;
+  --grey-soft: #999;
+  --grey-border: #2a2a2a;
+
+  --overlay-black-50: rgba(0, 0, 0, 0.5);
+
+  --gold-shadow-20: rgba(218, 165, 32, 0.2);
+  --gold-shadow-40: rgba(218, 165, 32, 0.4);
+
+
+  /* ===========================
+  */
+  --dark-bg-hero-2: #0a0a0a;
+  --dark-bg-mid: #0f0f0f;
+  --dark-bg-card-2: #1a1a1a;
+
+  --border-grey: #2a2a2a;
+
+  --input-placeholder: #666;
+  --grey-mid-2: #999;
+
+  --black-overlay-80: rgba(10, 10, 10, 0.8);
+  --gold-03: rgba(218, 165, 32, 0.03);
+  --gold-05: rgba(218, 165, 32, 0.05);
+  --gold-10: rgba(218, 165, 32, 0.1);
+  --gold-15: rgba(218, 165, 32, 0.15);
+  --gold-20: rgba(218, 165, 32, 0.2);
+  --gold-30: rgba(218, 165, 32, 0.3);
+  --gold-40: rgba(218, 165, 32, 0.4);
+  --gold-50: rgba(218, 165, 32, 0.5);
+
+  --bg-black-60: rgba(15, 15, 15, 0.6);
+  --bg-black-80: rgba(15, 15, 15, 0.8);
+
+  --card-blur-bg: rgba(26, 26, 26, 0.5);
+  --card-border-blur: rgba(42, 42, 42, 0.5);
+
+  --check-bg: linear-gradient(135deg, var(--primary-gold), var(--primary-gold-light));
+}

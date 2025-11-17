@@ -6,6 +6,7 @@ import "../css/footer.css";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { env } from "../data/data";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -49,7 +50,7 @@ function Footer() {
 
               <div className="social-links">
                 <a
-                  href="https://www.facebook.com/share/19uAsiQ4WB/"
+                  href={env.fb}
                   target="_blank"
                   aria-label="Facebook"
                 >
@@ -57,7 +58,7 @@ function Footer() {
                 </a>
 
                 <a
-                  href="https://x.com/truefind04?t=sdxnbn6KXw7-ipAgjdIqQg&s=08"
+                  href={env.twitter}
                   target="_blank"
                   aria-label="Twitter"
                 >
@@ -65,7 +66,7 @@ function Footer() {
                 </a>
 
                 <a
-                  href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&utm_medium=copy_link&utm_content=zx3tx63"
+                  href={env.instagram}
                   target="_blank"
                   aria-label="Instagram"
                 >

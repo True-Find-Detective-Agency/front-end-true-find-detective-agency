@@ -1,44 +1,13 @@
-/* ========================================
-   ADVANCED CSS FOR TRUE FIND DETECTIVE AGENCY
-   ======================================== */
-
-/* === ROOT VARIABLES === */
-:root {
-  --primary-gold: #DAA520;
-  --primary-gold-light: #FFD700;
-  --primary-gold-dark: #B8860B;
-  --dark-bg: #0a0a0a;
-  --dark-bg-secondary: #0f0f0f;
-  --dark-bg-tertiary: #1a1a1a;
-  --dark-border: #2a2a2a;
-  --text-primary: #e0e0e0;
-  --text-secondary: #c0c0c0;
-  --text-tertiary: #999;
-  --text-muted: #666;
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
-  --shadow-gold: 0 10px 30px rgba(218, 165, 32, 0.2);
-  --shadow-gold-lg: 0 15px 40px rgba(218, 165, 32, 0.4);
-  --gradient-gold: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #B8860B 100%);
-  --gradient-gold-subtle: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(218, 165, 32, 0.1) 100%);
-  --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
-}
-
-/* === GLOBAL RESET & BASE STYLES === */
+@import url("root.css");
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
-.main-container{
+.main-container {
   max-width: 100vw;
   overflow: hidden;
 }
@@ -51,13 +20,13 @@ html {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--dark-bg);
+  background: var(--dark-bg);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* === SCROLLBAR === */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -72,22 +41,21 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary-gold);
+  background: var(--gold);
 }
 
-/* Selection */
+/* === TEXT SELECTION === */
 ::selection {
-  background: var(--primary-gold);
+  background: var(--gold);
   color: var(--dark-bg);
 }
 
 ::-moz-selection {
-  background: var(--primary-gold);
+  background: var(--gold);
   color: var(--dark-bg);
 }
 
 /* === LAYOUT === */
-
 .app {
   min-height: 100vh;
   position: relative;
@@ -103,7 +71,7 @@ body {
   padding: 0 20px;
 }
 
-/* === TYPOGRAPHY === */
+/* === HEADINGS === */
 h1,
 h2,
 h3,
@@ -112,37 +80,47 @@ h5,
 h6 {
   font-weight: 700;
   line-height: 1.2;
-  color: #fff;
+  color: var(--text-primary);
 }
 
-/* === BUTTONS === */
+/* =====================================
+      BUTTON SYSTEM
+===================================== */
 .btn {
   padding: 1rem 2.5rem;
   font-size: 1rem;
   font-weight: 600;
   border: none;
   cursor: pointer;
-  transition: all var(--transition-normal);
+
   border-radius: 6px;
   position: relative;
   overflow: hidden;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+
   text-transform: uppercase;
   letter-spacing: 0.5px;
+
+  transition: all var(--transition-normal);
 }
 
+/* Button Ripple Hover */
 .btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
+
   width: 0;
   height: 0;
+
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+
   transform: translate(-50%, -50%);
   transition: width 0.6s, height 0.6s;
 }
@@ -152,8 +130,9 @@ h6 {
   height: 300px;
 }
 
+/* === PRIMARY BUTTON (GOLD) === */
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-light) 100%);
+  background: var(--gradient-gold);
   color: var(--dark-bg);
   box-shadow: var(--shadow-md);
 }
@@ -167,43 +146,55 @@ h6 {
   transform: translateY(-1px);
 }
 
+/* === SECONDARY BUTTON (OUTLINE GOLD) === */
 .btn-secondary {
   background: transparent;
-  color: var(--primary-gold);
-  border: 2px solid var(--primary-gold);
+  color: var(--gold);
+  border: 2px solid var(--gold);
   box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary:hover {
-  background: var(--primary-gold);
+  background: var(--gold);
   color: var(--dark-bg);
   transform: translateY(-3px);
   box-shadow: var(--shadow-gold);
 }
 
+/* === LARGE PRIMARY BUTTON === */
 .btn-primary-large {
-  background: linear-gradient(135deg, var(--primary-gold) 0%, var(--primary-gold-light) 100%);
+  background: var(--gradient-gold);
   color: var(--dark-bg);
+
   padding: 1.25rem 3rem;
   font-size: 1.15rem;
   font-weight: 700;
-  border: none;
+
   border-radius: 6px;
   cursor: pointer;
+
   transition: all var(--transition-normal);
   box-shadow: var(--shadow-md);
+
   position: relative;
   overflow: hidden;
 }
 
+/* SHINE EFFECT */
 .btn-primary-large::after {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
+  left: -50%;
   right: -50%;
   bottom: -50%;
-  left: -50%;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.18)
+  );
+
   transform: rotateZ(60deg) translate(-5em, 7.5em);
   animation: shine 3s infinite;
 }
@@ -212,7 +203,6 @@ h6 {
   0% {
     transform: rotateZ(60deg) translate(-5em, 7.5em);
   }
-
   100% {
     transform: rotateZ(60deg) translate(20em, -20em);
   }
@@ -222,3 +212,4 @@ h6 {
   transform: translateY(-4px) scale(1.02);
   box-shadow: var(--shadow-gold-lg);
 }
+

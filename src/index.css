@@ -1,12 +1,15 @@
-/* ================== Hide caret globally ================= */
-/* Remove outline on click */
 
-
-/* prevents text selection */
 html, body, *, *::before, *::after {
   caret-color: transparent !important;
-  user-select: none; 
+  user-select: none;
 }
 
+html, body {
+  margin: 0;
+  overflow-y: scroll;       
+  scroll-snap-type: y mandatory; 
+}
 
-
+section {
+  scroll-snap-align: start;
+}

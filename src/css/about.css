@@ -1,6 +1,6 @@
 .about-page {
-    background: #0a0a0a;
-    color: #e0e0e0;
+    background: var(--dark-bg-hero);
+    color: var(--grey-light);
     min-height: 100vh;
 }
 
@@ -12,22 +12,22 @@
 
 /* Hero Section */
 .about-hero {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--dark-bg-hero) 0%, var(--dark-bg-card) 100%);
     padding: 8rem 0 4rem;
     text-align: center;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid var(--grey-border);
 }
 
 .page-title {
     font-size: 3rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
     font-weight: 800;
 }
 
 .page-subtitle {
     font-size: 1.25rem;
-    color: #DAA520;
+    color: var(--gold);
     font-weight: 500;
 }
 
@@ -35,14 +35,12 @@
 .story-section {
     padding: 6rem 0;
     background:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        linear-gradient(var(--overlay-black-50), var(--overlay-black-50)),
         url("https://media.istockphoto.com/id/1326248317/photo/shot-from-outside-the-window-businessmen-and-businesswomen-working-in-the-office-managers-and.jpg?s=612x612&w=0&k=20&c=uqwSU-4Xre9lg-yE58C1B9HAHm15pfSus17ag2ToJyI=");
     background-size: cover;
-    /* better for full coverage */
     background-repeat: no-repeat;
     background-position: center;
 }
-
 
 .story-content {
     display: grid;
@@ -53,12 +51,12 @@
 
 .story-text h2 {
     font-size: 2.5rem;
-    color: #DAA520;
+    color: var(--gold);
     margin-bottom: 2rem;
 }
 
 .story-text p {
-    color: #c0c0c0;
+    color: var(--grey-mid);
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-size: 1.05rem;
@@ -71,48 +69,48 @@
 }
 
 .stat-box {
-    background: #1a1a1a;
+    background: var(--dark-bg-card);
     padding: 2rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--grey-border);
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .stat-box:hover {
-    border-color: #DAA520;
+    border-color: var(--gold);
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2);
+    box-shadow: 0 10px 30px var(--gold-shadow-20);
 }
 
 .stat-number {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #DAA520;
+    color: var(--gold);
     margin-bottom: 0.5rem;
 }
 
 .stat-label {
-    color: #999;
+    color: var(--grey-soft);
     font-size: 0.95rem;
 }
 
 /* Values Section */
 .values-section {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: var(--dark-bg-hero);
 }
 
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .section-description {
     text-align: center;
-    color: #999;
+    color: var(--grey-soft);
     margin-bottom: 4rem;
     font-size: 1.1rem;
 }
@@ -136,22 +134,22 @@
 }
 
 .value-card {
-    background: #1a1a1a;
+    background: var(--dark-bg-card);
     padding: 2.5rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--grey-border);
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .value-card:hover {
     transform: translateY(-5px);
-    border-color: #DAA520;
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px var(--gold-shadow-20);
 }
 
 .value-icon {
-    color: #DAA520;
+    color: var(--gold);
     margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
@@ -159,19 +157,19 @@
 
 .value-card h3 {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
 .value-card p {
-    color: #999;
+    color: var(--grey-soft);
     line-height: 1.6;
 }
 
 /* Team Section */
 .team-section {
     padding: 6rem 0;
-    background: #0f0f0f;
+    background: var(--dark-bg-alt);
 }
 
 .team-grid {
@@ -181,53 +179,53 @@
 }
 
 .team-card {
-    background: #1a1a1a;
+    background: var(--dark-bg-card);
     padding: 2.5rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--grey-border);
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .team-card:hover {
     transform: translateY(-5px);
-    border-color: #DAA520;
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px var(--gold-shadow-20);
 }
 
 .team-avatar {
     width: 100px;
     height: 100px;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--grey-border) 0%, var(--dark-bg-card) 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1.5rem;
-    color: #DAA520;
-    border: 2px solid #DAA520;
+    color: var(--gold);
+    border: 2px solid var(--gold);
 }
 
 .team-card h3 {
     font-size: 1.5rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 0.5rem;
 }
 
 .team-role {
-    color: #DAA520;
+    color: var(--gold);
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
 
 .team-experience {
-    color: #999;
+    color: var(--grey-soft);
     font-size: 0.9rem;
     margin-bottom: 1rem;
 }
 
 .team-specialization {
-    color: #c0c0c0;
+    color: var(--grey-mid);
     line-height: 1.6;
     font-size: 0.95rem;
 }
@@ -235,9 +233,8 @@
 /* Achievements Section */
 .achievements-section {
     padding: 6rem 0;
-    background: #0a0a0a;
+    background: var(--dark-bg-hero);
 }
-
 
 .achievements-grid-container {
     display: flex;
@@ -249,8 +246,6 @@
 
 .achievements-grid {
     display: grid;
-     gap: 1px; /* smaller clean gap */
-    justify-content: space-around;
     gap: 1.5rem;
     max-width: 900px;
     margin: 0 auto;
@@ -260,32 +255,32 @@
     display: flex;
     align-items: center;
     gap: 1rem;
-    background: #1a1a1a;
+    background: var(--dark-bg-card);
     padding: 1.5rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--grey-border);
     transition: all 0.3s ease;
 }
 
 .achievement-item:hover {
-    border-color: #DAA520;
+    border-color: var(--gold);
     transform: translateX(5px);
+    box-shadow: 0 5px 15px var(--gold-shadow-20);
 }
 
 .achievement-item svg {
-    color: #DAA520;
-    flex-shrink: 0;
+    color: var(--gold);
 }
 
 .achievement-item span {
-    color: #c0c0c0;
+    color: var(--grey-mid);
     font-size: 1rem;
 }
 
 /* CTA Section */
 .cta-section {
     padding: 6rem 0;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    background: linear-gradient(135deg, var(--dark-bg-card) 0%, var(--dark-bg-hero) 100%);
 }
 
 .cta-content {
@@ -296,20 +291,20 @@
 
 .cta-content h2 {
     font-size: 2.5rem;
-    color: #fff;
+    color: var(--text-primary);
     margin-bottom: 1.5rem;
 }
 
 .cta-content p {
-    color: #c0c0c0;
+    color: var(--grey-mid);
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 2.5rem;
 }
 
 .cta-button {
-    background: #DAA520;
-    color: #0a0a0a;
+    background: var(--gold);
+    color: var(--dark-bg-hero);
     padding: 1.25rem 3rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -320,243 +315,7 @@
 }
 
 .cta-button:hover {
-    background: #FFD700;
+    background: var(--gold-light);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.4);
+    box-shadow: 0 10px 30px var(--gold-shadow-40);
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .page-title {
-        font-size: 2rem;
-    }
-
-    .about-hero {
-        padding: 6rem 0 3rem;
-    }
-
-    .story-content {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .story-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .section-title {
-        font-size: 2rem;
-    }
-
-    .values-grid,
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .achievements-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cta-content h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .story-stats {
-        grid-template-columns: 1fr;
-    }
-
-    .stat-box {
-        padding: 1.5rem;
-    }
-}
-
-/* ========================================
-   ACHIEVEMENTS SECTION - RESPONSIVE FIX
-   ======================================== */
-
-.achievements-section {
-    padding: 6rem 0;
-    background: #0a0a0a;
-}
-
-.achievements-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns on desktop */
-    gap: 3rem;
-    align-items: center;
-}
-
-.achievements-grid-container img {
-    width: 100%;
-    height: auto; /* Let height adjust automatically */
-    max-height: 700px;
-    object-fit: contain; /* Maintain aspect ratio */
-    border-radius: 12px;
-    border: 2px solid #2a2a2a;
-    transition: all 0.3s ease;
-}
-
-.achievements-grid-container img:hover {
-    border-color: #DAA520;
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.2);
-    transform: scale(1.02);
-}
-
-.achievements-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Single column for list */
-    gap: 1.5rem;
-}
-
-.achievement-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: #1a1a1a;
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid #2a2a2a;
-    transition: all 0.3s ease;
-}
-
-.achievement-item:hover {
-    border-color: #DAA520;
-    transform: translateX(5px);
-    box-shadow: 0 5px 15px rgba(218, 165, 32, 0.15);
-}
-
-.achievement-item svg {
-    color: #DAA520;
-    flex-shrink: 0;
-}
-
-.achievement-item span {
-    color: #c0c0c0;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* ========================================
-   RESPONSIVE BREAKPOINTS
-   ======================================== */
-
-/* Tablets (max-width: 968px) */
-@media (max-width: 968px) {
-    .achievements-grid-container {
-        grid-template-columns: 1fr; /* Stack vertically */
-        gap: 2.5rem;
-    }
-
-    .achievements-grid-container img {
-        max-height: 500px;
-        order: 2; /* Move image below achievements list */
-    }
-
-    .achievements-grid {
-        order: 1; /* Show list first on mobile */
-    }
-}
-
-/* Mobile Landscape (max-width: 768px) */
-@media (max-width: 768px) {
-    .achievements-section {
-        padding: 4rem 0;
-    }
-
-    .achievements-grid-container {
-        gap: 2rem;
-    }
-
-    .achievements-grid-container img {
-        max-height: 400px;
-    }
-
-    .achievement-item {
-        padding: 1.25rem;
-    }
-
-    .achievement-item svg {
-        width: 20px;
-        height: 20px;
-    }
-
-    .achievement-item span {
-        font-size: 0.95rem;
-    }
-}
-
-/* Mobile Portrait (max-width: 480px) */
-@media (max-width: 480px) {
-    .achievements-section {
-        padding: 3rem 0;
-    }
-
-    .achievements-grid-container {
-        gap: 1.5rem;
-    }
-
-    .achievements-grid-container img {
-        max-height: 300px;
-        border-radius: 8px;
-    }
-
-    .achievements-grid {
-        gap: 1rem;
-    }
-
-    .achievement-item {
-        padding: 1rem;
-        flex-direction: row;
-        align-items: flex-start;
-    }
-
-    .achievement-item svg {
-        width: 18px;
-        height: 18px;
-        margin-top: 2px; /* Align with text */
-    }
-
-    .achievement-item span {
-        font-size: 0.9rem;
-        line-height: 1.4;
-    }
-}
-
-/* Extra Small Devices (max-width: 360px) */
-@media (max-width: 360px) {
-    .achievements-grid-container img {
-        max-height: 250px;
-    }
-
-    .achievement-item {
-        padding: 0.875rem;
-        gap: 0.75rem;
-    }
-
-    .achievement-item span {
-        font-size: 0.85rem;
-    }
-}
-
-/* ========================================
-   ALTERNATIVE LAYOUT (Optional)
-   ======================================== */
-/* If you want image to always be on top on mobile */
-@media (max-width: 768px) {
-    .achievements-grid-container img {
-        order: 1; /* Image first */
-    }
-
-    .achievements-grid {
-        order: 2; /* List second */
-    }
-}
-
-/* Hide image on very small screens (optional) */
-/* @media (max-width: 480px) {
-    .achievements-grid-container img {
-        display: none;
-    }
-} */

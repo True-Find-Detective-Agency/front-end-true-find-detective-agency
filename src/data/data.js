@@ -9,7 +9,11 @@ export const env = {
   teamExperts: 20,
   mobileCall: 9977014334,
   mobileCallView: "+91 99770 14334",
+  whatsapp: `https://wa.me/91${9977014334}`,
   email: "truefinddetectiveagency@gmail.com",
+  fb: "https://www.facebook.com/share/19uAsiQ4WB/",
+  twitter: "https://x.com/truefind04?t=sdxnbn6KXw7-ipAgjdIqQg&s=08",
+  instagram: "https://www.instagram.com/true_find_detective_agency__04?igsh=ZnZsanR3NjNyMWR2",
   branchCount: 5,
   stateCovered: 3
 }
@@ -873,6 +877,83 @@ export const values = [
     icon: "Award",
     title: "Excellence",
     description: "Superior investigative services"
+  }
+];
+
+
+
+// contactInfo.js
+
+export const contactInfo = [
+  {
+    icon: "Phone",
+    title: "Phone",
+    primary: env.mobileCallView,
+    secondary: "Available 24/7",
+    detail: "Emergency hotline available",
+    link: `tel:${env.mobileCallView}`,
+    btn: "Call Now"
+  },
+  {
+    icon: "Mail",
+    title: "Email",
+    primary: env.email,
+    secondary: env.email,
+    detail: "Response within 24 hours",
+    link: `mailto:${env.email}`,
+    btn: "Send Email"
+  },
+  {
+    icon: "MessageCircle",
+    title: "WhatsApp",
+    primary: `https://wa.me/${env.mobileCallView}`,
+    secondary: "Chat on WhatsApp",
+    detail: "Instant reply",
+    link: `https://wa.me/${env.mobileCallView}`,
+    btn: "Chat Now"
+  },
+  {
+    icon: "Facebook",
+    title: "Facebook",
+    primary: env.facebook,
+    secondary: "Social Profile",
+    detail: "Official Facebook Page",
+    link: env.facebook,
+    btn: "View Page"
+  },
+  {
+    icon: "Instagram",
+    title: "Instagram",
+    primary: env.instagram,
+    secondary: "Social Profile",
+    detail: "Instagram updates",
+    link: env.instagram,
+    btn: "View Page"
+  },
+  {
+    icon: "Twitter",
+    title: "Twitter",
+    primary: env.twitter,
+    secondary: "Social Profile",
+    detail: "Latest posts",
+    link: env.twitter,
+    btn: "View Page"
+  },
+  {
+    icon: "Clock",
+    title: "Business Hours",
+    primary: "Mon – Sat: 10AM to 7PM",
+    secondary: "",
+    detail: "Sunday closed",
+    link: null
+  },
+  {
+    icon: "MapPin",
+    title: "Location",
+    primary: "Jabalpur, Madhya Pradesh",
+    secondary: "",
+    detail: "Visit our office",
+    link: null
   }
 ];
 

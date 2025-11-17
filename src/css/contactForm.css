@@ -1,8 +1,8 @@
 .contact-form-wrapper {
-    background: #1a1a1a;
+    background: var(--dark-bg-tertiary);
     padding: 3rem;
     border-radius: 8px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--dark-border);
     max-width: 800px;
     margin: auto;
     box-sizing: border-box;
@@ -27,17 +27,17 @@
 .form-header {
     text-align: center;
     margin-bottom: 2.5rem;
-    color: #daa520;
+    color: var(--primary-gold);
 }
 
 .form-header h2 {
     font-size: 2rem;
-    color: #fff;
+    color: var(--text-primary);
     margin: 1rem 0 0.5rem;
 }
 
 .form-header p {
-    color: #999;
+    color: var(--text-tertiary);
     font-size: 1rem;
 }
 
@@ -78,7 +78,7 @@
 }
 
 .form-group label {
-    color: #c0c0c0;
+    color: var(--text-secondary);
     font-weight: 500;
     font-size: 0.95rem;
 }
@@ -86,22 +86,27 @@
 .form-group input,
 .form-group select,
 .form-group textarea {
-    background: #0f0f0f;
-    border: 1px solid #2a2a2a;
+    background: var(--dark-bg-secondary);
+    border: 1px solid var(--dark-border);
     padding: 0.875rem;
-    color: #e0e0e0;
+    color: var(--text-primary);
     border-radius: 4px;
     font-family: inherit;
     font-size: 1rem;
-    transition: all 0.3s ease;
+    transition: all var(--transition-normal);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--input-placeholder);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #daa520;
-    background: #121212;
+    border-color: var(--primary-gold);
+    background: var(--dark-bg-tertiary);
 }
 
 .form-group textarea {
@@ -110,39 +115,39 @@
 }
 
 .submit-button {
-    background: #daa520;
-    color: #0a0a0a;
+    background: var(--gradient-gold);
+    color: var(--dark-bg);
     padding: 1rem 2rem;
     font-size: 1.1rem;
     font-weight: 600;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition-normal);
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
+    box-shadow: var(--shadow-gold);
 }
 
 .submit-button:hover {
-    background: #ffd700;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.4);
+    box-shadow: var(--shadow-gold-lg);
 }
 
-/* Button smaller on phones */
 @media (max-width: 768px) {
     .submit-button {
         font-size: 1rem;
         padding: 0.875rem 1.5rem;
+        width: 100%;
     }
 }
 
 .privacy-note {
     text-align: center;
-    color: #999;
+    color: var(--text-tertiary);
     font-size: 0.9rem;
     margin-top: 1rem;
     line-height: 1.4;
@@ -155,16 +160,13 @@
     }
 }
 
+/* Mobile Refinements */
 @media (max-width: 768px) {
 
     .contact-form-wrapper {
         padding: 1.5rem;
         margin: 1rem;
         border-radius: 6px;
-    }
-
-    .form-header h2 {
-        font-size: 1.6rem;
     }
 
     .form-header p {
@@ -191,13 +193,6 @@
 
     .form-group textarea {
         min-height: 100px;
-    }
-
-    .submit-button {
-        width: 100%;
-        font-size: 1rem;
-        padding: 0.9rem;
-        border-radius: 6px;
     }
 
     .privacy-note {
